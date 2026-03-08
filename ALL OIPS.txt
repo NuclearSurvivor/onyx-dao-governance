@@ -1,0 +1,1048 @@
+OIP-8: Increase Staking Rewards
+Increase Staking Rewards
+Onyx DAO proposes to the community to increase the staking vault rewards which would make the APR approximately 33% as opposed to todays approximately 6.7% staking rate.
+By making this change the staking rewards still remain under the constitution threshold and creates incentive rewards for those who are securing and voting on the Onyx Protocol and Onyx DAO.
+Vote For100% Votes
+302.29M
+Addresses (10)
+
+OIP-9: Launch OLP Governance
+Abstract: After 3 weeks of testing and live network activity, the Onyx Liquidity Protocol (OLP) will now be fully shifted to the Onyx Governance and Onyx DAO . This proposal is deployed in two parts which will migrate the ownership of the OLP smart contracts to the time lock which is controlled by the Onyx Governance Onyxcoin $XCN stakers who secure and govern the network. Alongside this proposal, the OLP is now fully available via IPFS, a decentralized hosting making Onyx and OLP fully decentralized from the smart contract level to hosting. XCN holders are asked to vote in favor for this proposal to transfer OLP to Onyx DAO and Governance.
+Vote For100% Votes
+2.87B
+Addresses (10)
+
+OIP-9: Fund OLP Reserve
+Abstract: The purpose of this OIP is to transfer XCN reserves to the decentralized distributor address for the Onyx Liquidity Protocol market rewards. This proposal, if passed, will add one billion XCN from the DAO to the decentralized distributor to ensure reward markets continue to distribute incentives to users. This proposal is part 2 of the initial OIP-9 which activated the fully decentralized goverance module. The community should vote in further support of this OIP.
+Vote For100% Votes
+304.29M
+Addresses (5)
+
+OIP-10: Fund OLP Reserves
+Abstract: The purpose of this OIP is to transfer XCN reserves to the decentralized distributor address for the Onyx Liquidity Protocol market rewards. This proposal, if passed, will add one billion XCN from the DAO to the decentralized distributor to ensure reward markets continue to distribute incentives to users. This proposal is part 2 of the initial OIP-9 which activated the fully decentralized goverance module. The community should vote in further support of this OIP.
+Vote For100% Votes
+617.19M
+Addresses (5)
+
+Update XCN speed, grant DAO and support MAYC OPI-11
+Onyx Community will update the XCN market supply and borrow speed and grant DAO.
+
+For MAYC community support, Onyx community will support MAYC market in the Onyx protocol.
+
+    Reduce Borrow Speed for XCN from 350k daily to 50k daily
+
+    Increase Supply speed for XCN from 350k daily to 500k daily
+
+    Lower Borrow cap to 100m XCN
+
+    Reduce collateral factor to 30% (-10%)
+
+    Grant Dao 26,315,000 XCN to 0x4410cbF371A86355cE0690Fd08A92373dCd8e57f
+
+    Support MAYC market
+Vote For100% Votes
+1.06B
+Addresses (6)
+
+OIP-12: Budget allocation for current operations
+The Onyx DAO proposes to allocate a budget for current operations in May–July 2023:
+
+    Hiring the rest of the team
+    Infrastructure support
+    Marketing
+
+Total is 115,000,000 XCN. Details and discussion are in the community forum.
+Vote For30% Votes
+731.32M
+Addresses (12)
+Vote Against70% Votes
+1.69B
+Addresses (6)
+
+OIP-13: Burn XCN Treasury
+OIP-13: Burn the Onyx DAO Timelock XCN Treasury
+Over 30% Token Burn
+
+The Onyx DAO previously indicated to the community thay by May 10th, which is the launch of the new white paper, the DAO would put forward a governance proposal to make a significant XCN token burn.
+
+With the launch of OIP-13, over 30% of the XCN total supply is proposed to be burned. 15 billion XCN will be burned by changing the ownership of the DAO Treasury timelock address to the burn address making those tokens permanently inaccessible. We ask the community to vote in favor of this proposal.
+
+Vote For43% Votes
+516.82M
+Addresses (10)
+Vote Against57% Votes
+676.44M
+Addresses (10)
+OIP-14: Budget allocation for current operations
+
+The Onyx DAO proposes to allocate a budget for current operations in May–July 2023:
+
+    Development and Infrastructure support
+    Marketing and Community
+
+Total is 97,500,000 XCN. Details and discussion are in the community forum: https://community.onyx.org/t/budget-allocation-for-current-operations-may-july-2023-2/503
+Vote For100% Votes
+455.23M
+Addresses (21)
+
+OIP-15: Activate Liquidations
+OIP-15: Activate Liquidations
+
+Onyx DAO proposes to activate the liqudation module for the Onyx Liquidity Protocol by enabling it on the smart contract level.
+
+This will enable users to liquidate over-leveraged positions with a 10% fee per liquidation.
+
+Vote For100% Votes
+454.74M
+Addresses (18)
+
+OIP-16: Activate Liquidation Module
+OIP-16: Activate Liquidation Module
+
+This OIP is in furtherance of OIP-15 to activate the liquidation module.
+Vote For100% Votes
+179.11K( bru)
+Addresses (1)
+
+OIP-17: Activate Liquidations 3/3
+OIP-17 Activate Liquidation
+
+This OIP is the final proposal to activate liquidations
+Vote For100% Votes
+300.00M
+Addresses (2)
+
+OIP-18: Enable Liquidation Portal
+OIP-18: Enabling Liquidation Portal
+
+This OIP will enable the communtiy to utilize the liquidation portal in the app and enable liquidations on-chain.
+Vote For100% Votes
+300.18M
+Addresses (2)
+
+OIP-19: Budget allocation for current operations
+The Onyx DAO proposes to allocate a budget for current operations in Aug–Oct 2023:
+
+    Development and Infrastructure support
+    Marketing and Management
+
+Total is 436,000,000 XCN.
+
+Details and discussion are in the community forum: https://community.onyx.org/t/budget-allocation-for-current-operations-august-october-2023/768
+Vote For100% Votes
+235.27M
+Addresses (13)
+
+OIP-20: Allocate XCN to provide liquidity on exchanges
+The Onyx DAO proposes to allocate a budget to provide liquidity to exchanges, and cover new XCN listing expenses. Total is 600m XCN.
+
+Details and discussion are in the community forum: https://community.onyx.org/t/proposal-allocate-xcn-to-provide-liquidity-on-exchanges/892
+Vote For100% Votes
+237.45M
+Addresses (11)
+
+OIP-21: Accept new Brand book and Design
+The goal of the proposed protocol improvement is to revamp the existing brand identity of the Onyx Protocol by adopting a new Brand Book and Design.
+
+Details and discussion are in the community forum: https://community.onyx.org/t/proposal-accept-new-brand-book-and-design/991
+Vote For100% Votes
+240.31M
+
+Addresses (10)
+
+OIP-22: Support Pepe market
+
+This proposal suggests integrating the Pepe token, allowing for the secure, decentralized supplying and borrowing of Pepe tokens within the Onyx Protocol ecosystem, leveraging the platform's existing infrastructures and promoting diversification of assets and transactions on the platform.
+
+    Supply cap: 1,000,000,000,000,000 PEPE
+    Borrow cap: Uncapped
+    Daily XCN distributed: 200k
+    Collateral factor: 50%
+    Reserve factor: 20%
+
+Details and discussion are in the community forum: https://community.onyx.org/t/proposal-support-pepe-market/1104
+
+Vote For100% Votes
+241.08M
+Addresses (11)
+
+OIP-23: Support Onyx Facility Program
+This proposal is a temperature check on Proposition 1 discussed in the Onyx Community Forums.
+
+Onyx DAO has proposed utilizing a previously announced facility line to sell approximately 3 billion XCN through the facility line, which can be accessed for up to $40 million.
+
+For the entire proposal discussion, visit: https://community.onyx.org/t/recovery-proposal-1-of-2-allocate-funds-from-the-dao-treasury/1135
+Vote For25% Votes
+8.54M
+Addresses (10)
+Vote Against75% Votes
+25.79M
+Addresses (10)
+
+OIP-24: Support the Onyx & Strike Acquisition
+
+This proposal is a temperature check on Proposition 2 discussed in the Onyx Community Forums.
+
+In conjunction with Strike Finance, Onyx DAO has proposed an acquisition of the Onyx Protocol and XCN Token and conversion to STRK token.
+
+For a complete proposal discussion, visit: https://community.onyx.org/t/recovery-proposal-2-of-2-onyx-to-be-acquired-by-strike-finance/1136
+
+Vote For29% Votes
+12.57M
+Addresses (2)
+Vote Against71% Votes
+30.50M
+Addresses (17)
+
+
+OIP-25: Support the Onyx v2 Launch & Inflation Reduction
+This proposal is a temperature check on Proposition 3 discussed in the Onyx Community Forums.
+
+Onyx DAO has proposed to support Proposition #3, which pauses the current money market and prepares for the launch of a v2 market and reduction of XCN inflation.
+
+For a complete proposal discussion, visit: https://community.onyx.org/t/recovery-proposal-3-of-3-reduce-inflation-and-launch-the-v2-onyx-money-market-protocol/1167/
+Vote For34% Votes
+26.37M
+
+Addresses (12)
+Vote Against66% Votes
+50.55M
+Addresses (6)
+
+OIP-26: Support the Onyx v2 Launch with Onyx Facility Program
+
+
+This proposal is a temperature check on Proposition 4 discussed in the Onyx Community Forums.
+
+Onyx DAO has proposed to support Proposition #4, which combines the features of the 1st and 3rd proposals.
+
+For a complete proposal discussion, visit: https://community.onyx.org/t/recovery-proposal-4-taking-the-best-of-both-proposal-1-and-3/1179
+
+Vote For21% Votes
+64.69M
+
+Addresses (6)
+Vote Against79% Votes
+250.20M
+Addresses (11)
+
+OIP-27: Support Onyx v2 Launch targeting the primary markets
+This proposal is a temperature check on Proposition 5 discussed in the Onyx Community Forums.
+
+Onyx DAO has proposed to support Proposition #5, which introduces the Onyx v2 launch targeting the primary markets. After the launch of v2, the DAO will work on a recovery plan to help the v1 community.
+
+For a complete proposal discussion, visit: https://community.onyx.org/t/recovery-proposal-5-onyx-v2-launch-targeting-the-primary-markets/1215
+Success
+Vote For100% Votes
+250.38M
+Addresses (14)
+
+OIP-28: Onyx v2 Preparation, Part 1
+OIP-28 is the beginning proposal on the road to launch Onyx Protocol’s NFT-Money Market version 2. This OIP follows the approved OIP Proposition and works to begin deprecating the smart contracts in v1.
+Vote For100% Votes
+265.99M
+Addresses (15)
+
+OIP-29: Onyx v2 Preparation, Part 2
+OIP-29 is the second proposal on the road to launch Onyx Protocol’s NFT-Money Market version 2. This OIP follows the approved OIP Proposition and works to deprecate the smart contracts in v1.
+Success
+Vote For100% Votes
+236.10M
+Addresses (2)
+
+
+OIP-30: Onyx v2 Preparation, Part 3
+OIP-30 is the third proposal on the road to launch Onyx Protocol’s NFT-Money Market version 2. This OIP follows the approved OIP Proposition and works to deprecate the smart contracts in v1.
+Vote For100% Votes
+259.90M
+Addresses (11)
+
+
+
+OIP-31: Onyx Protocol v2 Preparations
+OIP-31: Onyx Protocol v2 Prep
+
+This proposal is the initial OIP prep for the v2 money markets that will set up the new guardian wallet, vote power, and other adjustments.
+Vote For100% Votes
+500.59M
+Addresses (10)
+
+
+OIP-32: Onyx v1 Deprecated Plan
+Onyx v1 Deprecated Plan
+V1 Reimbursement • V2 Admin Enable
+
+This proposal will initiate the v1 money market deprecating plan, alongside v1 user reimbursement and other administrative changes to fully migrate to v2 use. Users who were affected by the v1 issues, will need to verify their claim with a follow up system. However, this OIP will no longer require a 5 year reimbursement plan, but will be paid in this proposal and with dollar value at the time of the issue and 1-for-1 XCN.
+Vote For100% Votes
+795.44M
+Addresses (28)
+
+
+OIP-33: Finalise Onyx v1 Plan
+OIP-33: Finalise Onyx v1 Plan
+
+This OIP will finalise the last part of the Onyx v1 Reimbursement plan and migration to the Onyx v2 contracts. With the passage of this proposal, all users will now be fully compensated for their entire loss amounts based on the November market issues with PEPE. Thereafter, Onyx DAO will have distributed to every user claim the amount they lost during the incident. This OIP will also finalise the v2 contracts with goverance.
+Vote For100% Votes
+689.16M
+Addresses (13)
+
+
+OIP-34: Adjust Market Rates
+OIP-34: Adjust Market Rates
+
+This Onyx Improvement Proposal (OIP) aims to adjust the floating rate of the XCN staking markets back to its v2 level target of approximately 25% in order to create a sustainable incentive reward model for those who are securing the protocol via staking.
+Vote For86% Votes
+554.89M
+Addresses (15)
+Vote Against14% Votes
+92.09M
+Addresses (10)
+
+
+OIP-35: Activate Base Bridge With Liquidity And Adjust Market Rates
+OIP-35: Activate Base Bridge With Liquidity And Adjust Market Rates
+Activates Base XCN via Superbridge Officially • Adding DEX Liqudity of 100,000,000 XCN • Adjust floating staking rate
+
+This OIP will officially activate the Base Bridged XCN via Super bridge. Earlier the official Base XCN was launched which requires 1 XCN on Ethereum to be locked so that 1 XCN on Base can be minted. Same goes for redeeming the 1 locked XCN back on Ethereum; 1 XCN on Base would be required to be burned. This mechanism is identical to the Binance BEP20 BNBChain XCN.
+
+The proposal also grants 100 million XCN to be added to dex liquidty for proper layer 2 liquidity.
+
+Lastly, this proposal adjusts the floating staking rate back to its target rate.
+Vote For100% Votes
+260.67M
+Addresses (16)
+
+OIP-36: Activate Layer 3 Onyxchain or Stay on Layer 1
+Activate Layer 3 Onyxchain or Stay on Layer 1
+This OIP will determine whether Onyx will launch a bridged Layer 3 on top of Base to build out its ecosystem or remain on Layer 1 Ethereum
+
+Discussion:
+
+Onyx has proposed to create a roll-up based Layer 3 chain on top of Base Layer 2. This chain would be called Onyxchain. Onyxchain will be a Layer 3 protocol that will have bridged assets from Base. Its goal is to create a native burn mechanism through EIP-1559 as well as create a blockchain with fees denominated in XCN. The chains primary purpose will be to support the Onyx ecosystem and add a native dex into the Layer 3 chain.
+
+The community has mixed-feelings about this as many prefer to remain on Layer 1 (Ethereum) and continue to build out the product line centered around Onyx Protocol such as implementing isolated markets and a real world asset platform as well as to add support for VUSD on the Layer 1 protocol. Community members have urged that any other Layer 2 chain such as BNBChain or Base should simply be for bridged XCN to participate in onchain functionality on those layer 2s.
+
+This proposal will determine if the Onyx DAO will move forward with Onyxchain or forego that plan to continue working on Onyx Protocol on the Layer 1.
+
+Vote For20% Votes
+28.34M
+Addresses (6)
+Vote Against80% Votes
+115.23M
+Addresses (12)
+
+OIP-37: Finalise V3 Plan
+Isolated Pools • VUSD • RWA
+This OIP-37 is a follow up to the OIP-36 where the community voted in favor of focusing on the Layer 1 Onyx Protocol.
+
+Discussion:
+
+Onyx DAO proposes to finalize the V3 Whitepaper and V3 community development plan to ensure that the XCN community is aligned with the plan ahead. Since OIP-36 failed, it is clear that an overwhelming number of community members want to focus on the Layer 1 protocol that is Onyx Protocol today. With that in mind we propose to finalise the V3 white paper with the additional informal below:
+
+Isolated Pools: An isolated lending pool is where token holders provide stablecoins and the supported asset into one pool that is fully decentralized. This pool enables the lending, borrowing and earning for only those supported assets and doesn’t affect the other pools. Isolated pools are helpful for low liquidity based tokens and higher risk models. The business model will allow Onyx DAO to partner with more coins to collaborate on strategic relationships
+
+VUSD: As discussed is the in community forums, VUSD is short for Virtual USD, a regulated and compliant stablecoin that will be backed by transparent onchain tokens to have the flexibility of compliance such as USD and the transparency of a asset-backed stablecoin such as DAI all in one. If this proposal passes we will work with applicants whom are interested in to being the third party issuer for this stablecoin design. This design is unique as there are currently no centralized stablecoins that have collateral backed that’s fully onchain available in lending protocols. VUSD will also have Vaults on Venus for those who want to stake and secure the VUSD Modular Add-on to the Onyx Protocol
+
+RWA: Onyx Protocol offers a unique approach to lending and borrowing by enabling a cross-token environment that supports tokens and NFTs into one. To enable the ability to add RWA, Onyx will partner with a RWA provider to create Isolated and General lending pools for RWA NFT tokens. This will broaden the ability of Onyx to be a capital efficient RWA lending protocol.
+
+Vote For100% Votes
+337.76M
+Addresses (18)
+
+
+OIP-38: Adopt V3 White Paper & Development Plan
+OIP-38: Adopt V3 White Paper & Development Plan
+OIP-38 is a follow up to the OIP-37 where the community voted in favour of approving the V3 white paper (“WP”).
+
+The Onyx V3 WP is now live on the Onyx website and can be viewed at https://onyx.org/Whitepaper.pdf — This OIP will ratify and approve the V3 WP for the Onyx DAO as well as handle the development plan for the V3 white paper and Onyx DAO ops.
+
+Discussion: Onyx V1 and V2 were the first two protocols In the Onyx DAO ecosystem. It consisted of a cross-token NFT money market which supported borrowers and suppliers as well as XCN staking which democratised the governance process of the protocol to onchain proposals and voting. Onyx V1 was subject to a hack that occurred on the newly added PEPE market due to a rounding error on the smart contract which took approximately $2.1 million from the protocol.
+
+Since the launch of Onyx v2 — the Onyx DAO in collaboration with market participants have authorised through onchain proposals to successfully return this lost value to the holders. This was initiated through an onchain voting process and handled subsequently with the last repayment of the funds needed to leverage the USDC done and paid recently.
+
+Thus now, Onyx DAO has the V3 white paper which outlines its plan forward. It consists of isolated lending pools, a new centralized stablecoin that will be in partnership through third party entities which utlises a novel-onchain reserve process, and RWA lending markets also in partnership with third party entities. There wil be other ideas but forth from the community that will require development and onchain approvals or disapprovals.
+
+In accordance to the V3 white paper, this vote will also enable a budget to approved by the Onyx DAO of 400 million XCN per month to fund the development, salaries, operations, payments, and other related costs of the Onyx DAO. This will allow the DAO and XCN stakers to have a plan-of-action that is tangible and ascertainable.
+
+Vote For100% Votes
+269.59M
+Addresses (17)
+
+OIP-39: VUSD Launch Partner
+OIP-39: VUSD Launch Partner
+Virtual USD Stablecoin Launch Plan
+
+VUSD is a centralised stablecoin that plans to be a fully reserve-based stablecoin where the entire backing is onchain and verifiable. VUSD was previously approved by the DAO for launch and ratified in the WP proposal via OIP-37/38.
+
+The primary point of making VUWD centralised with decentralised aspects is to ensure the highest level of compliance to ensure that the product is regulatory agnostic and able to adapt for longevity.
+
+This proposal will have Onyx DAO partner with Chain to launch and manage VUSD as a standalone brand and product directly with Onyx. There would be an agreed payment of 200 million XCN per month (within the existing budget) to compensate the entire services via a plan to launch as outlined below:
+
+VUSD Role
+
+Primary Work: Design the Smart Contract, Get Audits, Enable Issuance/Redemptions, Add DEX liquidity,
+
+Ongoing Work: Onboard issuance partners, manage the program, exchanges, defi and other crypto partners, Market VUSD, Liason with the DAO, Ensure compliance
+
+Onyx Role
+
+Add VUSD to the Onyx Protocol, support VUSD as the primary stablecoin for Onyx DAO
+
+With this partnership VUSD will allocate $50 million in collateral for the initial issuance of VUSD and add $10 million in TVL to Onyx. They will issue at minimum $25 million VUSD to establish the stablecoin with various liquidity added as well.
+
+This proposal will fast track the launch of VUSD.
+Vote For100% Votes
+283.00M
+Addresses (18)
+
+OIP-40: VUSD Airdrop Campaign
+OIP-40: VUSD Airdrop Campaign
+
+This proposal is launched in partnership with VUSD to create an initial marketing airdrop for XCN holders and XCN stakers. The proposed structure is below:
+$100,000 VUSD Airdrop
+
+This airdrop will be to all XCN holders, excluding the treasury and burn wallets at a proportional ratio based on XCN holdings
+$500,000 VUSD airdrop
+
+This airdrop will be exclusively to all XCN stakers based on a snapshot taken on block 20623543 and it will be done proportionally based on XCN staked.
+
+It’s to be noted that these funds will be from VUSD and through current initiative. This proposal does not allocate any extra funds.
+Vote For100% Votes
+334.29M
+Addresses (30)
+
+
+OIP-41: Add VUSD Markets
+OIP-41: Add VUSD Markets
+Add oVUSD to the Onyx Protocol
+
+This proposal adds VUSD markets to the Onyx Protocol’s decentralised money markets. This will enable users to supply and borrow VUSD with cross-token collateral that’s supported such as NFTs, Stablecoins, and Digital Assets.
+
+Initial Parameters will be set at 80% LTV, and yield and bond curves from USDC. If/once this proposal passes, Onyx DAO will deploy a follow up proposal for the boosted APY XCN rate for VUSD Markets. The oVUSD contracts are initialized and derived from the auditted oUSDC contracts.
+Vote For100% Votes
+386.68M
+
+Addresses (36)
+
+OIP-42: Add VUSD Market 2/2
+OIP-42: Add VUSD Markets
+Add oVUSD to the Onyx Protocol
+
+This is a follow up from OIP-41 as a part 2. OIP-41 was approved with over 350 million votes.
+
+This proposal adds VUSD markets to the Onyx Protocol’s decentralised money markets. This will enable users to supply and borrow VUSD with cross-token collateral that’s supported such as NFTs, Stablecoins, and Digital Assets.
+
+Initial Parameters will be set at 80% LTV, and yield and bond curves from USDC. If/once this proposal passes, Onyx DAO will deploy a follow up proposal for the boosted APY XCN rate for VUSD Markets. The oVUSD contracts are initialized and derived from the auditted oUSDC contracts.
+
+Vote For100% Votes
+336.41M
+
+
+OIP-43: Adjust Staking Rates & VUSD
+OIP-43: Adjust Staking Rate & VUSD Markets
+Increase the staking rate to ~30% APR • Add the Chainlink Price Oracle for VUSD-USDC and add Collateral Factor
+
+This proposal, OIP-43, seeks to address several critical parameters related to staking and collateralization, aligning the XCN ecosystem with the evolving market dynamics. The adjustments outlined aim to optimize the protocol's operational efficiency, enhance user engagement, and expand XCN's utility across a broader range of platforms.
+
+Reinstatement of Floating Staking Rates:
+
+The primary component of this OIP involves reinstating the XCN staking rate to a floating range of approximately 25-30%, mirroring the rates approved during the initial v2 launch. The current decline in the staking rate is attributable to an increased volume of XCN being staked as more users actively participate in securing the protocol. By restoring the rate to its previous levels, this measure seeks to balance incentivization with sustainability, ensuring that long-term participants continue to be rewarded commensurately, while maintaining robust protocol security.
+
+Introduction of an 80% Collateral Factor for VUSD:
+
+In addition to the staking rate adjustment, this proposal introduces an 80% collateral factor for VUSD, comparable to established stablecoins such as USDT, DAI, and USDC. This collateral factor will allow users to leverage their VUSD holdings as collateral to borrow against within the ecosystem, enhancing liquidity and providing a more flexible capital utilization framework. The 80% factor is a strategic threshold, balancing risk management with user demand for borrowing capacity, thus fostering increased adoption and transactional efficiency within the ecosystem. First, the price oracle will be added and then, after sufficient testing and security checks, a follow up proposal will be launched to add the collateral factor
+Vote For100% Votes
+1.08B
+Addresses (30)
+
+
+OIP-44: Activate VUSD Lending & Rewards
+OIP-44: Activate VUSD Lending & Rewards
+Enable VUSD Borrowing and Liquidity Rewards
+
+This proposal aims to enable the new VUSD market to activate the previously approved collateral factor to enable borrowing and collateral for VUSD markets as well as distribute XCN liquidity rewards for VUSD suppliers and borrowers at the same level of USDC.
+
+Vote For100% Votes
+444.96M
+
+Addresses (21)
+
+OIP-45: Enable VUSD Rewards
+OIP-45: Enable VUSD Rewards
+Activate and Enable the VUSD Supply and Borrow XCN Rewards
+
+This OIP proposes to enable the VUSD market XCN rewards for supply and borrowing VUSD as previously approved in OIP-44.
+Vote For100% Votes
+330.19M
+Addresses (21)
+
+
+OIP-46: Relaunch Onyx Core
+
+OIP-46: Relaunch Onyx Core
+Launch Onyx Core • Update White Paper • Deorecate V2 Lending on Ethereum
+
+This OIP proposes Onyx relaunch its open source permissioned financial network, Onyx Core as its primary product alongside XCN Staking securing the governance of Onyx Core and for Onyx Stakers. Onyx Protocol will run as a closed-ended lending protocol on Onyx Core where users can wrap their NFT and RWA and borrow against them through a global network as well as wrap crypto assets from multiple chains, with the same functionality as the Onyx Protocol lending market on Ethereum.
+
+If this proposal passes, a revised white paper will be presented regarding Onyx Core as well as this proposal will shut down the Ethereum based lending market and reimburse all affected users in full at a 1:1 payment of the assets they supplied.
+
+Vote For100% Votes
+310.25M
+Addresses (16)
+
+OIP-47: Deprecate V2
+
+OIP-47: Deprecate V2
+Wind down V2 Ethereum Money Markets • Establish Reimbursement • Remove VUSD
+
+This proposal is a follow up from the approved OIP-46 to launch Onyx Core and wind down the existing money market on Ethereum. If passed, this proposal will close all the existing V2 lending markets, remove VUSD and ensure that swift reimbursements are done to V2 users.
+Vote For100% Votes
+279.12M
+Addresses (16)
+
+
+OIP-48: Onyx Protocol Ambassador, Gas Refund, and Community Engagement Programs
+OIP-48: Onyx Protocol Ambassador, Gas Refund, and Community Engagement Programs
+Launch XCN Ambassador Pilot Program • Allocate Gas Free Program Season 2 • Activate various community engagement programs
+
+To incentivize and reward active community participation within the Onyx Protocol ecosystem, Onyx Protocol will launch three campaigns. These campaigns will consist of a $100,000 USD gas refund program, an ambassador program and a public engagement program. These initiatives are key in fostering an environment that encourages continuous contribution and growth, aligning with Onyx Protocol’s strategic goals to expand its community outreach and engagement.
+
+Structure
+
+Ambassador Program
+
+Participants: 8 handpicked ambassadors, chosen for their potential and other factors at the discretion of Onyx Protocol.
+
+Compensation: Base Rate: $200 per month for each ambassador.
+
+Performance Bonuses:
+
+Rank 1: Additional $300 (Total $500)
+
+Rank 2: Additional $200 (Total $400)
+
+Rank 3: Additional $100 (Total $300)
+
+Roles and Responsibilities: Ambassadors are tasked with leading community-driven projects, promoting Onyx Protocol across various platforms, and enhancing community engagement through strategic initiatives. Examples include activity on Twitter, offline activities, activity on Telegram, personal connections and engagement on youtube, and other platforms that result in promotional activity.
+
+Ambassadors will operate via a private Zealy group where they will gain XP for their contributions. While proportional bonuses will be allocated, any ambassador in the bottom three on the Zealy leaderboard for two consecutive months will be eligible for replacement by the Onyx DAO at its discretion.
+
+Community Engagement Program
+
+Open Access: Available to all members of the Onyx Protocol community.
+
+Compensation: $1,000 distributed monthly among the top 20 performers, scaled based on engagement and contribution levels.
+
+Roles and Responsibilities: Community members earn points by engaging in activities such as Twitter raids, active participation in Telegram, and other tasks that support community growth.
+
+The top contributors to this program will be strongly considered for placement in the ambassador program if any ambassadors become eligible for replacement. Ambassadors are not excluded from this program if they complete the community engagement programs tasks.
+
+Feedback and Adjustments
+
+Continuous feedback will be provided to all participants, with adjustments made to the program based on overall performance and community input.
+
+Gas Refund Program
+
+$100,000 USD will be allocated for a gas refund program. All staking, voting, and reward claim interactions will be reimbursed on a monthly basis until the allocated funds are exhausted.
+
+Unstaking interactions will not be reimbursed.
+
+Budget
+
+In addition to the $100,000 USD allocated to the gas refund program, the below will be allocated on a monthly basis.
+
+Gas Fees: $300 reserved to cover transaction fees associated with the ambassador and community programs.
+
+Community Engagement Program: $1000
+
+Ambassador Program: $2200 for bonuses and base contribution.
+
+The total budget for the Onyx Protocol ambassador and public engagement programs is $3500 USD on a monthly basis.
+
+The total budget for the gas refund program is a onetime cost of $100,000 USD.
+
+Vote For100% Votes
+1.03B
+Addresses (24)
+
+OIP-49: Base XCN Liquidity Boost
+OIP-49: Base XCN Liquidity Boost
+Increase Base liquidity for Exchange Integrations
+
+This Onyx Improvement Proposal (OIP) recommends increasing the liquidity of Base Chain by adding 200 million XCN tokens. The prior liquidity allocation of 100 million XCN (Retroactive XCN transfers) was fully utilized to cover operational expenses, including exchange fees and reimbursements related to previously allocated grants. This previous effort successfully managed costs while ensuring a stable liquidity flow within Base Chain’s ecosystem.
+
+In this proposal, the additional allocation of 200 million XCN is intended to further strengthen Base Chain’s liquidity, serving as a foundational element for operational budgeting and V2 claim reimbursements. The goal is to enhance liquidity levels, thereby supporting both the platform’s ongoing financial commitments and maintaining seamless transactional flow for users within the ecosystem.
+
+By bolstering the liquidity reserves on Base Chain, this proposal ensures a robust and sustainable mechanism for liquidity management. This approach will not only support current claims and operations but also provide a stronger liquidity base, reinforcing Base Chain’s transactional efficiency.
+Vote For70% Votes
+751.49M
+Addresses (21)
+
+Vote Against30% Votes
+321.18M
+
+Addresses (1)
+
+
+
+OIP-50: Deprecation of V2 XCN Distributors
+OIP-50: Deprecation of V2 XCN Distributors
+V2 Closure • XCN Rewards Adjusted for Farming
+
+This proposal follows the previously approved Onyx Improvement Proposals (OIPs) that initiated the deprecation process for the Onyx Protocol V2 Money Market Lending Markets on Ethereum. The goal of this proposal is to advance that effort by addressing the current XCN token distribution mechanics within the legacy protocol. Specifically, it aims to reduce XCN incentive speeds for both borrowing and supplying activity to zero, effectively discontinuing further incentives tied to the outdated version of the platform.
+
+By setting XCN reward speeds to zero, this proposal will help facilitate the final phase of the V2 protocol’s sunset, ensuring that the system is fully deprecated and all active participants are migrated to the updated protocol versions. This step is crucial for streamlining resource allocation and maintaining the security and efficiency of the overall ecosystem. The remaining XCN Rewards will be migrated to the MasterChef contract to re-allocate those rewards for the XCN-WETH farm.
+
+Vote For100% Votes
+324.22M
+
+Addresses (20)
+
+
+OIP-51: HTX Market Support For XCN Part 1
+
+OIP-51: HTX Market Support For XCN Part 1
+Grant 1b XCN to HTX and Justin Sun • HTX Market Support • HTX and Justin Sun Staking and Governance
+
+This OIP is the first of a two part proposal that will grant the first allocation of 500m XCN from a total of 1B XCN to HTX and Justin Sun using the public wallet 0x243137bCb403EbD3e1437CeFA009dA7Ef16Eae46
+
+HTX and Justin Sun will be involved in XCN staking and governance as a result of this proposal and will stake the 1 billion XCN for a period of at least 2 years. 500 million unlocked year 1 / 500 million unlocked year 2.
+
+This grant will enhance Onyx Protocol through the expertise, experience, and credibility that Justin Sun and HTX bring through their participation in the DAO.
+
+H.E. Justin Sun is well known as the founder of TRON which recently invested $30m USD in World Liberty Financial which has links to President Donald Trump, and his commitment to innovation.
+
+Part 2 of this proposal for the subsequent 500m XCN will be published on February 1st.
+
+Budget
+
+The total budget for HTX Market Support which will involve HTX and Justin Sun in Onyx DAO Governance and staking is 1b XCN. This is part 1 of a 2 part proposal with this part granting 500m XCN, the 2nd part on February 1 will grant the remaining 500m XCN.
+
+Please note: This OIP will not release supply in excess of the current release schedule as there is an excess of XCN reserves at this time.
+
+Vote For49% Votes
+444.08M
+
+Addresses (170)
+Vote Against51% Votes
+459.92M
+
+Addresses (22)
+
+
+
+OIP-52: XCN Market Support
+OIP-52: XCN Market Support
+
+HTX has acquired significant XCN OTC to participate in the XCN ecosystem so this proposal will grant Justin Sun and HTX 500 million XCN to acquire with a lock up and settlement after 2 years.
+
+This OIP will enhance Onyx Protocol through the expertise, experience, and credibility that Justin Sun and HTX bring through their participation in the DAO.
+
+H.E. Justin Sun is well known as the founder of TRON which recently invested $30m USD in World Liberty Financial which has links to President Donald Trump, and his commitment to innovation.
+
+Please note: This OIP will not release supply in excess of the current release schedule as there is an excess of XCN reserves at this time.
+Vote For98% Votes
+983.57M
+Addresses (231)
+
+
+Vote Against2% Votes
+16.52M
+Addresses (8)
+
+
+
+
+
+
+OIP-53: Increase XCN Staking Rate
+
+OIP-53: Increase XCN Staking Rate
+Double the staking rate APR
+
+This proposal, OIP-53, seeks to address parameters related to staking aligning the XCN ecosystem with evolving market dynamics. The adjustments outlined aims to optimize the protocol's operational efficiency, enhance user engagement, and reward XCN stakers securing the network.
+
+Adjusting Staking Rate:
+
+The primary component of this OIP involves reinstating the XCN staking rate to a floating range of approximately 25-30% with an additional approximately 50% promotional boost.
+
+The current percentage in the staking rate is attributable to an increased volume and demand of XCN being staked as more users actively participate in securing the protocol with an increase of about 500% in Month to Month Stakers.
+
+By restoring the rate to its previous levels and adding the promotional boost, this measure seeks to balance incentivization with sustainability, ensuring that long-term participants continue to be rewarded commensurately, while maintaining robust protocol security.
+
+This increase will double the current emissions to stakers to approximately 4.22M XCN per day which is within the fixed monthly budget allocation.
+Vote For100% Votes
+595.56M
+
+Addresses (202)
+
+
+
+OIP-54: Adopt and Ratify Onyx L3 XCN Ledger & Whitepaper
+OIP-54: Adopt and Ratify Onyx L3 XCN Ledger & Whitepaper
+Adopt Onyx L3 XCN Ledger • Adopt Onyx L3 XCN Ledger Whitepaper
+
+This OIP will adopt and ratify the new Onyx whitepaper and Layer 3 XCN Ledger. The whitepaper can be found at https://onyx.org/Whitepaper.pdf and the onepager can be found at https://onyx.org/Onepager.pdf
+
+The Onyx blockchain represents a cutting-edge Layer 3 solution designed to significantly enhance scalability, interoperability, and economic efficiency across blockchain ecosystems. By integrating Arbitrum Orbit and utilizing advanced rollup technology, Onyx optimizes transaction throughput while upholding the rigorous security standards of Ethereum. This makes it an ideal platform for decentralized applications (DApps), financial systems, and broader enterprise adoption.
+
+Central to its innovation is the use of Onyxcoin (XCN), which functions as the native gas token for facilitating network transactions, staking, and decentralized governance through the Onyx DAO. This economic model not only stabilizes transaction fees but also encourages community participation in network governance while using EIP-1559 to enable onchain burning of XCN.
+
+Onyx’s strategic use of Coinbase’s Base Layer 2 as a settlement layer enhances its economic security and efficiency, allowing for high-performance transactions at reduced costs. The XCN Ledger also offers enterprises the flexibility to create customized blockchain environments tailored to specific needs, enhancing its appeal as a scalable and secure infrastructure suited for a variety of institutional applications.
+
+This proposal asserts that adopting the Onyx blockchain can provide a robust, adaptable, and economically efficient platform, capable of supporting the next generation of blockchain applications while maintaining alignment with the needs of its users and stakeholders.
+Vote For100% Votes
+506.92M
+Addresses (196)
+
+
+OIP-55: Deploy sXCN, the Onyx DAO's Liquid Staking Solution
+OIP-55: Deploy sXCN, the Onyx DAO's Liquid Staking Solution
+Deploy Liquid Staking • Deploy sXCN
+
+This OIP will deploy the Onyx DAO's liquid staking solution sXCN.
+
+Drawing inspiration from successful liquid staking models like stETH, Onyx DAO will deploy sXCN a liquid staking token representing users' staked Onyxcoin (XCN) within the Onyx Staking Protocol. With sXCN, users will receive their staking yields automatically, eliminating the need to manually claim rewards. The rewards will be integrated into the sXCN token itself, ensuring a seamless and efficient staking experience.
+
+More details are posted at https://blog.onyx.org/introducing-sxcn-onyx-daos-liquid-staking-solution-7f6e1da89be7
+
+sXCN will follow the below timeline and is subject to change:
+
+Development: 10-12 weeks Auditing: 4-6 weeks Testing: 2-4 weeks Deployment: 1-2 weeks
+Created3/4/2025, 11:33:35 AM
+Success
+Active3/4/2025, 11:33:47 AM
+Success
+Succeed3/6/2025, 6:27:35 AM
+Success
+Queued3/6/2025, 6:32:11 AM
+Success
+Execute3/8/2025, 6:33:11 AM
+(THE CURRENT DATE OF COLLECTING THIS DATA IS 2/14/2026 AT 1:34 AM)
+
+Vote For97% Votes
+604.68M
+
+Addresses (208)
+Vote Against3% Votes
+16.78M
+Addresses (8)
+
+
+OIP-56: Governance OIP Polling
+
+OIP-56: Governance OIP Polling
+Implement Gas-Free Governance Polling
+
+This Onyx Improvement Proposal (OIP) advocates for the creation of an official Onyx profile on Snapshot.org, a popular off-chain voting platform. The goal is to implement a new preliminary polling mechanism that enhances the democratic nature of the OIP process and lowers the barriers to participation, particularly for smaller token holders. By doing so, the community can encourage greater inclusivity and transparency in how proposals are introduced and assessed.
+
+Under this proposed system, any community member would be able to initiate a preliminary OIP poll with just 10 million XCN, significantly lower than the current 200 million XCN threshold required for formal proposal consideration. These polls would be hosted on Snapshot.org, where community members can engage and signal early interest or concerns. In order for a preliminary poll to advance, it must meet a quorum of 200 million XCN votes.
+
+Should a poll reach this quorum, it would then be escalated for broader visibility: the DAO would promote the poll through official social media channels and create a dedicated discussion thread in the community forum. This step serves to gather broader sentiment and feedback prior to formally sponsoring the OIP for full consideration.
+
+By introducing this process, Onyx aims to provide a more accessible and structured pathway for proposal submission—empowering a more diverse range of contributors and reinforcing the community-first ethos of the DAO.
+
+Vote For96% Votes
+396.85M
+Addresses (73)
+Vote Against4% Votes
+16.19M
+Addresses (6)
+
+
+OIP-57: Provide XCN Liquidity for BNB Chain Phase 1
+
+OIP-57: Provide XCN Liquidity for BNB Chain Phase 1
+Phase One: Provide liquidity for XCN/USDT
+
+This Onyx Improvement Proposal (OIP) seeks to ratify the official Onyx DAO poll at https://polls.onyx.org/#/proposal/0xdf0814bb7f6773736a478f52849e57145332942c4e4b1107b25338c5d0af0c1c that would provide liquidity for XCN/USDT and XCN/BNB Pairs on PancakeSwap (https://pancakeswap.finance) as the poll has reached quorum. Phase One will be this OIP which will start with a 100M grant for the USDT/XCN pool on BNB Chain.
+
+Pancakeswap is a leading decentralized exchange on BNB Chain. The goal is to strengthen the trading experience for XCN holders by deploying liquidity to two key trading pairs: XCN/USDT and XCN/BNB.
+
+By deploying this liquidity on PancakeSwap, the DAO aims to reduce slippage, increase trading efficiency, and broaden the availability of XCN across the BNB Chain ecosystem. These pairs will be accessible 24/7 on-chain, enabling improved access for traders and supporting the growth of XCN in DeFi markets.
+
+By executing this liquidity provision, the DAO will demonstrate its support for market health, user experience, and DeFi alignment—while laying the groundwork for increased community engagement and protocol resilience.
+
+Fees accrued in this pool will be used to buy back and burn XCN annually.
+
+50m XCN will be sent to OTC brokers and the USDT will then be used to add the USDT with the corresponding XCN for the creation of the XCN/USDT pool.
+
+Vote For100% Votes
+495.64M
+Addresses (65)
+
+Vote Against0% Votes
+801.29K
+Addresses (2)
+
+
+OIP-58: Extend the Onyx Gas Refund Program
+
+OIP-58: Extend the Onyx Gas Refund Program
+Extend the Onyx Protocol Gas Refund Program to incentivize voting
+
+This Onyx Improvement Proposal seeks to ratify the Onyx DAO poll conducted at https://polls.onyx.org/#/proposal/0x4456a1baf2c5a9500d43b499e8003a80322b8f6dfe5ddeaafc12615619c142a6 to extend the Onyx Gas Refund Program with the goal of enhancing governance accessibility, reducing participation costs, and increasing engagement in staking and voting activities.
+
+Gas costs have been a consistent barrier to broader participation in decentralized governance. By reducing this friction, Onyx Protocol can create a more inclusive and engaged community that actively contributes to the protocol’s future.
+
+If approved, the DAO will allocate $50,000 USD to continue the Gas Refund Program. Funds will be used to reimburse gas fees on a monthly basis for staking and voting. Unstaking and reward claim transactions are not included.
+
+These gas refunds will be processed monthly, occurring on the first full weekend of each month, until the allocated funds are exhausted.
+
+5 Million XCN is being requested to cover the $50,000 USD gas refunds with the remaining balance to be utilized for continuation of the XCN Ambassador and Zealy programs.
+
+This OIP will also execute OIP-57: Provide XCN Liquidity for BNB Chain Phase 1.
+
+Vote For99% Votes
+328.43M
+Addresses (41)
+
+Vote Against1% Votes
+4.05M
+Addresses (2)
+
+
+OIP-59: Adopt and Ratify the Goliath White Paper
+OIP-59: Adopt and Ratify the Goliath White Paper
+Adopt Goliath Framework • Advance Protocol Scalability & Economic Alignment
+
+This OIP formally proposes the adoption and ratification of the Goliath White Paper, now published at https://onyx.org/Goliath.pdf, as a strategic blueprint to guide the next chapter of Onyx’s evolution. This comprehensive framework lays the groundwork for meaningful advancements in scalability, economic alignment, and protocol sustainability.
+
+Building on the momentum of community consensus, and following the successful passage of the governance poll at https://polls.onyx.org/#/proposal/0x7dda4dd5d46cf63b624540c4f0d6969c49e7979ac199416c5ca879f814a5f77b, this proposal seeks to empower core contributors and designated working groups to initiate implementation of the Goliath framework in alignment with the vision and priorities set forth in the white paper.
+
+At its core, the Goliath White Paper presents a bold, future-facing architecture that reimagines how the Onyx protocol can evolve to meet the needs of a dynamic and expanding ecosystem. It reflects a collective commitment to progressive decentralization, systemic resilience, and the adaptive infrastructure required to support a thriving, user-aligned network for years to come.
+
+The Goliath framework represents a transformative leap in distributed ledger architecture, offering a purpose-built, high-performance platform designed to meet the rigorous demands of mainstream adoption. Goliath distinguishes itself with an innovative consensus protocol that achieves asynchronous Byzantine Fault Tolerance (aBFT), enabling robust security and rapid finality without the centralization or inefficiencies found in traditional blockchains. With throughput exceeding 100,000 transactions per second and deterministic transaction ordering, Goliath sets a new standard for scalability and fairness. Unlike conventional blockchain systems that discard concurrent data, Goliath integrates all valid events into a unified, non-linear ledger—preserving full historical accuracy while enhancing operational efficiency.
+
+At the core of Goliath is a modular, multi-layered network architecture that powers services such as smart contract execution, distributed file storage, native tokenization, and real-time consensus ordering—all governed transparently by the Onyx DAO. Through its dual support for public and permissioned token ecosystems (via the Goliath Ledger and Goliath Mesh), the framework empowers both open applications and regulated enterprises to operate within a shared, verifiable infrastructure. Combined with a flexible staking model, proxy delegation, and built-in regulatory compliance mechanisms, Goliath delivers an advanced, adaptable foundation for decentralized finance, digital identity, enterprise automation, and beyond.
+
+In addition, this OIP formally ratifies all prior community polls that achieved quorum and passed but have not yet been implemented, including Direct integration of Onyx Gas-Free Polling into the Onyx app and Adjustment of the XCN emissions rate. These passed proposals can be reviewed at https://polls.onyx.org/#/proposals
+
+Vote For100% Votes
+553.39M
+Addresses (81)
+
+OIP-60: Activate Onyx Points for XCN Stakers on Ethereum & Deploy Onyx Gas-Free Wallet
+OIP-60: Activate Onyx Points for XCN Stakers on Ethereum & Deploy Onyx Gas-Free Wallet
+Activate Onyx Points System • Enhance User Engagement • Deploy Gas-Free Smart Wallet
+
+This proposal seeks community approval to activate the Onyx Points system for XCN stakers on Ethereum, ratifying the community poll that successfully passed at https://polls.onyx.org/#/proposal/0x51b954faf8a9f210412ee12310e320731239e9183cd4c61eb040734f25a92e0e
+
+Designed to reward users for their on-chain engagement, the Points system offers a transparent, gamified experience directly integrated into the Onyx dApp. Points are tracked in real time, unlocking achievements, tiered access, and additional incentives aimed at increasing user participation and long-term alignment with the protocol’s growth. By expanding this system, XCN stakers will gain direct benefits and deeper engagement with the Onyx ecosystem.
+
+In parallel, this proposal formally appoints Chain as the official project manager responsible for deploying and maintaining the upcoming Onyx Gas-Free Smart Wallet. The wallet, ready for deployment, incorporates advanced features such as thirdweb integrations, passkey and phone number login, seamless Google and Apple authentication, and built-in support for NFTs and tokens on the Onyx Ledger—all without any transaction gas fees.
+
+Chain will oversee setup, deployment, security protocols, infrastructure maintenance, and continuous updates to ensure reliability, user safety, and scalability.
+Vote For100% Votes
+621.81M
+Addresses (105)
+
+OIP-61: Ratify All XCN Polls & Outstanding Items
+
+OIP-61: Ratify All XCN Polls & Outstanding Items
+Ratify recent XCN polls • Conclude Season 1 • Decentralized DAO Registry
+
+This proposal seeks to ratify all recent XCN community polls, including Conclude Onyx Points Season 1, Expand Chains Supporting XCN Gas-Free & Governance, and Create a Decentralized DAO Registry. Together, these initiatives mark an important step in advancing the Onyx protocol’s infrastructure, governance transparency, and user engagement.
+
+As part of concluding Onyx Points Season 1, this proposal allocates 10 million XCN to fund rewards and incentives promised during the season. Season 1 introduced a gamified, onchain engagement model that rewarded user activity with transparent, real-time tracking through the Onyx Points dashboard. By finalizing this allocation, the DAO ensures timely distribution of rewards to participants and fulfills commitments made during the program’s launch. The conclusion of Season 1 also sets the stage for designing an improved Season 2, with expanded activities, new reward tiers, and deeper integration into the Onyx dApp to further align users with the long-term growth of the protocol.
+
+This proposal also moves forward with the creation of a decentralized registry of service providers supporting the Onyx protocol, to be deployed on Ethereum and governed exclusively by XCN token holders. The registry will serve as an auditable, onchain source of truth for all third-party or community service providers powering critical elements of the Onyx ecosystem, such as node infrastructure, RPC endpoints, API hosting, indexing, analytics, and other essential off-chain services. Managed through DAO governance, the registry will allow the community to add, remove, or update provider details, ensuring transparency, accountability, and the ability to adapt infrastructure partnerships as the protocol evolves. Over time, this registry could also be used to direct payments, assign reputation, and delegate responsibilities to trusted providers.
+
+In alignment with the poll to expand chains supporting XCN gas-free transactions and governance, this proposal confirms Chain as the official infrastructure provider for the Onyx Gas-Free Smart Wallet. This wallet, now ready for deployment, will deliver a seamless user experience with features such as thirdweb integration, passkey and phone number login, Google and Apple authentication, and built-in NFT and token support on the Onyx Ledger—all without requiring users to pay transaction gas fees. Chain will manage the wallet’s deployment, security, scalability, and ongoing maintenance, ensuring reliable, long-term infrastructure for the Onyx community. The updated Gas-Free Program will prioritize users engaging through the Onyx Layer 3 wallet and extend gas-free benefits for governance participation and cross-chain XCN activity on Base, BNB Chain, and Ethereum, further removing barriers to active involvement in the protocol.
+
+In addition, while the poll to make Chain the lead developer has been successfully ratified as part of previous OIPs and OIP-60 ratified Chain as the official project manager of the gas-free smart wallet, this OIP covers Chain as the infrastructure provider.
+
+Finally, in alignment with the community’s direction on expanding gas-free support, the Gas Refund Program will be updated to better reflect Onyx’s long-term vision for Layer 3 adoption, cross-chain utility, and incentivized governance.
+
+Eligibility will be limited to users engaging through the Onyx Layer 3 wallet, creating a consistent and streamlined user experience. The program will extend gas-free transactions to XCN activity on Base, BNB Chain, and Ethereum, while governance-related reimbursements will be provided only to those voting on proposals on Ethereum via the Layer 3 wallet. These adjustments are intended to encourage broader adoption of the Layer 3 wallet, strengthen participation in governance, remove gas cost barriers for active XCN holders, and improve the overall fairness and accessibility of the governance process.
+
+Vote For100% Votes
+392.58M
+Addresses (60)
+
+
+OIP-62: Increase Native Staking Rate, Establish MultiSig DAO, Global Marketing Activation, DAO Registry & Ratify Polls
+OIP-62: Increase Native Staking Rate, Establish MultiSig DAO, Global Marketing Activation, DAO Registry & Fund Ambassador + Zealy Programs
+Increase Native XCN Staking Rate • Establish MultiSig DAO • Global Marketing Activation • Create Decentralized DAO Registry • Fund Ambassador & Zealy Programs • Ratify Miscellaneous Items.
+
+This proposal strengthens the Onyx Protocol’s governance, incentive structure, and community development through a coordinated set of updates. It introduces an increase to the native XCN staking rate, establishes the MultiSig Guardian for protocol security, launches a global marketing activation, formalizes the decentralized DAO Registry, funds the Ambassador and Zealy programs, and ratifies other previously approved community initiatives. Together, these actions enhance Onyx’s transparency, participation, and long-term sustainability.
+
+Increase XCN Native Staking Rate
+
+Throughout Q4 2025, the XCN native staking rate will increase, at current staking volume, to approximately 40% APR, marking a key upgrade to Onyx’s incentive and security framework. This enhancement rewards long-term participants while strengthening the protocol’s decentralized foundation.
+
+Users staking their ERC-20 XCN through the Onyx Protocol app will directly benefit from the new rate. A higher return encourages consistent participation, deepens commitment to network integrity, and aligns community incentives with protocol growth and security.
+
+The DAO will monitor staking data to ensure that rewards remain balanced and sustainable. This increase demonstrates Onyx’s commitment to responsible, community-aligned governance and establishes a stronger economic base for future expansion.
+
+Establish MultiSig DAO
+
+This proposal also implements a 3-of-5 MultiSig DAO to protect the Onyx protocol from malicious proposals and governance attacks. As Onyx matures, fortifying governance infrastructure becomes critical to preserving integrity and trust. The MultiSig DAO will help in governance and protocol related matters.
+
+Furthermore, MultiSig Guardians Are:
+
+    Chain.com
+    @TheOnyxDAO
+    Ambassador Leader (Shawn)
+    Community Leader (VT)
+    One Community Ambassador (AstroDaze)
+
+These will be evaluated and voted by the community quarterly after this initial structure. The Guardian functions as a security layer, activated only under exceptional circumstances when a proposal or contract action poses a clear risk to the network. Requiring approval from at least three of five independent signers ensures checks and balances while maintaining community oversight.
+
+By establishing the Guardian, Onyx combines decentralization with defense, ensuring that progress and protection coexist in balance and that the protocol’s governance remains both open and resilient. Chain will work with the Onyx DAO to upgrade the Governor Alpha to Governor Bravo so that the guardian EOA can be modified and in the interim the MultiSig DAO will be responsible for the guardian EOA.
+
+Onyx Marketing Global Activation
+
+Additionally, this proposal activates a Global Marketing Campaign, driving awareness, adoption, and credibility for Onyx worldwide.
+
+The initiative encompasses listings, education, Goliath incentives, and promotional campaigns, each advancing Onyx’s mission of accessible, community-driven blockchain participation.
+
+    Listings expand accessibility and liquidity across major platforms.
+    Education builds informed, confident users and developers.
+    Goliath incentives reward contributors who amplify protocol growth.
+    Promotions raise global visibility and brand strength.
+
+The DAO will transparently govern all activities, with performance-based oversight, to ensure the efficient use of funds. This activation positions Onyx to scale sustainably and compete globally with clarity, purpose, and coordination.
+
+Activate Decentralized DAO Registry
+
+This proposal formalizes the Decentralized DAO Registry, deployed on Ethereum and governed entirely by XCN token holders. The registry establishes a transparent, on-chain record of all service providers supporting the Onyx ecosystem, including but not limited to:
+
+    Node infrastructure and RPC endpoints
+    API hosting and indexing services
+    Web hosting and monitoring operations
+    Analytics and off-chain data services
+
+Through governance, DAO members can add, remove, or modify entries, ensuring visibility and accountability across all infrastructure partners.
+
+The registry creates an auditable source of truth for who supports the protocol and how they contribute, paving the way for future integrations such as delegated roles, reputation scoring, and payment routing.
+
+By decentralizing infrastructure oversight, the DAO reinforces trust, transparency, and resilience within Onyx’s operational core.
+
+Ratify Miscellaneous Passed Items
+
+This section formally ratifies all previously approved but unrecorded governance actions and minor operational updates. Consolidating these into the DAO’s on-chain record preserves governance continuity and ensures all community decisions are properly documented.
+
+Fund Ambassador & Zealy Programs
+
+This proposal allocates resources to continue the Onyx Ambassador Program and Zealy initiatives through the end of the year. These programs have proven invaluable in building awareness, fostering education, and empowering active contributors within the global community.
+
+Ambassadors serve as educators and advocates, organizing events, producing content, and onboarding new users into the ecosystem. Zealy adds a gamified engagement layer, rewarding participants for completing verified on-chain and community tasks.
+
+By renewing support for these programs, the DAO ensures the continued growth of an informed, motivated, and globally distributed network of Onyx contributors. This investment sustains the human layer of the protocol, one of its most dynamic and essential components.
+
+Conclusion Together, these initiatives strengthen every pillar of the Onyx ecosystem:
+
+    Higher staking incentives to deepen network security
+    MultiSig DAO for governance protection and operations
+    Global Marketing Activation to expand adoption
+    Decentralized DAO Registry for transparent infrastructure management
+    Ambassador & Zealy Programs to sustain community engagement
+    Ratification of miscellaneous items for complete governance integrity
+Vote For97% Votes
+735.81M
+Addresses (117)
+Vote Against3% Votes
+20.28M
+Addresses (2)
+
+
+
+OIP-63: Goliath Mainnet Validator Framework, Staking & Farm Upgrades, Strategic Development Allocation & Ethereum Liquidity Consolidation
+OIP-63: Goliath Mainnet Validator Framework, Staking & Farm Upgrades, Strategic Development Allocation & Ethereum Liquidity Consolidation
+
+Goliath Mainnet Validator Rewards • Liquid Staking & Auto-Compounding Upgrades • Strategic Development & Marketing Allocation • Ethereum Liquidity Consolidation • Ratify Miscellaneous Items
+
+This proposal advances the next phase of the Onyx ecosystem by preparing Goliath for mainnet readiness, modernizing staking infrastructure, strengthening strategic growth initiatives, and improving liquidity efficiency. Together, these actions reinforce long-term security, participation incentives, ecosystem expansion, and capital efficiency across the protocol.
+
+Goliath Mainnet Validator Rewards Framework
+
+As the Goliath network approaches mainnet readiness, it is critical to transition from testnet-specific experimentation to a production-ready validator rewards structure.
+
+This proposal authorizes the team to research, model, and finalize a mainnet validator rewards framework distinct from the current testnet mechanisms. The goal is to ensure:
+
+• Sustainable validator incentives
+
+• Long-term network security
+
+• Balanced emissions aligned with ecosystem growth
+
+• Transparent and production-grade reward mechanics
+
+Importantly, this authorization does not approve specific emission rates, reward parameters, or tokenomic changes at this stage. It enables structured planning and economic modeling, with a finalized framework to be presented transparently to the community.
+
+By formalizing this step, the DAO ensures that Goliath launches with a durable validator incentive structure designed for long-term resilience rather than short-term experimentation.
+
+Farm & Staking Upgrades: Liquid Staking & Auto-Compounding
+
+This proposal supports preparing upgrades to the XCN/WETH Farm and native XCN staking systems to introduce. The DAO authorizes development and preparation work required to implement these upgrades in a transparent and secure manner.
+
+Strategic Development & Marketing Allocation (100,000,000 XCN)
+
+This proposal allocates 100,000,000 XCN toward development and marketing initiatives designed to strengthen collaboration with strategic partners, including platforms such as Robinhood and other opeartions.
+
+Concentration of Liquidity on Ethereum
+
+In response to evolving exchange support dynamics, this proposal authorizes consolidating XCN liquidity onto Ethereum by migrating a portion of the outside liquidity and incentives currently positioned on BNB Chain and others to Ethereum and for other operational purposes.
+
+This action does not modify token supply, governance structure, or core tokenomics. It strictly addresses liquidity deployment strategy to improve market efficiency and accessibility.
+
+Ratify Miscellaneous Passed Items
+
+This proposal also ratifies several previously approved governance actions and operational adjustments found on Onyx Polls.
+
+Conclusion
+
+Together, these coordinated actions position the protocol for sustainable mainnet launch, improved user participation, stronger exchange presence, foundational operations and payments with liquidity enhancements and streamlined governance execution.
+
+Vote For100% Votes
+431.00M
+Addresses (51)
+Success
+Created2/13/2026, 10:44:35 AM
+Success
+Active2/13/2026, 10:44:47 AM
+27h : 46m : 34s LEFT ON VOTING
+
+OIP-64: Ratification of Outstanding Governance Polls & Community Safeguards
+Vote For98% Votes
+329.21M
+Addresses (62)
+
+Vote Against2% Votes
+5.91M
+Addresses (1)
+
+OIP-64: Ratification of Outstanding Governance Polls & Community Safeguards
+
+This proposal formally ratifies several governance polls that have successfully passed quorum and voting requirements on polls.onyx.org. These measures strengthen governance standards, enhance community security, and formalize ecosystem representation policies under a consolidated OIP.
+
+Adjust the XCN Requirement to Create a Poll
+
+This item ratifies the approved adjustment to the XCN threshold required to create a governance poll. The change improves proposal quality, reduces low-signal submissions, and preserves governance accessibility while protecting against misuse.
+
+Implement Join CAPTCHA in the Official Onyx Telegram Group
+
+This item ratifies the implementation of a CAPTCHA verification system for new members joining the official Telegram group. This enhances security by limiting bot activity, spam, and impersonation risks while maintaining productive community discussions.
+
+Onyx Ambassador Vetting & Accountability Framework
+
+This item ratifies the establishment of a structured Ambassador Vetting & Accountability Framework. The framework formalizes onboarding standards, conduct expectations, and accountability procedures to ensure responsible ecosystem representation.
+
+Conclusion
+
+These items have already achieved quorum and approval through governance polls. OIP-64 formally consolidates and records their adoption within the governance framework.
+
+• Vote “For” if you support the ratification of the initiatives outlined in this proposal.
+
+• Vote “Against” if you do not support their formal adoption.
+•
+• Created2/17/2026, 5:46:35 PM
+Success
+Active2/17/2026, 5:46:47 PM
+Success
+Succeed2/19/2026, 12:36:47 PM
+Success
+Queued2/25/2026, 10:44:11 PM
+Success
+Execute2/28/2026, 12:28:35 AM

@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onyx DAO Governance Analytics — Nuclear (@xplo333)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06080d;--card:#0d1117;--card2:#161b22;--border:#21262d;--accent:#58a6ff;--green:#3fb950;--red:#f85149;--amber:#d29922;--purple:#bc8cff;--cyan:#39d2c0;--pink:#f778ba;--text:#e6edf3;--muted:#8b949e;--dim:#484f58;--orange:#db6d28;--lime:#7ee787}
+body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sans-serif;line-height:1.5}
+.header{background:linear-gradient(135deg,#0d1117,#161b22,#0d1117);border-bottom:1px solid var(--border);padding:28px 24px 22px}
+.header .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);display:inline-block;margin-right:10px}
+.header .tag{font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.14em}
+.header h1{font-size:22px;font-weight:800;letter-spacing:-.03em;margin:6px 0 0}
+.header p{font-size:12px;color:var(--muted);margin:5px 0 0}
+.tabs{display:flex;gap:2px;padding:10px 24px 0;border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:9px 16px;font-size:12px;font-weight:700;cursor:pointer;background:transparent;color:var(--muted);border:none;border-bottom:2px solid transparent;border-radius:8px 8px 0 0;font-family:inherit;transition:all .15s;white-space:nowrap;flex-shrink:0}
+.tab.active{background:var(--card);color:var(--accent);border-bottom-color:var(--accent)}
+.tab:hover{color:var(--accent)}
+.content{padding:0 24px 40px;max-width:1200px}
+.page{display:none}.page.active{display:block}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;flex:1 1 160px;min-width:120px}
+.stat-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.stat-value{font-size:28px;font-weight:800;font-family:'JetBrains Mono',monospace;line-height:1.15}
+.stat-sub{font-size:11px;color:var(--dim);margin-top:3px}
+.section{font-size:16px;font-weight:700;margin:32px 0 14px;padding-left:12px}
+.chart-box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px}
+.chart-box canvas{max-height:280px}
+.note{font-size:10px;color:var(--dim);margin-top:6px;font-style:italic}
+.badge{padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;white-space:nowrap;display:inline-block}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{padding:8px 10px;text-align:left;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border);background:var(--card2)}
+td{padding:6px 10px;border-bottom:1px solid var(--border)}
+.grid5{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.guardian{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center}
+.guardian-name{font-size:13px;font-weight:700}
+.guardian-issue{font-size:10px;color:var(--red);margin-top:2px}
+.callout{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:10px;font-size:11px;color:var(--muted)}
+.insight{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:12px;border-left:4px solid var(--accent)}
+.insight h3{font-size:14px;font-weight:800;margin-bottom:6px}
+.insight p{font-size:12px;line-height:1.7;color:var(--muted)}
+.omnibus{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-bottom:8px}
+.omnibus-title{font-weight:700;font-size:12px;color:var(--accent)}
+.omnibus-sub{font-size:11px;color:var(--dim);margin-left:8px}
+.badge-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.q-item{background:var(--card2);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:6px;padding:6px 10px;font-size:11px;color:var(--muted)}
+.filter-row{display:flex;gap:6px;margin:20px 0 12px;flex-wrap:wrap}
+.filter-btn{padding:5px 14px;font-size:11px;font-weight:600;cursor:pointer;border-radius:6px;background:var(--card);color:var(--muted);border:1px solid var(--border);font-family:inherit;transition:all .15s}
+.filter-btn.active{background:#58a6ff22;color:var(--accent);border-color:var(--accent)}
+.timeline-item{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.timeline-day{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;min-width:52px;text-align:right}
+.timeline-bar{width:2px;height:16px;border-radius:1px}
+.timeline-label{font-size:12px}
+.cta{background:var(--card2);border:2px solid var(--pink);border-radius:10px;padding:20px;margin-top:16px;text-align:center}
+.cta-title{font-size:14px;font-weight:800;color:var(--pink)}
+.cta-sub{font-size:11px;color:var(--muted);margin-top:4px}
+.cta-quote{font-size:11px;color:var(--dim);margin-top:3px;font-style:italic}
+.poll-card{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;padding:20px;margin-bottom:14px;position:relative}
+.poll-id{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:800;margin-bottom:4px}
+.poll-title{font-size:16px;font-weight:800;color:var(--text);margin-bottom:12px}
+.poll-body{font-size:12px;line-height:1.75;color:var(--muted)}
+.poll-body p{margin:0 0 10px}
+.poll-body strong{color:var(--text)}
+.poll-vote{font-size:11px;color:var(--dim);border-top:1px solid var(--border);padding-top:10px;margin-top:10px}
+.poll-vote strong{color:var(--text)}
+.phase-header{font-size:17px;font-weight:800;margin:28px 0 16px;padding-left:14px}
+.new-badge{background:#7ee78722;color:var(--lime);border:1px solid #7ee78744;border-radius:4px;font-size:9px;font-weight:800;padding:1px 6px;letter-spacing:.1em;text-transform:uppercase;margin-left:8px;vertical-align:middle}
+.updated-badge{background:#d2992222;color:var(--amber);border:1px solid #d2992244;border-radius:4px;font-size:9px;font-weight:800;padding:1px 6px;letter-spacing:.1em;text-transform:uppercase;margin-left:8px;vertical-align:middle}
+/* Treasury Scanner */
+.addr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:20px 0}
+.addr-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;border-left:4px solid var(--orange)}
+.addr-card .net{font-size:10px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.1em}
+.addr-card .addr-hex{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin:4px 0;word-break:break-all}
+.addr-card .bal{font-size:20px;font-weight:800;font-family:'JetBrains Mono',monospace;color:var(--text);margin-top:6px}
+.addr-card .bal-sub{font-size:10px;color:var(--dim)}
+.scan-btn{background:var(--orange);color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin:8px 4px 8px 0;transition:opacity .15s}
+.scan-btn:hover{opacity:.85}
+.scan-btn:disabled{opacity:.4;cursor:not-allowed}
+.scan-status{font-size:11px;color:var(--muted);margin:6px 0;min-height:18px}
+.tx-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:10px}
+.tx-table th{padding:7px 10px;text-align:left;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border);background:var(--card2);white-space:nowrap}
+.tx-table td{padding:5px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+.tx-table tr:hover td{background:var(--card2)}
+.tx-out{color:var(--red)}
+.tx-in{color:var(--green)}
+.tx-hash{font-family:'JetBrains Mono',monospace;color:var(--accent);cursor:pointer;font-size:10px}
+.tx-hash:hover{text-decoration:underline}
+.tx-flag{background:#f8514920;color:var(--red);border-radius:3px;padding:1px 5px;font-size:9px;font-weight:700;margin-left:4px}
+.flow-wrap{overflow-x:auto;margin-top:10px}
+#flowCanvas{display:block;margin:0 auto}
+.copy-addr-btn{background:transparent;border:none;color:var(--dim);cursor:pointer;font-size:10px;margin-left:4px;padding:1px 4px;border-radius:3px}
+.copy-addr-btn:hover{color:var(--accent)}
+/* Search */
+.search-wrap{position:relative;margin-bottom:14px}
+.search-input{width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:9px 36px 9px 12px;font-size:12px;color:var(--text);font-family:inherit;outline:none;transition:border-color .15s}
+.search-input:focus{border-color:var(--accent)}
+.search-input::placeholder{color:var(--dim)}
+.search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:0 4px;display:none}
+.search-empty{text-align:center;color:var(--dim);font-size:13px;padding:40px 0}
+/* Status badges on poll cards */
+.poll-status-badge{position:absolute;top:14px;right:14px;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+/* Copy button */
+.poll-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);flex-wrap:wrap;gap:8px}
+.copy-btn{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:6px 12px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit;transition:all .15s;min-height:36px}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent)}
+.copy-btn.copied{background:#3fb95022;border-color:var(--green);color:var(--green)}
+/* Tracker tab */
+.tracker-progress{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-top:20px;margin-bottom:16px}
+.tracker-progress h3{font-size:13px;font-weight:700;margin-bottom:12px;color:var(--text)}
+.progress-bar-outer{background:var(--card2);border-radius:8px;height:14px;overflow:hidden;margin-bottom:6px}
+.progress-bar-inner{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--green),var(--lime));transition:width .4s}
+.progress-label{font-size:11px;color:var(--muted)}
+.tracker-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.action-btn{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:7px 14px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit;transition:all .15s;min-height:36px}
+.action-btn:hover{border-color:var(--accent);color:var(--accent)}
+.tracker-stats{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tracker-stat{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center;flex:1 1 80px}
+.tracker-stat-count{font-size:22px;font-weight:800;font-family:'JetBrains Mono',monospace}
+.tracker-stat-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+.tracker-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid var(--border)}
+.tracker-table{width:100%;min-width:700px;border-collapse:collapse;font-size:11px}
+.tracker-table th{padding:9px 12px;text-align:left;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border);background:var(--card2);white-space:nowrap}
+.tracker-table td{padding:7px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+.tracker-table tr:last-child td{border-bottom:none}
+.tracker-table tr:hover td{background:#ffffff06}
+.status-select{background:var(--card2);border:1px solid var(--border);border-radius:5px;padding:3px 6px;font-size:10px;font-weight:700;cursor:pointer;font-family:inherit;outline:none;color:var(--text)}
+.notes-input{background:transparent;border:1px solid transparent;border-radius:5px;padding:3px 6px;font-size:11px;color:var(--muted);font-family:inherit;width:100%;min-width:120px;outline:none;transition:border-color .15s}
+.notes-input:focus{border-color:var(--border);background:var(--card2)}
+.reset-btn{background:#f8514920;border:1px solid #f8514944;border-radius:6px;padding:7px 14px;font-size:11px;font-weight:600;color:var(--red);cursor:pointer;font-family:inherit;transition:all .15s;min-height:36px}
+.reset-btn:hover{background:#f8514940;border-color:var(--red)}
+/* Print FAB */
+.print-fab{position:fixed;bottom:24px;right:24px;background:var(--card);border:2px solid var(--pink);border-radius:10px;padding:10px 18px;font-size:12px;font-weight:700;color:var(--pink);cursor:pointer;font-family:inherit;transition:all .15s;z-index:999;box-shadow:0 4px 20px #00000080}
+.print-fab:hover{background:#f778ba20}
+/* Print styles */
+@media print{
+  .header{display:none!important}
+  .tabs{display:none!important}
+  .filter-row{display:none!important}
+  .search-wrap{display:none!important}
+  .chart-box{display:none!important}
+  .stats{display:none!important}
+  .print-fab{display:none!important}
+  .tracker-progress{display:none!important}
+  .tracker-stats{display:none!important}
+  .tracker-table-wrap{display:none!important}
+  .tracker-actions{display:none!important}
+  .copy-btn{display:none!important}
+  .poll-status-badge{display:none!important}
+  .page{display:none!important}
+  #reform.page{display:block!important}
+  body{background:#fff!important;color:#000!important}
+  .poll-card{background:#fff!important;border:1px solid #ccc!important;border-left:4px solid #000!important;border-radius:6px!important;padding:16px!important;margin-bottom:12px!important;break-inside:avoid;page-break-inside:avoid}
+  .poll-id{color:#000!important;font-size:11px!important}
+  .poll-title{color:#000!important;font-size:15px!important}
+  .poll-body{color:#333!important}
+  .poll-body strong{color:#000!important}
+  .poll-vote{color:#555!important}
+  .phase-header{color:#000!important;border-left:4px solid #000!important;page-break-before:always;break-before:always}
+  .phase-header:first-of-type{page-break-before:avoid;break-before:avoid}
+  .reformPhaseSection:not(:first-child) .phase-header{page-break-before:always}
+  .updated-badge,.new-badge{display:none}
+  .section{display:none}
+}
+@media(max-width:600px){
+  .stat{min-width:120px}
+  .stat-value{font-size:22px}
+  .q-grid{grid-template-columns:1fr}
+  .search-input{font-size:14px}
+  .poll-card-footer{flex-direction:column;align-items:flex-start}
+  .copy-btn{width:100%;text-align:center}
+  .tracker-actions{flex-direction:column}
+  .action-btn,.reset-btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div><span class="dot"></span><span class="tag">Onyx DAO · Governance Deep Dive</span></div>
+  <h1>Voting Trends, Anomalies & Reform Analysis</h1>
+  <p>58 OIPs · 85 Polls · 43 Reform Proposals · 3 Innovation Proposals · Nuclear (@xplo333)</p>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('overview',this)">Overview</button>
+  <button class="tab" onclick="showTab('anomalies',this)">Anomalies</button>
+  <button class="tab" onclick="showTab('reform',this)">Reform Package</button>
+  <button class="tab" onclick="showTab('innovation',this)" style="color:var(--lime)">Innovation &#10022;</button>
+  <button class="tab" onclick="showTab('insights',this)">Critical Findings</button>
+  <button class="tab" onclick="showTab('tracker',this)" style="color:var(--cyan)">Tracker &#9673;</button>
+  <button class="tab" onclick="showTab('scanner',this)" style="color:var(--orange)">Treasury Scanner &#9632;</button>
+  <button class="tab" onclick="showTab('livepolls',this)" style="color:var(--pink)">&#128229; Live Polls</button>
+  <button class="tab" onclick="showTab('oiparchive',this)" style="color:var(--purple)">&#128196; OIP Archive</button>
+</div>
+
+<div class="content">
+
+<!-- OVERVIEW -->
+<div id="overview" class="page active">
+  <div class="stats">
+    <div class="stat"><div class="stat-label">OIPs Passed</div><div class="stat-value" style="color:var(--green)">50/58</div><div class="stat-sub">86% pass rate</div></div>
+    <div class="stat"><div class="stat-label">Unanimous</div><div class="stat-value" style="color:var(--cyan)">44</div><div class="stat-sub">76% of all OIPs</div></div>
+    <div class="stat"><div class="stat-label">Participation &#8593;</div><div class="stat-value" style="color:var(--accent)">~600%</div><div class="stat-sub">2025+ vs pre-2025</div></div>
+    <div class="stat"><div class="stat-label">Est. Outflows</div><div class="stat-value" style="color:var(--red)">~16B+</div><div class="stat-sub">XCN since CIP-1</div></div>
+    <div class="stat"><div class="stat-label">Reforms</div><div class="stat-value" style="color:var(--pink)">43</div><div class="stat-sub">+ 3 Innovation</div></div>
+  </div>
+  <h2 class="section" style="border-left:3px solid var(--accent)">Voter Addresses Per OIP</h2>
+  <div class="chart-box"><canvas id="chartAddr"></canvas></div>
+  <h2 class="section" style="border-left:3px solid var(--green)">OIP Categories — Pass vs Fail</h2>
+  <div class="chart-box"><canvas id="chartCat"></canvas></div>
+  <h2 class="section" style="border-left:3px solid var(--red)">Estimated Treasury Outflows (Millions XCN)</h2>
+  <div class="chart-box"><canvas id="chartOutflows"></canvas>
+    <div class="note">Estimates based on approved budgets x duration. No independent audit has been conducted.</div>
+  </div>
+</div>
+
+<!-- ANOMALIES -->
+<div id="anomalies" class="page">
+  <h2 class="section" style="border-left:3px solid var(--red)">The OIP-51 to OIP-52 Vote Swing</h2>
+  <div class="chart-box">
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Same proposal (Justin Sun/HTX grant). OIP-51 rejected 51-49%. OIP-52 passed 98-2%. +540M FOR appeared, -443M AGAINST vanished.</p>
+    <canvas id="chart5152"></canvas>
+    <div class="q-grid">
+      <div class="q-item">Where did +540M new FOR votes come from?</div>
+      <div class="q-item">Where did 443M AGAINST votes disappear?</div>
+      <div class="q-item" style="border-left-color:var(--red)">Why 170 to 231 FOR addresses?</div>
+      <div class="q-item" style="border-left-color:var(--red)">Why 22 to 8 AGAINST addresses?</div>
+    </div>
+  </div>
+  <h2 class="section" style="border-left:3px solid var(--amber)">Quorum Manipulation Pattern</h2>
+  <div class="chart-box">
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Spending/insider polls: 149-319% quorum. Community improvement polls (97%+ approval): 27-53% quorum.</p>
+    <canvas id="chartQuorum"></canvas>
+  </div>
+  <h2 class="section" style="border-left:3px solid var(--purple)">Resubmission / Rename Patterns</h2>
+  <div class="chart-box" style="overflow-x:auto">
+    <table>
+      <thead><tr><th>Original</th><th>Result</th><th>Resubmitted As</th><th>New Result</th><th>Gap</th><th>Renamed?</th></tr></thead>
+      <tbody>
+        <tr><td>OIP-36: Onyxchain L3</td><td><span class="badge" style="background:#f8514920;color:var(--red)">80% AGAINST</span></td><td>OIP-54: XCN Ledger L3</td><td><span class="badge" style="background:#3fb95020;color:var(--green)">100% FOR</span></td><td>~7 months</td><td><span class="badge" style="background:#d2992220;color:var(--amber)">Yes</span></td></tr>
+        <tr><td>OIP-51: Justin Sun 1B</td><td><span class="badge" style="background:#f8514920;color:var(--red)">51% AGAINST</span></td><td>OIP-52: Justin Sun 500M</td><td><span class="badge" style="background:#3fb95020;color:var(--green)">98% FOR</span></td><td>Same month</td><td><span class="badge" style="background:#484f5820;color:var(--dim)">No</span></td></tr>
+        <tr><td>Liquidity Consolidation (Feb 6)</td><td><span class="badge" style="background:#f8514920;color:var(--red)">2% quorum</span></td><td>Liquidity Consolidation (Feb 9)</td><td><span class="badge" style="background:#3fb95020;color:var(--green)">255% quorum</span></td><td>3 days</td><td><span class="badge" style="background:#484f5820;color:var(--dim)">No</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h2 class="section" style="border-left:3px solid var(--orange)">MultiSig: 5/5 Insiders</h2>
+  <div class="chart-box">
+    <div class="grid5">
+      <div class="guardian"><div class="guardian-name">Chain.com</div><div class="guardian-issue">Paid by DAO</div><div style="font-size:16px;margin-top:4px">&#10060;</div></div>
+      <div class="guardian"><div class="guardian-name">@dolph1779</div><div class="guardian-issue">DAO representative</div><div style="font-size:16px;margin-top:4px">&#10060;</div></div>
+      <div class="guardian"><div class="guardian-name">Shawn</div><div class="guardian-issue">Appointed</div><div style="font-size:16px;margin-top:4px">&#10060;</div></div>
+      <div class="guardian"><div class="guardian-name">VT</div><div class="guardian-issue">Appointed</div><div style="font-size:16px;margin-top:4px">&#10060;</div></div>
+      <div class="guardian"><div class="guardian-name">AstroDaze</div><div class="guardian-issue">Re-elected (54/46%)</div><div style="font-size:16px;margin-top:4px">&#10060;</div></div>
+    </div>
+    <div class="callout"><strong style="color:var(--amber)">3 of 5 needed.</strong> Chain + OnyxDAO + any 1 insider = complete treasury control. Zero independent oversight.</div>
+  </div>
+  <h2 class="section" style="border-left:3px solid var(--cyan)">Bundled "Omnibus" Proposals</h2>
+  <div class="chart-box">
+    <div class="omnibus">
+      <span class="omnibus-title">OIP-62</span><span class="omnibus-sub">6 unrelated items bundled:</span>
+      <div class="badge-row"><span class="badge" style="background:#484f5820;color:var(--dim)">Staking rate</span><span class="badge" style="background:#484f5820;color:var(--dim)">MultiSig DAO</span><span class="badge" style="background:#484f5820;color:var(--dim)">Marketing</span><span class="badge" style="background:#484f5820;color:var(--dim)">DAO Registry</span><span class="badge" style="background:#484f5820;color:var(--dim)">Ambassador $</span><span class="badge" style="background:#484f5820;color:var(--dim)">Ratify misc</span></div>
+    </div>
+    <div class="omnibus">
+      <span class="omnibus-title">OIP-63</span><span class="omnibus-sub">5 unrelated items bundled:</span>
+      <div class="badge-row"><span class="badge" style="background:#484f5820;color:var(--dim)">Goliath validators</span><span class="badge" style="background:#484f5820;color:var(--dim)">Liquid staking</span><span class="badge" style="background:#484f5820;color:var(--dim)">100M marketing</span><span class="badge" style="background:#484f5820;color:var(--dim)">Liquidity consolidation</span><span class="badge" style="background:#484f5820;color:var(--dim)">Ratify misc</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- REFORM PACKAGE -->
+<div id="reform" class="page">
+  <div class="stats">
+    <div class="stat"><div class="stat-label">Total Reforms</div><div class="stat-value" style="color:var(--pink)">43</div><div class="stat-sub">Governance overhaul</div></div>
+    <div class="stat"><div class="stat-label">Phase 1</div><div class="stat-value" style="color:var(--red)">4</div><div class="stat-sub">0-30 days · Critical</div></div>
+    <div class="stat"><div class="stat-label">Phase 2</div><div class="stat-value" style="color:var(--amber)">12</div><div class="stat-sub">30-90 days</div></div>
+    <div class="stat"><div class="stat-label">Phase 3+4</div><div class="stat-value" style="color:var(--accent)">20</div><div class="stat-sub">90-180+ days</div></div>
+    <div class="stat"><div class="stat-label">Strategic</div><div class="stat-value" style="color:var(--pink)">4</div><div class="stat-sub">Cross-cutting</div></div>
+    <div class="stat"><div class="stat-label">Innovation</div><div class="stat-value" style="color:var(--lime)">3</div><div class="stat-sub">New — see tab</div></div>
+  </div>
+  <h2 class="section" style="border-left:3px solid var(--pink)">Reform Categories</h2>
+  <div class="chart-box"><canvas id="chartReformCat"></canvas></div>
+  <div class="search-wrap">
+    <input type="text" class="search-input" id="reformSearch" placeholder="Search polls by title, content, or ID..." oninput="onSearchInput()" autocomplete="off">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()" title="Clear search">&#x00D7;</button>
+  </div>
+  <div class="filter-row" id="reformFilterRow">
+    <button class="filter-btn active" onclick="filterPhase('all',this)">All Phases</button>
+    <button class="filter-btn" onclick="filterPhase('phase1',this)">Phase 1</button>
+    <button class="filter-btn" onclick="filterPhase('phase2',this)">Phase 2</button>
+    <button class="filter-btn" onclick="filterPhase('phase3',this)">Phase 3</button>
+    <button class="filter-btn" onclick="filterPhase('phase4',this)">Phase 4</button>
+    <button class="filter-btn" onclick="filterPhase('strategic',this)">Strategic</button>
+  </div>
+  <div id="reformFullContent"></div>
+  <h2 class="section" style="border-left:3px solid var(--red)">Implementation Timeline</h2>
+  <div class="chart-box" id="timelineBox"></div>
+</div>
+
+<!-- INNOVATION -->
+<div id="innovation" class="page">
+  <div class="stats">
+    <div class="stat"><div class="stat-label">Innovation Polls</div><div class="stat-value" style="color:var(--lime)">3</div><div class="stat-sub">Forward-looking</div></div>
+    <div class="stat"><div class="stat-label">Proposed Fund</div><div class="stat-value" style="color:var(--lime)">800M</div><div class="stat-sub">XCN for growth</div></div>
+    <div class="stat"><div class="stat-label">Focus</div><div class="stat-value" style="color:var(--lime);font-size:18px">Build</div><div class="stat-sub">Goliath ecosystem</div></div>
+  </div>
+  <div class="insight" style="border-left-color:var(--lime);margin-top:20px">
+    <h3 style="color:var(--lime)">Why Innovation Polls?</h3>
+    <p>The 43 reform proposals address what's broken. These 3 address what's <em>missing</em>. You can fix every governance flaw and still have a ghost chain if nobody builds on it. Goliath is launching — but there is no ecosystem fund, no validator incentive program, no runway protection. Every successful L1 (Ethereum Foundation, Solana Foundation, Polygon zkEVM Fund) invested heavily in these from day one. This is the offensive half of the reform package. The community deserves to vote on both.</p>
+  </div>
+  <div id="innovationContent" style="margin-top:20px"></div>
+</div>
+
+<!-- CRITICAL FINDINGS -->
+<div id="insights" class="page">
+  <div id="insightsContainer" style="margin-top:20px"></div>
+  <div class="cta">
+    <div style="font-size:20px;margin-bottom:4px">&#10084;&#65039;&#128081;</div>
+    <div class="cta-title">WE WIN IT WITHIN IT</div>
+    <div class="cta-sub">43 reform proposals &#183; 3 innovation proposals &#183; 55+ vulnerabilities &#183; 55+ exploits closed</div>
+    <div class="cta-quote">"The arc of the moral universe is long, but it bends toward justice." — Now we bend it ourselves.</div>
+  </div>
+</div>
+
+<!-- TRACKER -->
+<div id="tracker" class="page">
+  <div class="tracker-progress">
+    <h3>Campaign Progress</h3>
+    <div class="progress-bar-outer">
+      <div class="progress-bar-inner" id="progressBar" style="width:0%"></div>
+    </div>
+    <div class="progress-label" id="progressLabel">0 of <span id="totalPollCount">0</span> polls passed</div>
+    <div class="tracker-actions">
+      <button class="action-btn" onclick="markPhase1Submitted()">Mark All Phase 1 as Submitted</button>
+      <button class="action-btn" onclick="exportStatusText()">Export Status as Text</button>
+      <button class="reset-btn" onclick="resetAllStatuses()">Reset All</button>
+    </div>
+  </div>
+  <div class="tracker-stats" id="trackerStats"></div>
+  <div class="filter-row" id="trackerFilterRow">
+    <button class="filter-btn active" onclick="filterTracker('all',this)">All</button>
+    <button class="filter-btn" onclick="filterTracker('pending',this)">Pending</button>
+    <button class="filter-btn" onclick="filterTracker('submitted',this)">Submitted</button>
+    <button class="filter-btn" onclick="filterTracker('voting',this)">Voting</button>
+    <button class="filter-btn" onclick="filterTracker('passed',this)">Passed</button>
+    <button class="filter-btn" onclick="filterTracker('failed',this)">Failed</button>
+  </div>
+  <div class="tracker-table-wrap">
+    <table class="tracker-table">
+      <thead>
+        <tr>
+          <th>Poll ID</th>
+          <th>Title</th>
+          <th>Phase</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="trackerTableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TREASURY SCANNER -->
+<div id="scanner" class="page">
+  <div class="stats" style="margin-top:20px">
+    <div class="stat"><div class="stat-label">DAO ETH</div><div class="stat-value" style="color:var(--orange);font-size:16px;font-family:'JetBrains Mono',monospace" id="scanBalEth">—</div><div class="stat-sub">Ethereum balance</div></div>
+    <div class="stat"><div class="stat-label">XCN · ETH</div><div class="stat-value" style="color:var(--orange)" id="scanBalXcnEth">—</div><div class="stat-sub">DAO wallet on Ethereum</div></div>
+    <div class="stat"><div class="stat-label">XCN · BSC</div><div class="stat-value" style="color:var(--amber)" id="scanBalXcnBsc">—</div><div class="stat-sub">DAO wallet on BNB Chain</div></div>
+    <div class="stat"><div class="stat-label">XCN · BASE</div><div class="stat-value" style="color:var(--cyan)" id="scanBalXcnBase">—</div><div class="stat-sub">DAO wallet on BASE</div></div>
+    <div class="stat"><div class="stat-label">XCN Price</div><div class="stat-value" style="color:var(--green);font-size:15px;font-family:'JetBrains Mono',monospace" id="scanXcnPrice">—</div><div class="stat-sub">USD · CoinGecko</div></div>
+  </div>
+
+  <div class="addr-grid">
+    <div class="addr-card"><div class="net">Ethereum — XCN ERC-20 Contract</div><div class="addr-hex">0xA2cd3D43c775978A96BdBf12d733D5A1ED94fb18 <button class="copy-addr-btn" onclick="copyText('0xA2cd3D43c775978A96BdBf12d733D5A1ED94fb18',this)">copy</button></div></div>
+    <div class="addr-card" style="border-left-color:var(--amber)"><div class="net" style="color:var(--amber)">BNB Chain — XCN BEP-20 Contract</div><div class="addr-hex">0x7324c7C0d95CEBC73eEa7E85CbAac0dBdf88a05b <button class="copy-addr-btn" onclick="copyText('0x7324c7C0d95CEBC73eEa7E85CbAac0dBdf88a05b',this)">copy</button></div></div>
+    <div class="addr-card" style="border-left-color:var(--cyan)"><div class="net" style="color:var(--cyan)">BASE — XCN Contract</div><div class="addr-hex">0x9c632E6Aaa3eA73f91554f8A3cB2ED2F29605e0C <button class="copy-addr-btn" onclick="copyText('0x9c632E6Aaa3eA73f91554f8A3cB2ED2F29605e0C',this)">copy</button></div></div>
+    <div class="addr-card" style="border-left-color:var(--red)"><div class="net" style="color:var(--red)">DAO Treasury Wallet (all chains)</div><div class="addr-hex">0x61dBb3254C699e480974754971259346e525d5B7 <button class="copy-addr-btn" onclick="copyText('0x61dBb3254C699e480974754971259346e525d5B7',this)">copy</button></div></div>
+  </div>
+
+  <div style="margin:18px 0 8px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <button class="scan-btn" id="scanNowBtn" onclick="runScan()">&#9654; Scan Balances</button>
+    <button class="scan-btn" id="deepScanBtn" onclick="runDeepScan()" style="background:#161b22;color:var(--amber);border-color:var(--amber)">&#9650; Deep Scan</button>
+    <label style="font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px">
+      Min:
+      <select id="deepScanThreshold" style="background:var(--card2);border:1px solid var(--border);border-radius:5px;padding:4px 8px;font-size:11px;color:var(--text);font-family:inherit;cursor:pointer;outline:none">
+        <option value="100000">100K XCN</option>
+        <option value="500000">500K XCN</option>
+        <option value="1000000" selected>1M XCN</option>
+        <option value="5000000">5M XCN</option>
+        <option value="10000000">10M XCN</option>
+        <option value="50000000">50M XCN</option>
+        <option value="100000000">100M XCN</option>
+      </select>
+    </label>
+    <div class="scan-status" id="scanStatus">Scan Balances for live data. Deep Scan searches full chain history &mdash; lower threshold = more results, longer scan.</div>
+  </div>
+  <div id="deepScanProgress" style="display:none;margin-bottom:12px">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:5px" id="deepScanLabel">Scanning blocks&hellip;</div>
+    <div style="background:#161b22;border-radius:4px;height:6px;overflow:hidden;border:1px solid #30363d"><div id="deepScanBar" style="height:100%;background:var(--amber);width:0%;transition:width 0.2s"></div></div>
+  </div>
+
+  <h2 class="section" style="border-left:3px solid var(--orange);margin-top:24px">Known Treasury Outflows — Historical Fund Flow</h2>
+  <div class="chart-box">
+    <p style="font-size:11px;color:var(--muted);margin-bottom:12px">Click any destination node for OIP receipt details. Line width proportional to XCN authorized. Source: approved OIP budgets.</p>
+    <div class="flow-wrap" style="position:relative"><canvas id="flowCanvas" width="860" height="320" style="cursor:pointer"></canvas></div>
+    <div id="flowNodeDetail" style="display:none;margin-top:12px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;font-size:12px"></div>
+    <div class="note">Based on approved OIP budgets. Click Deep Scan for live on-chain verification.</div>
+  </div>
+
+  <h2 class="section" style="border-left:3px solid var(--red)">Live Transactions — Ethereum XCN</h2>
+  <div class="chart-box" style="overflow-x:auto"><div id="txEthContainer"><p style="color:var(--dim);font-size:12px">Scan to load&hellip;</p></div></div>
+
+  <h2 class="section" style="border-left:3px solid var(--amber)">Live Transactions — BNB Chain XCN</h2>
+  <div class="chart-box" style="overflow-x:auto"><div id="txBscContainer"><p style="color:var(--dim);font-size:12px">Scan to load&hellip;</p></div></div>
+
+  <h2 class="section" style="border-left:3px solid var(--cyan)">Live Transactions — BASE XCN</h2>
+  <div class="chart-box" style="overflow-x:auto"><div id="txBaseContainer"><p style="color:var(--dim);font-size:12px">Scan to load&hellip;</p></div></div>
+
+  <div id="deepScanResults" style="display:none">
+    <h2 class="section" style="border-left:3px solid var(--amber);margin-top:32px">&#9650; Deep Scan Results — Large Transfers &ge;100K XCN</h2>
+    <div class="note" style="margin-bottom:12px">Full chain history scan via eth_getLogs. All transfers &ge;100,000 XCN to or from the DAO wallet.</div>
+    <h3 style="color:var(--orange);font-size:13px;margin:16px 0 4px;font-weight:600">Ethereum</h3>
+    <div class="chart-box" style="overflow-x:auto"><div id="deepEthContainer"><p style="color:var(--dim);font-size:12px">Run Deep Scan&hellip;</p></div></div>
+    <h3 style="color:var(--amber);font-size:13px;margin:16px 0 4px;font-weight:600">BNB Chain</h3>
+    <div class="chart-box" style="overflow-x:auto"><div id="deepBscContainer"><p style="color:var(--dim);font-size:12px">Run Deep Scan&hellip;</p></div></div>
+    <h3 style="color:var(--cyan);font-size:13px;margin:16px 0 4px;font-weight:600">BASE</h3>
+    <div class="chart-box" style="overflow-x:auto"><div id="deepBaseContainer"><p style="color:var(--dim);font-size:12px">Run Deep Scan&hellip;</p></div></div>
+  </div>
+</div>
+
+<!-- LIVE POLLS -->
+<div id="livepolls" class="page">
+  <div style="margin:20px 0 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <div>
+      <h2 style="font-size:18px;font-weight:800;margin:0 0 4px">Live Governance Polls</h2>
+      <p style="font-size:11px;color:var(--muted)">Community polls on polls.onyx.org. Data cached from last audit — open live site for real-time votes.</p>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="https://polls.onyx.org/#/" target="_blank" style="background:var(--pink);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;font-family:inherit">Open polls.onyx.org ↗</a>
+      <a href="https://app.onyx.org/en/governance" target="_blank" style="background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;font-family:inherit">Open Governance App ↗</a>
+    </div>
+  </div>
+
+  <div class="stats" style="margin-top:0;margin-bottom:20px">
+    <div class="stat"><div class="stat-label">Total OIPs</div><div class="stat-value" style="color:var(--accent)">64</div><div class="stat-sub">OIP-8 through OIP-64</div></div>
+    <div class="stat"><div class="stat-label">Reform Proposals</div><div class="stat-value" style="color:var(--pink)">43</div><div class="stat-sub">Ready to submit</div></div>
+    <div class="stat"><div class="stat-label">Innovation Polls</div><div class="stat-value" style="color:var(--cyan)">3</div><div class="stat-sub">Forward-looking</div></div>
+    <div class="stat"><div class="stat-label">Community Polls</div><div class="stat-value" style="color:var(--amber)">85</div><div class="stat-sub">Historical record</div></div>
+  </div>
+
+  <div style="background:var(--card2);border:1px solid var(--border);border-left:4px solid var(--pink);border-radius:8px;padding:14px 16px;margin-bottom:20px;font-size:11px;color:var(--muted)">
+    <strong style="color:var(--text)">How to participate:</strong> Governance proposals are submitted at <a href="https://polls.onyx.org/#/" target="_blank" style="color:var(--accent)">polls.onyx.org</a>. You need 1M XCN to create a proposal. Voting is token-weighted — 1 XCN = 1 vote. Phase 1 reform polls below are prioritized for immediate submission.
+  </div>
+
+  <div class="filter-row" id="livePollsFilterRow">
+    <button class="filter-btn active" onclick="filterLivePolls('all',this)">All Proposals</button>
+    <button class="filter-btn" onclick="filterLivePolls('phase1',this)" style="color:var(--red)">Phase 1 — Immediate</button>
+    <button class="filter-btn" onclick="filterLivePolls('phase2',this)" style="color:var(--amber)">Phase 2 — Structure</button>
+    <button class="filter-btn" onclick="filterLivePolls('phase3',this)" style="color:var(--accent)">Phase 3 — Transparency</button>
+    <button class="filter-btn" onclick="filterLivePolls('phase4',this)" style="color:var(--green)">Phase 4 — Future</button>
+    <button class="filter-btn" onclick="filterLivePolls('innovation',this)" style="color:var(--cyan)">Innovation</button>
+  </div>
+
+  <div id="livePollsContainer">
+    <!-- Rendered by JS -->
+    <p style="color:var(--dim);font-size:12px;padding:20px 0">Loading proposals...</p>
+  </div>
+
+  <h2 class="section" style="border-left:3px solid var(--amber);margin-top:32px">Historical Community Polls — polls.onyx.org</h2>
+  <div class="note" style="margin-bottom:12px">85 community polls from governance history. Visit polls.onyx.org for live results and active voting.</div>
+  <div class="chart-box" style="overflow-x:auto">
+    <table class="tx-table">
+      <thead><tr><th>#</th><th>Poll Question (Abbreviated)</th><th>Outcome</th><th>Live Link</th></tr></thead>
+      <tbody id="histPollsBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- OIP ARCHIVE -->
+<div id="oiparchive" class="page">
+  <div style="margin:20px 0 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <div>
+      <h2 style="font-size:18px;font-weight:800;margin:0 0 4px">OIP Archive — All Governance Proposals</h2>
+      <p style="font-size:11px;color:var(--muted)">Complete record of Onyx Improvement Proposals OIP-8 through OIP-64. Audited data from governance history.</p>
+    </div>
+    <a href="https://app.onyx.org/en/governance" target="_blank" style="background:var(--purple);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;font-family:inherit">app.onyx.org ↗</a>
+  </div>
+
+  <div class="stats" style="margin-top:0;margin-bottom:20px">
+    <div class="stat"><div class="stat-label">Total OIPs</div><div class="stat-value" style="color:var(--accent)">64</div><div class="stat-sub">OIP-8 → OIP-64</div></div>
+    <div class="stat"><div class="stat-label">Passed</div><div class="stat-value" style="color:var(--green)">~45</div><div class="stat-sub">Approximate</div></div>
+    <div class="stat"><div class="stat-label">Failed</div><div class="stat-value" style="color:var(--red)">~15</div><div class="stat-sub">Including OIP-51</div></div>
+    <div class="stat"><div class="stat-label">Total Authorized</div><div class="stat-value" style="color:var(--amber);font-size:18px">16B+ XCN</div><div class="stat-sub">Zero independent audit</div></div>
+  </div>
+
+  <div class="filter-row" id="oipFilterRow">
+    <button class="filter-btn active" onclick="filterOIPs('all',this)">All OIPs</button>
+    <button class="filter-btn" onclick="filterOIPs('passed',this)" style="color:var(--green)">Passed</button>
+    <button class="filter-btn" onclick="filterOIPs('failed',this)" style="color:var(--red)">Failed / Contested</button>
+    <button class="filter-btn" onclick="filterOIPs('treasury',this)" style="color:var(--amber)">Treasury Outflows</button>
+    <button class="filter-btn" onclick="filterOIPs('flagged',this)" style="color:var(--pink)">Flagged</button>
+  </div>
+
+  <div class="chart-box" style="overflow-x:auto;margin-top:12px">
+    <table class="tx-table" id="oipArchiveTable">
+      <thead><tr><th>OIP</th><th>Title</th><th>Category</th><th>Outcome</th><th>XCN Authorized</th><th>Notes</th></tr></thead>
+      <tbody id="oipArchiveBody"></tbody>
+    </table>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<button class="print-fab" onclick="window.print()" title="Print Reform Package">&#128438; Print Reform Package</button>
+
+<script>
+// TAB LOGIC
+function showTab(id,el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(el) el.classList.add('active');
+  if(id==='tracker') renderTracker();
+  if(id==='livepolls') renderLivePolls();
+  if(id==='oiparchive') renderOIPArchive();
+}
+
+// STATUS SYSTEM
+const STATUS_COLORS={pending:'#484f58',submitted:'#d29922',voting:'#58a6ff',passed:'#3fb950',failed:'#f85149',withdrawn:'#bc8cff'};
+const STATUS_LABELS={pending:'Pending',submitted:'Submitted',voting:'Voting',passed:'Passed',failed:'Failed',withdrawn:'Withdrawn'};
+
+function getStatuses(){
+  try{return JSON.parse(localStorage.getItem('onyxPollStatuses'))||{};}catch(e){return {};}
+}
+function getNotes(){
+  try{return JSON.parse(localStorage.getItem('onyxPollNotes'))||{};}catch(e){return {};}
+}
+function saveStatus(id,val){
+  const s=getStatuses();s[id]=val;
+  localStorage.setItem('onyxPollStatuses',JSON.stringify(s));
+}
+function saveNote(id,val){
+  const n=getNotes();n[id]=val;
+  localStorage.setItem('onyxPollNotes',JSON.stringify(n));
+}
+function getStatus(id){return getStatuses()[id]||'pending';}
+function getNote(id){return getNotes()[id]||'';}
+
+function statusBadgeHTML(pollId){
+  const s=getStatus(pollId);
+  const c=STATUS_COLORS[s];
+  return `<span class="poll-status-badge" id="sbadge-${pollId.replace('.','_')}" style="background:${c}22;color:${c};border:1px solid ${c}44">${STATUS_LABELS[s]}</span>`;
+}
+
+// CHART DATA
+const oipLabels=["OIP-8","9a","9b","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64"];
+const oipAddr=[10,10,5,5,6,18,20,21,18,1,2,2,13,11,10,11,20,19,18,17,14,15,2,11,10,28,13,25,16,18,18,17,18,30,36,0,30,21,21,16,16,24,22,20,192,239,202,196,216,79,67,43,81,105,60,119,51,63];
+const catLabels=["Protocol","Staking","Community","Governance","Liquidity","Treasury","Budget","Stablecoin","Tokenomics","Partnership"];
+const catPassed=[19,5,4,4,3,2,2,5,0,1];
+const catFailed=[5,0,0,0,0,1,1,0,1,1];
+const outLabels=["CIP-3 Budget (~100M/mo x48)","OIP-38 Dev (400M/mo x18)","OIP-39 VUSD/Chain (200M/mo x12)","Exchange Liquidity","OIP-52 Justin Sun/HTX","Ambassador/Community","OIP-63 Marketing"];
+const outAmts=[4800,7200,2400,900,500,200,100];
+const catColors={Access:"#39d2c0",Accountability:"#f85149",Democracy:"#58a6ff",Transparency:"#d29922",Integrity:"#bc8cff",Security:"#3fb950",Treasury:"#db6d28",Governance:"#f778ba",Community:"#58a6ff",Innovation:"#7ee787"};
+const phaseNames={1:"Phase 1: Immediate Priorities (0-30 Days)",2:"Phase 2: Short-Term Reforms (30-90 Days)",3:"Phase 3: Medium-Term Reforms (90-180 Days)",4:"Phase 4: Long-Term Reforms (180+ Days)",0:"Strategic Community Polls"};
+const phaseHeaderColors={1:"var(--red)",2:"var(--amber)",3:"var(--accent)",4:"var(--purple)",0:"var(--pink)"};
+
+// REFORM DATA (summary — for filter/search metadata)
+const reformData=[
+  {id:"1.2",title:"Leadership Public Identity Standard",cat:"Accountability",phase:"Immediate",issue:"Anonymous leaders managing community funds",phaseN:1,updated:true},
+  {id:"1.4",title:"Verify Justin Sun Lockup Contract",cat:"Accountability",phase:"Immediate",issue:"100% vote May 2025, status still unknown",phaseN:1},
+  {id:"1.5",title:"Independent Treasury Audit",cat:"Transparency",phase:"Immediate",issue:"15-20B+ XCN, zero independent verification",phaseN:1},
+  {id:"1.6",title:"Minimum Quorum Standards",cat:"Integrity",phase:"Immediate",issue:"Spending polls get whales. Reform polls don't.",phaseN:1},
+  {id:"2.1",title:"Restructure MultiSig (5-of-9)",cat:"Security",phase:"Short-Term",issue:"All 5 guardians are insiders",phaseN:2},
+  {id:"2.2",title:"Quarterly Financial Reports",cat:"Transparency",phase:"Short-Term",issue:"No standardized reporting",phaseN:2},
+  {id:"2.3",title:"Resubmission Cooling Period",cat:"Integrity",phase:"Short-Term",issue:"Rejected proposals renamed and resubmitted",phaseN:2},
+  {id:"2.4",title:"Tiered Spending Caps",cat:"Treasury",phase:"Short-Term",issue:"No limits on treasury spending",phaseN:2},
+  {id:"2.5",title:"Prohibit Conflicts of Interest",cat:"Accountability",phase:"Short-Term",issue:"Paid entities hold governance positions",phaseN:2},
+  {id:"2.6",title:"Mandatory Security Audits",cat:"Security",phase:"Short-Term",issue:"No required audits before releases",phaseN:2},
+  {id:"2.7",title:"Comprehensive Ambassador Reform",cat:"Democracy",phase:"Short-Term",issue:"No elections, no terms, no performance, no pay transparency",phaseN:2,updated:true},
+  {id:"2.11",title:"Clawback for Failed Deliverables",cat:"Treasury",phase:"Short-Term",issue:"No recourse when deliverables aren't met",phaseN:2},
+  {id:"2.12",title:"Full Compensation Transparency",cat:"Transparency",phase:"Short-Term",issue:"Unknown pay for team and ambassadors",phaseN:2,updated:true},
+  {id:"2.13",title:"Bug Bounty Program",cat:"Security",phase:"Short-Term",issue:"No security bounty exists",phaseN:2},
+  {id:"2.14",title:"Public Roadmap with Milestones",cat:"Transparency",phase:"Short-Term",issue:"No public roadmap",phaseN:2},
+  {id:"2.15",title:"Emergency Pause Limitations",cat:"Security",phase:"Short-Term",issue:"No defined emergency procedures",phaseN:2},
+  {id:"3.1",title:"Community Delegates System",cat:"Democracy",phase:"Medium-Term",issue:"No vote delegation",phaseN:3},
+  {id:"3.2",title:"Community Veto Power",cat:"Democracy",phase:"Medium-Term",issue:"Community can't block harmful proposals",phaseN:3},
+  {id:"3.3",title:"Amend DAO Constitution",cat:"Governance",phase:"Medium-Term",issue:"Constitution from 2022, out of date",phaseN:3},
+  {id:"3.4",title:"Monthly Community Town Halls",cat:"Transparency",phase:"Medium-Term",issue:"No regular public leadership meetings",phaseN:3},
+  {id:"3.5",title:"Whistleblower Protection",cat:"Accountability",phase:"Medium-Term",issue:"No protection for those reporting wrongdoing",phaseN:3},
+  {id:"3.6",title:"Monthly Treasury Outflow Cap",cat:"Treasury",phase:"Medium-Term",issue:"No hard spending limit",phaseN:3},
+  {id:"3.8",title:"Lock-Up for Large Grants",cat:"Treasury",phase:"Medium-Term",issue:"No vesting on large allocations",phaseN:3},
+  {id:"3.9",title:"Strategic Reserve Structure",cat:"Treasury",phase:"Medium-Term",issue:"Treasury is an undifferentiated pool",phaseN:3},
+  {id:"3.10",title:"Partnership & Listing Disclosure",cat:"Transparency",phase:"Medium-Term",issue:"Opaque exchange and partnership spending",phaseN:3,updated:true},
+  {id:"3.11",title:"Service Provider Accountability",cat:"Accountability",phase:"Medium-Term",issue:"No reviews for providers receiving DAO funds",phaseN:3,updated:true},
+  {id:"3.12",title:"Whistleblower Rewards Fund",cat:"Accountability",phase:"Medium-Term",issue:"No financial incentive to surface wrongdoing",phaseN:3},
+  {id:"3.13",title:"Goliath Launch Criteria",cat:"Security",phase:"Medium-Term",issue:"No mandatory criteria before mainnet",phaseN:3},
+  {id:"3.14",title:"Goliath Migration Protection",cat:"Security",phase:"Medium-Term",issue:"No guarantee of fair 1:1 migration",phaseN:3},
+  {id:"3.15",title:"Ban Bundled Proposals",cat:"Integrity",phase:"Medium-Term",issue:"Unrelated items force all-or-nothing votes",phaseN:3},
+  {id:"3.16",title:"Advance Notice Requirements",cat:"Integrity",phase:"Medium-Term",issue:"No required notice before proposals go live",phaseN:3},
+  {id:"4.1",title:"Investigate OIP-51/52 Discrepancy",cat:"Integrity",phase:"Long-Term",issue:"+540M FOR, -443M AGAINST swing — same proposal",phaseN:4},
+  {id:"4.2",title:"Full Chain Financial Disclosure",cat:"Transparency",phase:"Long-Term",issue:"Chain's total compensation from DAO unknown",phaseN:4},
+  {id:"4.3",title:"V1 Hack Post-Mortem",cat:"Security",phase:"Long-Term",issue:"No post-mortem for $2.1M exploit",phaseN:4},
+  {id:"4.4",title:"Goliath Validator Decentralization",cat:"Security",phase:"Long-Term",issue:"No concentration limits for validators",phaseN:4},
+  {id:"4.5",title:"Community Insurance Fund",cat:"Treasury",phase:"Long-Term",issue:"No protocol loss protection",phaseN:4},
+  {id:"S.1",title:"Community Strategic Voting Pool (100M)",cat:"Democracy",phase:"Strategic",issue:"No organized community voting power",phaseN:0},
+  {id:"S.2",title:"Justin Sun/HTX Accountability Review",cat:"Accountability",phase:"Strategic",issue:"OIP-52 compliance unverified",phaseN:0},
+  {id:"S.3",title:"Testnet Contributor Support Program",cat:"Community",phase:"Strategic",issue:"No support for testnet contributors",phaseN:0},
+  {id:"S.4",title:"Testnet Points System (1 XCN = 1 Point)",cat:"Community",phase:"Strategic",issue:"No fair, simple points system",phaseN:0},
+];
+
+const fullPolls=[
+// PHASE 1
+{id:"1.2",phase:1,updated:true,title:"Leadership Public Identity Standard",body:`<p><strong>The Principle:</strong> Any individual with access to community funds must be publicly identifiable. This is not a personal attack on anyone — it is a basic standard of accountability that any serious financial institution requires.</p><p>Chain.com raised $40 million from institutional investors who required KYC. The community deserves the same standard from anyone managing their treasury.</p><p><strong>Required for all Leadership roles:</strong><br>• Real photograph and full name (or a verified pseudonym on file with an independent third party)<br>• Professional background — LinkedIn or equivalent public profile<br>• Primary DAO wallet address publicly disclosed<br>• KYC verified by an independent third party (status public)</p><p><strong>Applies to:</strong> Head of DAO, Head of BD, Community Manager, Ambassador Leader, and any wallet with MultiSig or treasury access.</p><p><strong>Implementation:</strong> 30-day compliance window. Non-compliant individuals must step down. Independent third party holds documents — not shared publicly unless a breach occurs.</p>`,vote:"<strong>For</strong> — Require public identity for leadership | <strong>Against</strong> — Allow anonymous leadership",color:"var(--red)"},
+{id:"1.4",phase:1,title:"Verify Justin Sun Lockup Smart Contract",body:`<p><strong>May 2025 Community Vote (100% approval) Required:</strong> Onchain smart contract enforcing 2-year lockup for 500M XCN. Non-transferable, non-stakable for 730 days. No staking rewards during lockup.</p><p><strong>Current Status: UNKNOWN.</strong> No contract address published. No verification tokens are locked. No compliance confirmation.</p><p><strong>Required:</strong> Contract address, confirmation non-transferable, confirmation no staking rewards, unlock date in contract, independent verification. If not implemented → 14-day deadline, public explanation, retroactive reward adjustment.</p>`,vote:"<strong>For</strong> — Require verification | <strong>Against</strong> — Do not require",color:"var(--red)"},
+{id:"1.5",phase:1,title:"Independent Treasury Audit (CIP-1 to Present)",body:`<p><strong>Known Allocations:</strong> CIP-3: 10B XCN treasury + 100M/month budget. OIP-38: 400M/month dev. OIP-39: 200M/month VUSD/Chain. OIP-52: 500M Justin Sun. Various: 600M+ exchange liquidity. <strong>Estimated total: 15-20+ BILLION XCN. Zero independent verification.</strong></p><p><strong>Scope:</strong> All treasury tx from CIP-1 to present. All recipient wallets. Major transaction tracing. Chain's total compensation. Stated purpose vs actual usage. Auditor must have no financial ties to Onyx/Chain. Budget: up to 50M XCN.</p>`,vote:"<strong>For</strong> — Commission audit | <strong>Against</strong> — Do not audit",color:"var(--red)"},
+{id:"1.6",phase:1,title:"Establish Minimum Quorum Standards",body:`<p><strong>Pattern:</strong> Spending polls get 149-319% quorum. Community improvement polls with 97%+ approval fail at 27-54% quorum.</p><p><strong>Tiered Quorum:</strong> Operational (<10M): 50M XCN / 50 addresses. Standard (10-100M): 100M / 100 addr. Major (>100M): 150M / 150 addr. Governance: 100M / 100 addr. Constitutional: 200M / 200 addr.</p><p><strong>Anti-Manipulation:</strong> DAO wallets can't count toward quorum for insider-benefiting proposals. Max quorum requirement capped at 150%.</p>`,vote:"<strong>For</strong> — Implement standards | <strong>Against</strong> — Continue current system",color:"var(--red)"},
+// PHASE 2
+{id:"2.1",phase:2,title:"Restructure MultiSig with Independent Members",body:`<p><strong>Current 3-of-5:</strong> All insiders — Chain.com (paid), @dolph1779 (DAO rep), Shawn (appointed), VT (appointed), AstroDaze (re-elected 54/46%).</p><p><strong>Proposed 5-of-9:</strong> Chain (must recuse on Chain votes), DAO official, 3 community-elected ✅, independent security auditor ✅, Top 100 holder rep ✅, ambassador rep, rotating quarterly seat ✅. Minimum 3 independent approvals required.</p>`,vote:"<strong>For</strong> — 5-of-9 with independence | <strong>Against</strong> — Keep 3-of-5 insider control",color:"var(--amber)"},
+{id:"2.2",phase:2,title:"Mandatory Quarterly Financial Reports",body:`<p><strong>Required:</strong> Treasury overview (balances, inflows, outflows, runway). Detailed expenditures (wallets, amounts, tx hashes). Category breakdown. Chain's total across ALL agreements. Implementation status of all governance decisions. Independent accountant attestation. Due 30 days after quarter end. Historical catch-up for 2024-2025.</p>`,vote:"<strong>For</strong> — Require reports | <strong>Against</strong> — No standardized reporting",color:"var(--amber)"},
+{id:"2.3",phase:2,title:"Proposal Resubmission Cooling Period",body:`<p><strong>Documented abuse:</strong> OIP-36 (80% AGAINST L3) → OIP-54 (100% FOR, renamed "XCN Ledger"). OIP-51 (51% AGAINST) → OIP-52 (98% FOR, same proposal).</p><p><strong>Cooling periods:</strong> >50% against → 90 days. >66% → 180 days. >75% → 365 days. Failed quorum (>80% approval) → 30 days. Failed quorum (<80%) → 90 days. Resubmissions must disclose prior rejection. Renaming does NOT reset the cooling period.</p>`,vote:"<strong>For</strong> — Cooling periods | <strong>Against</strong> — Unlimited resubmission",color:"var(--amber)"},
+{id:"2.4",phase:2,title:"Tiered Spending Caps",body:`<p><strong>Tiers:</strong> <50M: normal process. 50-250M: single-purpose, 7-day discussion. 250-500M: 14-day discussion, 60% supermajority. >500M: 21-day discussion, 2/3 supermajority, escrow. Recurring >25M/month requires quarterly renewal with progress report. No indefinite authorizations.</p>`,vote:"<strong>For</strong> — Spending caps | <strong>Against</strong> — Unlimited spending",color:"var(--amber)"},
+{id:"2.5",phase:2,title:"Prohibit Conflicts of Interest",body:`<p><strong>Prohibited:</strong> >10M XCN annually → can't hold MultiSig seat. >25M annually → no governance control position. Active service contract → can't vote on own renewal. Performance compensation → can't vote on metrics. Mandatory public recusal. Violation → vote invalidation.</p>`,vote:"<strong>For</strong> — Prohibit conflicts | <strong>Against</strong> — Allow conflicts",color:"var(--amber)"},
+{id:"2.6",phase:2,title:"Mandatory Security Audits Before Major Releases",body:`<p><strong>Qualified auditors:</strong> Trail of Bits, OpenZeppelin, Consensys Diligence, Certik, Halborn, Quantstamp. Full report published BEFORE deployment. 14-day community review. All Critical/High findings resolved. Goliath: minimum 3 audits, consensus audit, bridge audit, 90-day clean testnet.</p>`,vote:"<strong>For</strong> — Require audits | <strong>Against</strong> — No audit requirement",color:"var(--amber)"},
+{id:"2.7",phase:2,updated:true,title:"Comprehensive Ambassador Reform",body:`<p><strong>Why one poll?</strong> Four separate ambassador polls were replaced with this single, clear vote on a complete reform package. Ambassadors represent the community. The community should choose them, know what they're paid, and hold them accountable.</p><p><strong>1. ELECTIONS (replacing appointments):</strong> All ambassadors elected by community. Nomination period (14 days, requires 100K+ XCN, real identity). Campaign period (7 days, public Q&A). Community vote (7 days, all XCN holders). No grandfathering.</p><p><strong>2. TERM LIMITS:</strong> 6-month terms. Maximum 3 consecutive terms (18 months). Mandatory 6-month break after max. Re-election required each term.</p><p><strong>3. PERFORMANCE ACCOUNTABILITY:</strong> Quarterly public activity report — content created, events attended, tickets resolved, community satisfaction score. Persistent public record.</p><p><strong>4. COMPENSATION TRANSPARENCY:</strong> Monthly disclosure of base pay, bonuses, and wallet addresses for all ambassadors.</p>`,vote:"<strong>For</strong> — Full ambassador reform (elections + terms + performance + pay) | <strong>Against</strong> — Continue current system",color:"var(--amber)"},
+{id:"2.11",phase:2,title:"Clawback Mechanism for Failed Deliverables",body:`<p>All allocations >25M XCN must include deliverables, timeline, success criteria, clawback triggers. Review at milestone → 30-day cure → community vote → blacklist if non-compliant. Grants >100M held in escrow, released on milestone completion.</p>`,vote:"<strong>For</strong> — Clawback | <strong>Against</strong> — No clawback",color:"var(--amber)"},
+{id:"2.12",phase:2,updated:true,title:"Full Compensation Transparency (Team + Ambassadors)",body:`<p>Quarterly disclosure by role: Head of DAO (total), Head of BD (total), Community Manager (total), Development Team (aggregate + headcount), Operations Team (aggregate + headcount). Monthly disclosure for ambassadors: base, bonuses, wallet addresses. All transaction hashes published. Combined into one report.</p>`,vote:"<strong>For</strong> — Full compensation transparency | <strong>Against</strong> — Continue without disclosure",color:"var(--amber)"},
+{id:"2.13",phase:2,title:"Bug Bounty Program",body:`<p>Critical: up to $500K. High: up to $100K. Medium: up to $25K. Low: up to $5K. Partner with Immunefi or similar. Fund with 500M XCN. Clear responsible disclosure policy. No retaliation for good-faith reports.</p>`,vote:"<strong>For</strong> — Bug bounty | <strong>Against</strong> — No program",color:"var(--amber)"},
+{id:"2.14",phase:2,title:"Transparent Roadmap with Milestones",body:`<p>Each milestone: clear deliverable, specific target date (not "Q1"), success criteria, assigned team, dependencies, risks. Monthly status: On Track / At Risk / Delayed / Completed. Missed milestones require public explanation within 7 days.</p>`,vote:"<strong>For</strong> — Public roadmap | <strong>Against</strong> — No roadmap",color:"var(--amber)"},
+{id:"2.15",phase:2,title:"Emergency Pause Limitations",body:`<p><strong>Valid triggers:</strong> Active exploit, critical vulnerability, oracle manipulation, governance attack. <strong>Time limits:</strong> 0-24h: MultiSig auth. 24-72h: public explanation required. >72h: emergency community poll. >7 days: full governance proposal required. Community can override any pause by simple majority vote.</p>`,vote:"<strong>For</strong> — Pause limitations | <strong>Against</strong> — Undefined procedures",color:"var(--amber)"},
+// PHASE 3
+{id:"3.1",phase:3,title:"Community Delegates System",body:`<p>Delegate voting power to active representatives. Requirements: 100K XCN minimum, vote on all proposals, publish rationale within 24h, respond to delegators within 48h. Revocable at any time. Partial delegation supported.</p>`,vote:"<strong>For</strong> — Delegates | <strong>Against</strong> — No delegation",color:"var(--accent)"},
+{id:"3.2",phase:3,title:"Community Veto Power",body:`<p>Petition with 1,000 wallet signatures (each holding 10,000+ XCN). If threshold met → veto vote triggered. Simple majority vetoes the proposal. Vetoed proposals enter 180-day cooling period.</p>`,vote:"<strong>For</strong> — Veto power | <strong>Against</strong> — No veto",color:"var(--accent)"},
+{id:"3.3",phase:3,title:"Amend DAO Constitution",body:`<p><strong>Article I Rights:</strong> Vote proportional to holdings, propose (subject to threshold), transparent information, equal treatment, exit without lock-ups, privacy in voting. <strong>Article II Principles:</strong> Decentralization, transparency, community-first, accountability, meritocracy. <strong>Article III Amendments:</strong> 2/3 supermajority, 30-day deliberation, two votes 14 days apart. Fundamental rights: 3/4 majority required.</p>`,vote:"<strong>For</strong> — Updated constitution | <strong>Against</strong> — No reform",color:"var(--accent)"},
+{id:"3.4",phase:3,title:"Monthly Community Town Halls",body:`<p>Structure: Dev Update (15 min), Financial Update (15 min), Community Q&A (30+ min), Upcoming Proposals (15 min). Required attendees: Head of DAO, Head of BD, Ambassador Leader, tech team. Live video/audio. Recording within 24h. Written summary within 48h.</p>`,vote:"<strong>For</strong> — Monthly town halls | <strong>Against</strong> — No meetings",color:"var(--accent)"},
+{id:"3.5",phase:3,title:"Whistleblower Protection",body:`<p>No retaliation. Anonymous reporting option. Confidential investigation. Identity protection. Rewards: up to 10% of recovered funds, up to 5M XCN for preventing significant harm. Retaliation consequences: immediate removal, public disclosure, potential legal action.</p>`,vote:"<strong>For</strong> — Protections | <strong>Against</strong> — No protections",color:"var(--accent)"},
+{id:"3.6",phase:3,title:"Monthly Treasury Outflow Cap",body:`<p>Standard cap: 500M XCN per month. Exceptions: up to 750M (60% supermajority), up to 1B (2/3 + 14-day notice), over 1B (3/4 + 21-day notice). Emergency reserve: 2B XCN (3/4 vote to access).</p>`,vote:"<strong>For</strong> — 500M/month cap | <strong>Against</strong> — No cap",color:"var(--accent)"},
+{id:"3.8",phase:3,title:"Lock-Up Requirements for Large Grants",body:`<p>50-100M: 1yr lock, 6mo cliff. 100-250M: 18mo, 12mo cliff. 250-500M: 2yr, 12mo cliff. >500M: 3yr, 18mo cliff. Smart contract enforced. Locked tokens cannot vote. Clawback provisions included.</p>`,vote:"<strong>For</strong> — Lock-ups | <strong>Against</strong> — Immediate access",color:"var(--accent)"},
+{id:"3.9",phase:3,title:"Strategic Reserve Structure",body:`<p>Development: 30%. Marketing: 15%. Security: 10%. Emergency: 15% (3/4 vote to access). Community Rewards: 15%. Strategic Partnerships: 15%. Separate on-chain tracking for each bucket. No cross-contamination without community vote.</p>`,vote:"<strong>For</strong> — Strategic reserves | <strong>Against</strong> — Undifferentiated pool",color:"var(--accent)"},
+{id:"3.10",phase:3,updated:true,title:"Partnership & Listing Disclosure Standard",body:`<p><strong>Simple rule:</strong> Before any partnership or exchange listing vote, the following must be publicly disclosed: (1) partner/exchange name, (2) total XCN cost, (3) exactly what the DAO receives in return, (4) timeline and milestones, (5) what happens if deliverables aren't met. 90-day outcome review required. No disclosure = proposal is invalid and cannot proceed to vote.</p>`,vote:"<strong>For</strong> — Mandatory disclosure | <strong>Against</strong> — Continue without disclosure",color:"var(--accent)"},
+{id:"3.11",phase:3,updated:true,title:"Service Provider Accountability",body:`<p><strong>Simple standard:</strong> Any entity receiving >25M XCN annually must submit a quarterly public report: (1) what was promised, (2) what was delivered, (3) what wasn't delivered and why. Community votes on renewal annually. If deliverables are <60% met in two consecutive quarters, renewal requires a 66% supermajority. No bureaucratic scoring formulas — just honest reporting and community judgment.</p>`,vote:"<strong>For</strong> — Accountability standard | <strong>Against</strong> — Continue without reviews",color:"var(--accent)"},
+{id:"3.12",phase:3,title:"Whistleblower Rewards Fund",body:`<p>Dedicated fund of 10M XCN for rewarding reports that prevent harm or recover funds. Rewards: up to 10% of recovered/protected assets (max 5M per incident). Administered by independent committee (not DAO insiders). Anonymous submissions accepted. Fund replenished annually up to 10M.</p>`,vote:"<strong>For</strong> — Establish rewards fund | <strong>Against</strong> — No fund",color:"var(--accent)"},
+{id:"3.13",phase:3,title:"Goliath Launch Criteria",body:`<p><strong>Security:</strong> 3 independent audits, all Critical/High findings resolved, bug bounty active 60+ days. <strong>Stability:</strong> 90 consecutive testnet days, no critical issues in final 30 days, stress tested. <strong>Infrastructure:</strong> 100+ validators, no >30% single country, no >10% single entity. Community vote to confirm launch readiness.</p>`,vote:"<strong>For</strong> — Launch criteria | <strong>Against</strong> — No criteria",color:"var(--accent)"},
+{id:"3.14",phase:3,title:"Goliath Migration Protection",body:`<p>1:1 ratio (1 Ethereum XCN = 1 Goliath XCN). No penalty or fee. 180-day migration window. 1-year legacy support post-Goliath. Multiple migration methods available. Community vote required if any of these terms change.</p>`,vote:"<strong>For</strong> — Migration protections | <strong>Against</strong> — No protections",color:"var(--accent)"},
+{id:"3.15",phase:3,title:"Ban Bundled Proposals",body:`<p>One proposal = one topic. Not allowed: budget + governance change, staking change + marketing budget, ambassador funding + MultiSig restructure. Any holder can challenge a bundled proposal. Challenged proposals must split within 7 days or are withdrawn. This closes the OIP-62/63 loophole permanently.</p>`,vote:"<strong>For</strong> — Ban bundling | <strong>Against</strong> — Allow bundling",color:"var(--accent)"},
+{id:"3.16",phase:3,title:"Advance Notice Requirements",body:`<p>Minor (<10M XCN): 48h notice, optional forum. Standard (10-100M): 7 days + forum thread. Major (>100M): 14 days + community call. Constitutional: 30 days + multiple forums. Proposals going live before notice period ends are automatically invalid.</p>`,vote:"<strong>For</strong> — Notice requirements | <strong>Against</strong> — No notice",color:"var(--accent)"},
+// PHASE 4
+{id:"4.1",phase:4,title:"Investigation into OIP-51/52 Vote Discrepancy",body:`<p><strong>The anomaly:</strong> OIP-51 (1B XCN to Justin Sun/HTX) REJECTED: FOR 444M (170 addresses), AGAINST 460M (22 addresses). OIP-52 (same deal, 500M) PASSED: FOR 984M (231 addresses), AGAINST 16.5M (8 addresses). Same proposal. +540M FOR appeared (+122%). -443M AGAINST vanished (-96%). This requires explanation. Budget: up to 25M XCN.</p>`,vote:"<strong>For</strong> — Commission investigation | <strong>Against</strong> — Don't investigate",color:"var(--purple)"},
+{id:"4.2",phase:4,title:"Full Chain Financial Disclosure",body:`<p>Required: total XCN received from DAO since 2014, current wallet addresses, ongoing compensation rate from all sources, VUSD partnership accounting, deliverables completed vs promised. Non-compliance: public disclosure, compensation suspension, potential MultiSig removal.</p>`,vote:"<strong>For</strong> — Full disclosure | <strong>Against</strong> — No requirement",color:"var(--purple)"},
+{id:"4.3",phase:4,title:"V1 Hack Comprehensive Post-Mortem",body:`<p>Required: technical analysis (vulnerability, exploit method), timeline (discovery → resolution), financial impact (stolen, recovered, reimbursed), response evaluation, lessons learned, independent review. Published publicly.</p>`,vote:"<strong>For</strong> — Require post-mortem | <strong>Against</strong> — Don't require",color:"var(--purple)"},
+{id:"4.4",phase:4,title:"Goliath Validator Decentralization",body:`<p>Concentration limits: single entity max 10%, single country max 30%, insiders max 25%, single hosting provider max 25%. At launch: minimum 100 validators, minimum 10 countries represented, no insider majority.</p>`,vote:"<strong>For</strong> — Decentralization limits | <strong>Against</strong> — No limits",color:"var(--purple)"},
+{id:"4.5",phase:4,title:"Community Insurance Fund",body:`<p>Initial: 500M XCN. Ongoing: 1% of all treasury allocations. Managed separately. Covers: smart contract exploits (100M max per incident), protocol bugs (100M), verified insider scams (50M). Does NOT cover: market declines, user error.</p>`,vote:"<strong>For</strong> — Insurance fund | <strong>Against</strong> — No insurance",color:"var(--purple)"},
+// STRATEGIC
+{id:"S.1",phase:0,title:"Community Strategic Voting Pool",body:`<p><strong>100,000,000 XCN</strong> from treasury. 5 elected representatives, 20M voting power each. EXCLUSIVELY for governance voting — no withdrawal, no transfer, smart contract enforced. Requirements: 500K XCN personal (6-month history), 1K+ Zealy XP, verified identity, NOT an insider. 6-month terms, max 3 consecutive. If Justin Sun reallocation occurs (S.2) → pool increases to 500M (100M each).</p>`,vote:"<strong>For</strong> — Establish voting pool | <strong>Against</strong> — Don't establish",color:"var(--pink)"},
+{id:"S.2",phase:0,title:"Justin Sun/HTX Accountability Review",body:`<p><strong>Phase 1 (Days 1-30):</strong> Required disclosure — wallet addresses, lockup proof, governance vote history, market support docs, staking status, May 2025 compliance.</p><p><strong>Phase 2 (Days 31-60):</strong> Assess lockup compliance, token lock status, no staking rewards, governance participation (≥50%), market support evidence. Passive holding does NOT count as market support.</p><p><strong>Phase 3 (Day 61-68):</strong> Full compliance → no action. Partial → 90-day remediation. Non-compliance → breach.</p><p><strong>Phase 4 — If Breach:</strong> Request voluntary return. If returned → Community Voting Pool. If not → public breach statement, partnership termination, wallet flagging, permanent exclusion, legal consultation.</p>`,vote:"<strong>For</strong> — Accountability review | <strong>Against</strong> — Don't review",color:"var(--pink)"},
+{id:"S.3",phase:0,title:"Goliath Testnet Contributor Support Program",body:`<p><strong>Tier 1 Basic:</strong> Faucet (10M test XCN), docs, support channel. <strong>Tier 2 Active (5 bug reports, 30 days active):</strong> Priority alloc (100M test XCN), dev channel, leaderboard, mainnet validator priority. <strong>Tier 3 Validator (Tier 2 + 14 days >95% uptime):</strong> Hardware grant $1,500-$2,000 reimbursement, tech support, mainnet validator priority. Budget: 20 grants × $2K = $40K max.</p>`,vote:"<strong>For</strong> — Testnet support | <strong>Against</strong> — Don't establish",color:"var(--pink)"},
+{id:"S.4",phase:0,title:"Testnet Points System (1 XCN = 1 Point)",body:`<p><strong>1 XCN = 1 Point.</strong> No complex multipliers. No insider advantages. Simple, fair, transparent. Sources: Staked XCN: 1pt/XCN/day. Held XCN: 1pt/XCN/day. Validator operation: 10K pts/day. Bug report: 50K pts. Transaction: 10 pts/tx. Weekly compliance report. Failures investigated, not ignored.</p>`,vote:"<strong>For</strong> — 1 XCN = 1 Point | <strong>Against</strong> — Current system",color:"var(--pink)"},
+];
+
+const innovationPolls=[
+{id:"I.1",title:"Onyx Innovation & Ecosystem Development Fund",body:`<p><strong>The Gap:</strong> The 45 reform proposals fix what's broken. But nobody has asked the critical question: <em>who builds on Goliath?</em></p><p>There is no ecosystem fund. No developer grants. No builder incentives. No hackathon budget. Every successful Layer 1 blockchain funded its ecosystem aggressively from day one — Ethereum Foundation, Solana Foundation, Polygon zkEVM Ecosystem Fund. Goliath without builders is a ghost chain with good marketing.</p><p><strong>Proposal:</strong> Establish a <strong>500,000,000 XCN Innovation & Ecosystem Development Fund</strong>.</p><p><strong>What it funds:</strong><br>• Developer grants for building on Goliath (DeFi protocols, wallets, tooling, bridges, community apps)<br>• Technical bounties for protocol improvements and integrations<br>• Hackathons and builder competitions<br>• Integration incentives for established protocols to deploy on Goliath<br>• Documentation, SDKs, and developer education</p><p><strong>How it works:</strong><br>• 5-member Grants Committee (3 elected by community, 2 nominated by dev team — NOT existing leadership)<br>• Monthly public grant review — all applications, decisions, and rationale public<br>• Maximum 50M XCN per project<br>• 6-month delivery milestones with clawback for non-delivery<br>• Quarterly community report on fund activity</p><p><strong>Why now:</strong> Goliath mainnet is the inflection point. You either build the ecosystem before launch or you scramble after. The community should vote on this before launch, not after.</p>`,vote:"<strong>For</strong> — Establish 500M Innovation Fund | <strong>Against</strong> — No ecosystem fund",color:"var(--lime)"},
+{id:"I.2",title:"Goliath Early Validator Incentive Program",body:`<p><strong>The Gap:</strong> Goliath needs validators. But why would any serious operator commit expensive infrastructure for standard staking rates when Ethereum, Solana, and Cosmos offer comparable or better yields with proven track records?</p><p>Decentralization is a claim, not a reality, until you have 100+ independent validators in 10+ countries. Right now, there is no plan to get there.</p><p><strong>Proposal:</strong> <strong>200,000,000 XCN Early Validator Incentive Program</strong> (24 months).</p><p><strong>Structure:</strong><br>• First 100 validators who commit before mainnet: <strong>2x standard staking rewards</strong> for 12 months<br>• Uptime requirements: 95%+ = full rewards, 90-95% = 50%, below 90% = no bonus<br>• Geographic diversity bonus: +25% additional rewards for running in underrepresented regions<br>• Community validator bonus (non-institutional individual): +10%<br>• Hardware grant eligibility (linked to S.3 Testnet program)</p><p><strong>Requirements:</strong><br>• Public validator identity (entity or verified pseudonym)<br>• 90-day minimum commitment post-mainnet<br>• Governance participation: vote on 50%+ of proposals<br>• Monthly uptime report published on-chain</p><p><strong>Why this works:</strong> Economic incentives are the only reliable mechanism for decentralized infrastructure. Asking for validators out of idealism gets you 10. Paying meaningfully gets you 100+. This is how every real decentralized network was built.</p>`,vote:"<strong>For</strong> — Establish 200M Validator Program | <strong>Against</strong> — No program",color:"var(--lime)"},
+{id:"I.3",title:"Strategic Treasury Diversification (Operational Runway)",body:`<p><strong>The Risk Nobody's Talking About:</strong> 100% of the DAO treasury is in XCN. In a sustained bear market, the DAO's operational capacity crashes proportionally with the token price. Development slows. Audits get delayed. Talent leaves. The protocol that the community funded with 16B+ XCN becomes unable to execute.</p><p>This is not speculation — it happened to dozens of DAOs in the 2022-2023 bear market.</p><p><strong>Proposal:</strong> Convert up to <strong>2% of treasury quarterly</strong> to operational reserves in stable assets.</p><p><strong>Structure:</strong><br>• Quarterly conversion: up to 200M XCN → USDC/ETH via OTC block trades (no open market selling)<br>• Target: 12-month operational runway in non-XCN assets (development, audits, infrastructure)<br>• Held in DAO-controlled multisig (separate from main treasury)<br>• Usable for: development salaries, security audits, infrastructure costs — never speculation<br>• Execution: minimum 30-day community notice, transparent OTC counterparty disclosure</p><p><strong>What this is NOT:</strong> It is not selling XCN on the market. It is not abandoning XCN. It is not a bearish signal. It is financial prudence — the same thing every serious organization does to protect operations from concentration risk.</p><p><strong>Why the community should decide:</strong> This is a fundamental treasury management question. It should not be decided by leadership unilaterally. The community holds the treasury — the community votes on how to protect it.</p>`,vote:"<strong>For</strong> — Approve 2%/quarter diversification | <strong>Against</strong> — Maintain 100% XCN treasury",color:"var(--lime)"},
+];
+
+// ALL POLLS combined for tracker
+const allTrackerPolls=[
+  ...fullPolls.map(p=>({...p,source:'reform'})),
+  ...innovationPolls.map(p=>({...p,source:'innovation',phase:99})),
+];
+document.getElementById('totalPollCount').textContent=allTrackerPolls.length;
+
+// SEARCH STATE
+let currentSearchTerm='';
+let currentPhaseFilter='all';
+
+function onSearchInput(){
+  const v=document.getElementById('reformSearch').value;
+  currentSearchTerm=v.toLowerCase().trim();
+  document.getElementById('searchClear').style.display=v?'block':'none';
+  renderReformFull(currentPhaseFilter,currentSearchTerm);
+}
+
+function clearSearch(){
+  document.getElementById('reformSearch').value='';
+  currentSearchTerm='';
+  document.getElementById('searchClear').style.display='none';
+  renderReformFull(currentPhaseFilter,'');
+}
+
+// RENDER REFORM POLLS
+function renderReformFull(filter,search){
+  const container=document.getElementById('reformFullContent');
+  const sq=search?search.toLowerCase().trim():'';
+  let phases=filter==='all'?[1,2,3,4,0]:filter==='phase1'?[1]:filter==='phase2'?[2]:filter==='phase3'?[3]:filter==='phase4'?[4]:[0];
+  let html='';
+  let totalShown=0;
+  phases.forEach(p=>{
+    let polls=fullPolls.filter(x=>x.phase===p);
+    if(sq){
+      polls=polls.filter(x=>{
+        const haystack=(x.id+' '+x.title+' '+(x.body||'')).toLowerCase();
+        return haystack.includes(sq);
+      });
+    }
+    if(polls.length===0) return;
+    totalShown+=polls.length;
+    html+=`<div class="reformPhaseSection"><h2 class="phase-header" style="border-left:4px solid ${phaseHeaderColors[p]};color:${phaseHeaderColors[p]}">${phaseNames[p]} — ${polls.length} Poll${polls.length===1?'':'s'}</h2>`;
+    polls.forEach(poll=>{
+      const updTag=poll.updated?'<span class="updated-badge">Updated</span>':'';
+      const voteText=poll.vote?poll.vote.replace(/<[^>]+>/g,''):'';
+      html+=`<div class="poll-card" style="border-left-color:${poll.color}">
+        ${statusBadgeHTML(poll.id)}
+        <div class="poll-id" style="color:${poll.color}">POLL ${poll.id}${updTag}</div>
+        <div class="poll-title">${poll.title}</div>
+        <div class="poll-body">${poll.body}</div>
+        <div class="poll-card-footer">
+          <div class="poll-vote">${poll.vote}</div>
+          <button class="copy-btn" id="copybtn-${poll.id.replace('.','_')}" onclick="copyPoll('${poll.id}','${poll.title.replace(/'/g,"\'")}','${voteText.replace(/'/g,"\'")}')">Copy</button>
+        </div>
+      </div>`;
+    });
+    html+='</div>';
+  });
+  if(totalShown===0&&sq){
+    html='<div class="search-empty">No polls match your search.</div>';
+  }
+  container.innerHTML=html;
+}
+renderReformFull('all','');
+
+function filterPhase(f,btn){
+  document.querySelectorAll('#reformFilterRow .filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentPhaseFilter=f;
+  renderReformFull(f,currentSearchTerm);
+}
+
+// COPY BUTTON
+function copyPoll(id,title,voteText){
+  const text=`[POLL ${id}] ${title}\n${voteText}\nFull dashboard: onyx-dao-dashboard — Nuclear (@xplo333)`;
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=document.getElementById('copybtn-'+id.replace('.','_'));
+    if(btn){btn.textContent='Copied!';btn.classList.add('copied');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);}
+  }).catch(()=>{
+    const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+    const btn=document.getElementById('copybtn-'+id.replace('.','_'));
+    if(btn){btn.textContent='Copied!';btn.classList.add('copied');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);}
+  });
+}
+
+// TIMELINE
+const timeline=[
+  {day:"Day 0",label:"All polls pass",color:"#3fb950"},
+  {day:"Day 7",label:"Testnet SLA + Points system active",color:"#39d2c0"},
+  {day:"Day 14",label:"Justin Sun lockup verification deadline",color:"#f85149"},
+  {day:"Day 30",label:"Leadership identity verified · Sun disclosure deadline",color:"#f85149"},
+  {day:"Day 60",label:"Sun assessment · Ambassador elections begin · Hardware grants",color:"#d29922"},
+  {day:"Day 68",label:"Justin Sun final determination",color:"#f85149"},
+  {day:"Day 90",label:"Treasury audit underway · MultiSig restructured",color:"#58a6ff"},
+  {day:"Day 105",label:"Community representatives onboarded",color:"#3fb950"},
+  {day:"Day 120",label:"Innovation Fund grants committee elected",color:"#7ee787"},
+  {day:"Day 180+",label:"Constitution amended · Mainnet criteria set · First builder grants",color:"#bc8cff"},
+];
+const tlBox=document.getElementById('timelineBox');
+timeline.forEach(t=>{
+  tlBox.innerHTML+=`<div class="timeline-item"><div class="timeline-day" style="color:${t.color}">${t.day}</div><div class="timeline-bar" style="background:${t.color}"></div><div class="timeline-label">${t.label}</div></div>`;
+});
+
+// INNOVATION POLLS RENDER
+const ic2=document.getElementById('innovationContent');
+innovationPolls.forEach(poll=>{
+  const voteText=poll.vote?poll.vote.replace(/<[^>]+>/g,''):'';
+  ic2.innerHTML+=`<div class="poll-card" style="border-left-color:${poll.color}">
+    ${statusBadgeHTML(poll.id)}
+    <div class="poll-id" style="color:${poll.color}"><span class="new-badge">NEW</span> POLL ${poll.id}</div>
+    <div class="poll-title">${poll.title}</div>
+    <div class="poll-body">${poll.body}</div>
+    <div class="poll-card-footer">
+      <div class="poll-vote">${poll.vote}</div>
+      <button class="copy-btn" id="copybtn-${poll.id.replace('.','_')}" onclick="copyPoll('${poll.id}','${poll.title.replace(/'/g,"\'")}','${voteText.replace(/'/g,"\'")}')">Copy</button>
+    </div>
+  </div>`;
+});
+
+const insights=[
+  {title:"The Founding Was a 3-Person Affair",color:"#f85149",text:"CIP-1, CIP-2, and CIP-3 — establishing the DAO, re-denominating the token, creating the constitution, and putting 10B XCN into the treasury — were all passed with just 3-5 voting addresses. The entire governance foundation was decided by a handful of wallets, yet these decisions still govern 60,000+ holders today."},
+  {title:"97%+ of Holders Still Can't Create Proposals",color:"#f85149",text:"The threshold was recently lowered from 10M to 1M XCN — a step forward. But at 1M, only ~730 wallets qualify out of 60,709 holders. That's still 98.8% excluded. The reform now proposes 500K XCN, reaching ~1,500 wallets — a 25x increase from the original threshold. True governance requires going further."},
+  {title:"OIP-51 → OIP-52: The 540M Vote Swing",color:"#d29922",text:"OIP-51 (1B XCN to Justin Sun/HTX) rejected 51-49%. Same month, OIP-52 (500M XCN, same deal) passed 98-2%. Between these votes: +540M FOR appeared, -443M AGAINST vanished. The community unanimously voted May 2025 to require a lockup smart contract — no contract address has been published."},
+  {title:"Selective Quorum: Spending Passes, Reform Doesn't",color:"#d29922",text:"The pattern is clear: insider/spending polls consistently achieve 149-319% quorum. Community improvement polls with 97-100% approval die at 27-54% quorum. Poll Manager, Forum Manager, Diversify Treasury, Partnerships Role, Increase Zealy — overwhelming approval, zero whale participation."},
+  {title:"Rejected Proposals Get Renamed and Resubmitted",color:"#bc8cff",text:"OIP-36 proposed 'Onyxchain' as L3 — rejected 80% against. Seven months later, OIP-54 rebranded the same concept as 'XCN Ledger' — passed unanimously. No acknowledgment, no cooling period, no disclosure. The reform package calls for mandatory cooling periods and explicit labeling of resubmitted proposals."},
+  {title:"5/5 MultiSig Guardians Are Insiders",color:"#db6d28",text:"Chain.com (paid by DAO), @TheOnyxDAO (the DAO itself), Shawn (appointed), VT (appointed), AstroDaze (appointed). Only 3 of 5 needed to execute. Chain + OnyxDAO + any 1 insider = total treasury control with zero independent oversight. Reform proposes 5-of-9 with mandatory independent seats."},
+  {title:"~16B+ XCN Outflows, Zero Independent Verification",color:"#f85149",text:"CIP-3's 100M/month, OIP-38's 400M/month, OIP-39's 200M/month, exchange liquidity, grants — estimated total exceeds 16 billion XCN since inception. Not a single independent audit has ever been conducted. Nobody outside leadership can verify where these funds went or whether they were used as stated."},
+  {title:"Bundled Proposals Force All-or-Nothing Votes",color:"#bc8cff",text:"OIP-62 bundles 6 unrelated items in one yes/no vote: staking rate, MultiSig, marketing, DAO registry, ambassador funding, miscellaneous ratifications. Want the staking increase but oppose the marketing spend? You can't split them. Reform: one topic, one vote. Always."},
+  {title:"Goliath Has No Ecosystem Plan",color:"#7ee787",text:"The 43 reform proposals address accountability. But zero proposals address the forward question: who builds on Goliath? There is no ecosystem development fund, no validator incentive program, no builder grants. Launching an L1 without these isn't ambitious — it's incomplete. The three innovation proposals address exactly this gap."},
+  {title:"Note: Ambassador Elections Recently Held",color:"#484f58",text:"Community ambassador elections were held recently. Some races were close and the process raised questions about legitimacy. The threshold poll (1M XCN) was also recently achieved — a step forward. Poll 2.7 (Comprehensive Ambassador Reform) in Phase 2 addresses the next layer: term limits, performance accountability, and compensation transparency for the current and future ambassador cohort."},
+];
+
+const ic=document.getElementById('insightsContainer');
+insights.forEach(i=>{
+  ic.innerHTML+=`<div class="insight" style="border-left-color:${i.color}"><h3 style="color:${i.color}">${i.title}</h3><p>${i.text}</p></div>`;
+});
+
+// TRACKER
+let trackerFilter='all';
+
+function getPhaseName(p){
+  if(p===1) return 'Phase 1';
+  if(p===2) return 'Phase 2';
+  if(p===3) return 'Phase 3';
+  if(p===4) return 'Phase 4';
+  if(p===0) return 'Strategic';
+  if(p===99) return 'Innovation';
+  return 'Unknown';
+}
+
+function renderTracker(){
+  const statuses=getStatuses();
+  const notes=getNotes();
+  const counts={pending:0,submitted:0,voting:0,passed:0,failed:0,withdrawn:0};
+  allTrackerPolls.forEach(p=>{const s=statuses[p.id]||'pending';counts[s]=(counts[s]||0)+1;});
+
+  // Progress bar
+  const passedCount=counts.passed||0;
+  const total=allTrackerPolls.length;
+  const pct=total>0?Math.round(passedCount/total*100):0;
+  document.getElementById('progressBar').style.width=pct+'%';
+  document.getElementById('progressLabel').textContent=`${passedCount} of ${total} polls passed (${pct}%)`;
+
+  // Stats row
+  const statsHtml=Object.entries(STATUS_COLORS).map(([s,c])=>`
+    <div class="tracker-stat">
+      <div class="tracker-stat-count" style="color:${c}">${counts[s]||0}</div>
+      <div class="tracker-stat-label" style="color:${c}">${STATUS_LABELS[s]}</div>
+    </div>`).join('');
+  document.getElementById('trackerStats').innerHTML=statsHtml;
+
+  // Table
+  const tbody=document.getElementById('trackerTableBody');
+  let rows='';
+  allTrackerPolls.forEach(poll=>{
+    const s=statuses[poll.id]||'pending';
+    const n=notes[poll.id]||'';
+    if(trackerFilter!=='all'&&s!==trackerFilter) return;
+    const c=STATUS_COLORS[s];
+    const pn=getPhaseName(poll.phase);
+    const safeId=poll.id.replace('.','_');
+    const opts=Object.entries(STATUS_LABELS).map(([v,l])=>`<option value="${v}"${s===v?' selected':''}>${l}</option>`).join('');
+    rows+=`<tr>
+      <td><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:${c||'#8b949e'}">${poll.id}</span></td>
+      <td style="font-size:11px;max-width:260px">${poll.title}</td>
+      <td><span style="font-size:10px;color:var(--muted)">${pn}</span></td>
+      <td>
+        <select class="status-select" id="ss-${safeId}" onchange="onStatusChange('${poll.id}',this.value)" style="color:${c};border-color:${c}44;background:${c}11">
+          ${opts}
+        </select>
+      </td>
+      <td><input class="notes-input" value="${n.replace(/"/g,'&quot;')}" placeholder="Add note..." onchange="onNoteChange('${poll.id}',this.value)" onblur="onNoteChange('${poll.id}',this.value)"></td>
+    </tr>`;
+  });
+  tbody.innerHTML=rows||'<tr><td colspan="5" style="text-align:center;color:var(--dim);padding:20px">No polls match this filter.</td></tr>';
+}
+
+function onStatusChange(id,val){
+  saveStatus(id,val);
+  renderTracker();
+  // Update badge in reform/innovation tabs
+  const safeId=id.replace('.','_');
+  const badge=document.getElementById('sbadge-'+safeId);
+  if(badge){
+    const c=STATUS_COLORS[val];
+    badge.style.background=c+'22';badge.style.color=c;badge.style.borderColor=c+'44';
+    badge.textContent=STATUS_LABELS[val];
+  }
+}
+
+function onNoteChange(id,val){
+  saveNote(id,val);
+}
+
+function filterTracker(f,btn){
+  document.querySelectorAll('#trackerFilterRow .filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  trackerFilter=f;
+  renderTracker();
+}
+
+function markPhase1Submitted(){
+  const phase1Ids=allTrackerPolls.filter(p=>p.phase===1).map(p=>p.id);
+  const statuses=getStatuses();
+  phase1Ids.forEach(id=>{if((statuses[id]||'pending')==='pending') statuses[id]='submitted';});
+  localStorage.setItem('onyxPollStatuses',JSON.stringify(statuses));
+  renderTracker();
+}
+
+function exportStatusText(){
+  const statuses=getStatuses();
+  const notes=getNotes();
+  let out='ONYX DAO REFORM PACKAGE — POLL STATUS EXPORT\n';
+  out+='Generated: '+new Date().toLocaleDateString()+'\n';
+  out+='Nuclear (@xplo333)\n\n';
+  allTrackerPolls.forEach(p=>{
+    const s=statuses[p.id]||'pending';
+    const n=notes[p.id]||'';
+    out+=`[${s.toUpperCase()}] POLL ${p.id}: ${p.title}${n?' — '+n:''}\n`;
+  });
+  navigator.clipboard.writeText(out).then(()=>alert('Status export copied to clipboard!')).catch(()=>{
+    const ta=document.createElement('textarea');ta.value=out;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+    alert('Status export copied to clipboard!');
+  });
+}
+
+function resetAllStatuses(){
+  if(!confirm('Reset ALL poll statuses and notes to default? This cannot be undone.')) return;
+  localStorage.removeItem('onyxPollStatuses');
+  localStorage.removeItem('onyxPollNotes');
+  renderTracker();
+}
+
+// CHARTS
+Chart.defaults.color='#8b949e';
+Chart.defaults.borderColor='#21262d';
+Chart.defaults.font.family='Inter';
+Chart.defaults.font.size=10;
+
+new Chart(document.getElementById('chartAddr'),{type:'line',data:{labels:oipLabels,datasets:[{label:'Voting Addresses',data:oipAddr,borderColor:'#58a6ff',backgroundColor:'#58a6ff22',fill:true,tension:.3,pointRadius:1.5}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{maxRotation:45}},y:{beginAtZero:true}}}});
+new Chart(document.getElementById('chartCat'),{type:'bar',data:{labels:catLabels,datasets:[{label:'Passed',data:catPassed,backgroundColor:'#3fb950'},{label:'Failed',data:catFailed,backgroundColor:'#f85149'}]},options:{responsive:true,indexAxis:'y',scales:{x:{stacked:true},y:{stacked:true}},plugins:{legend:{position:'bottom'}}}});
+new Chart(document.getElementById('chartOutflows'),{type:'bar',data:{labels:outLabels,datasets:[{label:'M XCN',data:outAmts,backgroundColor:'#f85149'}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}}}});
+new Chart(document.getElementById('chart5152'),{type:'bar',data:{labels:['FOR Votes (M)','AGAINST Votes (M)','FOR Addresses','AGAINST Addresses'],datasets:[{label:'OIP-51 (Rejected)',data:[444,460,170,22],backgroundColor:'#f85149'},{label:'OIP-52 (Passed)',data:[984,16.5,231,8],backgroundColor:'#3fb950'}]},options:{responsive:true,plugins:{legend:{position:'bottom'}}}});
+
+const qLabels=["Chain Lead Dev","PancakeSwap $1M","40% Staking","Marketing 300M","Poll Manager","Forum Mgr","Diversify Treasury","Partnerships","Zealy Increase","Bridge Chains"];
+const qData=[149,162,319,304,27.8,28.1,33.9,41,31.1,53.6];
+const qColors=qData.map((v,i)=>i<4?'#3fb950':'#f85149');
+new Chart(document.getElementById('chartQuorum'),{type:'bar',data:{labels:qLabels,datasets:[{label:'Quorum %',data:qData,backgroundColor:qColors}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{maxRotation:30}}}}});
+
+const rcLabels=["Transparency","Security","Accountability","Democracy","Treasury","Integrity","Community","Access","Governance"];
+const rcData=[8,7,7,6,6,5,2,1,1];
+const rcColors=rcLabels.map(l=>catColors[l]||'#58a6ff');
+new Chart(document.getElementById('chartReformCat'),{type:'bar',data:{labels:rcLabels,datasets:[{label:'Polls',data:rcData,backgroundColor:rcColors}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}}}});
+
+// ═══ TREASURY SCANNER ═══
+const DAO='0x61dBb3254C699e480974754971259346e525d5B7';
+const XCN_ETH='0xA2cd3D43c775978A96BdBf12d733D5A1ED94fb18';
+const XCN_BSC='0x7324c7C0d95CEBC73eEa7E85CbAac0dBdf88a05b';
+const XCN_BASE='0x9c632E6Aaa3eA73f91554f8A3cB2ED2F29605e0C';
+const TRANSFER_TOPIC='0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
+const MIN_XCN=BigInt('100000000000000000000000'); // 100K XCN × 1e18
+const DAO_PAD='0x000000000000000000000000'+DAO.replace('0x','').toLowerCase();
+
+// Known address labels
+const KNOWN_ADDRS={
+  '0xa3f44d236a0af400d2f5a747f82b623fdaaa7752':'Chain.com (Dev)',
+  '0x3ee18b2214aff97000d974cf647e7c347e8fa585':'Wormhole Bridge',
+  '0x7a250d5630b4cf539739df2c5dacb4c659f2488d':'Uniswap V2 Router',
+  '0xe592427a0aece92de3edee1f18e0157c05861564':'Uniswap V3 Router',
+  '0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f':'SushiSwap Router',
+  '0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45':'Uniswap V3 Router2',
+  '0x0000000000000000000000000000000000000000':'Burn / Zero',
+};
+function labelAddr(a){
+  if(!a) return null;
+  const low=a.toLowerCase();
+  if(low===DAO.toLowerCase()) return 'DAO Wallet';
+  for(const[k,v] of Object.entries(KNOWN_ADDRS)) if(low===k) return v;
+  return null;
+}
+
+// OIP receipt data for interactive fund flow diagram
+const OIP_RECEIPTS={
+  'Chain.com Dev':{
+    oip:'OIP-38',authorized:'7.2B XCN',purpose:'Chain.com development team — 12-month contract',
+    detail:'Passed with ~97% approval. Largest single DAO expenditure on record. Funded the blockchain development team maintaining the Onyx protocol. No independent audit of deliverables has been conducted.',
+    txNote:'DAO wallet → Chain.com contract. Verify on Etherscan.',color:'#f85149'
+  },
+  'CIP-3 Budget':{
+    oip:'OIP-45 / CIP-3',authorized:'4.8B XCN (~100M/mo)',purpose:'Chain Improvement Proposal 3 — recurring protocol budget',
+    detail:'Monthly 100M XCN budget disbursements to protocol development. Most contentious ongoing expense — no independent verification of deliverables published. Reform Poll 2.3 targets this budget for mandatory reporting.',
+    txNote:'Multiple monthly disbursements — check Etherscan for recurring outflows.',color:'#d29922'
+  },
+  'VUSD/Chain':{
+    oip:'OIP-39',authorized:'2.4B XCN',purpose:'VUSD stablecoin and Chain product development',
+    detail:'Passed OIP-39. Allocated for VUSD stablecoin infrastructure and Chain product suite development. Current status of VUSD deliverables is unclear — no public milestone reports.',
+    txNote:'Single large outflow post OIP-39. Recipient wallet unknown.',color:'#bc8cff'
+  },
+  'Exchange Liquidity':{
+    oip:'OIP-31 / OIP-41',authorized:'900M XCN',purpose:'DEX and CEX liquidity provision',
+    detail:'Multiple OIPs approved liquidity seeding across decentralized (Uniswap V2/V3, SushiSwap) and centralized exchanges. Liquidity may have since been withdrawn or migrated.',
+    txNote:'Multiple transfers to DEX routers and LP contracts. Check Uniswap/SushiSwap pools.',color:'#58a6ff'
+  },
+  'Justin Sun':{
+    oip:'OIP-52',authorized:'500M XCN',purpose:'Strategic partnership — Justin Sun / TRON ecosystem',
+    detail:'Passed OIP-52 (979M FOR vs 16.5M AGAINST). Highly controversial: OIP-51 (identical proposal) failed 6 days prior with 460M AGAINST. Key swing voters flipped outcome. 100% of community polls since have demanded lockup verification — none published. Reform Poll 1.4 demands this verification.',
+    txNote:'CRITICAL: Verify lockup compliance. DAO wallet → Justin Sun wallet. No public proof of token lockup.',color:'#f778ba'
+  },
+  'Ambassador & Community':{
+    oip:'OIP-26 / OIP-44',authorized:'200M XCN',purpose:'Ambassador program and community incentives',
+    detail:'OIP-26 funded ambassador program. OIP-44 funded community rewards (Zealy). Ambassadors now elected — see Reform Poll 2.7 for accountability reforms. Distribution across multiple ambassador wallets.',
+    txNote:'Distributed to multiple ambassador wallet addresses.',color:'#39d2c0'
+  },
+  'Marketing':{
+    oip:'OIP-63 + prior OIPs',authorized:'100M+ XCN',purpose:'Marketing budget — OIP-63 latest allocation',
+    detail:'OIP-63 is the latest marketing budget. Previous allocations via OIP-23 and OIP-25. Total estimated marketing spend across all OIPs: 300-400M XCN. No ROI reporting required under current governance.',
+    txNote:'Multiple marketing wallet disbursements across OIP-23, OIP-25, OIP-63.',color:'#7ee787'
+  },
+};
+
+const RPC={
+  eth:'https://eth.llamarpc.com',
+  bsc:'https://bsc-dataseed1.binance.org',
+  base:'https://mainnet.base.org'
+};
+const BLOCKSCOUT={
+  eth:'https://eth.blockscout.com/api',
+  bsc:'https://bsc.blockscout.com/api',
+  base:'https://base.blockscout.com/api'
+};
+const SCAN_START={eth:13500000,bsc:20000000,base:1000000};
+const CHUNK=100000;
+
+let deepScanAborted=false;
+function getDeepThreshold(){
+  const sel=document.getElementById('deepScanThreshold');
+  const v=sel?parseInt(sel.value):1000000;
+  return BigInt(v)*BigInt('1000000000000000000');
+}
+
+function copyText(txt,btn){
+  const orig=btn.textContent;
+  navigator.clipboard.writeText(txt).catch(()=>{const t=document.createElement('textarea');t.value=txt;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);});
+  btn.textContent='✓';setTimeout(()=>btn.textContent=orig,1500);
+}
+function fmtXCN(raw){
+  if(!raw||raw==='0') return '0 XCN';
+  try{
+    const n=Number(BigInt(raw))/1e18;
+    if(n>=1e9) return (n/1e9).toFixed(3)+'B XCN';
+    if(n>=1e6) return (n/1e6).toFixed(2)+'M XCN';
+    if(n>=1e3) return (n/1e3).toFixed(1)+'K XCN';
+    return n.toFixed(2)+' XCN';
+  }catch(e){return '? XCN';}
+}
+function fmtETH(raw){
+  if(!raw||raw==='0') return '0 ETH';
+  try{return (Number(BigInt(raw))/1e18).toFixed(4)+' ETH';}catch(e){return '? ETH';}
+}
+function fmtAddr(a){if(!a||a.length<10) return a||'—';return a.slice(0,6)+'…'+a.slice(-4);}
+function fmtDate(ts){
+  if(!ts) return '—';
+  const d=new Date(parseInt(ts)*1000);
+  return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+}
+function setEl(id,val){const e=document.getElementById(id);if(e)e.textContent=val;}
+function setStatus(msg,err){
+  const el=document.getElementById('scanStatus');
+  if(!el) return;
+  el.textContent=msg;
+  el.style.color=err?'var(--red)':'var(--muted)';
+}
+
+async function rpcCall(endpoint,method,params){
+  try{
+    const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({jsonrpc:'2.0',method,params,id:1}),signal:AbortSignal.timeout(12000)});
+    const j=await r.json();
+    return j.result||null;
+  }catch(e){return null;}
+}
+
+async function rpcBatch(endpoint,calls){
+  try{
+    const body=calls.map((c,i)=>({jsonrpc:'2.0',method:c.method,params:c.params,id:i}));
+    const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(body),signal:AbortSignal.timeout(20000)});
+    const j=await r.json();
+    if(!Array.isArray(j)) return null;
+    return j.sort((a,b)=>a.id-b.id).map(x=>x.result||null);
+  }catch(e){return null;}
+}
+
+async function getEthBalance(rpc,addr){
+  const raw=await rpcCall(rpc,'eth_getBalance',[addr,'latest']);
+  if(!raw) return null;
+  try{return BigInt(raw).toString();}catch(e){return null;}
+}
+
+async function getTokenBalance(rpc,contract,wallet){
+  const padded=wallet.replace('0x','').padStart(64,'0');
+  const raw=await rpcCall(rpc,'eth_call',[{to:contract,data:'0x70a08231'+padded},'latest']);
+  if(!raw||raw==='0x') return '0';
+  try{return BigInt(raw).toString();}catch(e){return '0';}
+}
+
+async function getBlockscoutTxs(base,contract,addr){
+  try{
+    const url=`${base}?module=account&action=tokentx&contractaddress=${contract}&address=${addr}&page=1&offset=50&sort=desc`;
+    const r=await fetch(url,{signal:AbortSignal.timeout(9000)});
+    const j=await r.json();
+    if(j.status==='1'&&Array.isArray(j.result)) return j.result;
+    return null;
+  }catch(e){return null;}
+}
+
+async function getLatestBlock(rpc){
+  const raw=await rpcCall(rpc,'eth_blockNumber',[]);
+  if(!raw) return null;
+  return parseInt(raw,16);
+}
+
+async function getTransferLogs(rpc,contract,fromBlock,toBlock){
+  const from='0x'+fromBlock.toString(16);
+  const to='0x'+toBlock.toString(16);
+  const [outLogs,inLogs]=await Promise.all([
+    rpcCall(rpc,'eth_getLogs',[{address:contract,topics:[TRANSFER_TOPIC,DAO_PAD,null],fromBlock:from,toBlock:to}]),
+    rpcCall(rpc,'eth_getLogs',[{address:contract,topics:[TRANSFER_TOPIC,null,DAO_PAD],fromBlock:from,toBlock:to}])
+  ]);
+  return [...(Array.isArray(outLogs)?outLogs:[]),...(Array.isArray(inLogs)?inLogs:[])];
+}
+
+async function batchTimestamps(rpc,blockNumbers){
+  const unique=[...new Set(blockNumbers)];
+  const BSIZE=20;
+  const map={};
+  for(let i=0;i<unique.length;i+=BSIZE){
+    const chunk=unique.slice(i,i+BSIZE);
+    const calls=chunk.map(bn=>({method:'eth_getBlockByNumber',params:['0x'+bn.toString(16),false]}));
+    const results=await rpcBatch(rpc,calls);
+    if(results) results.forEach((blk,idx)=>{if(blk&&blk.timestamp) map[chunk[idx]]=parseInt(blk.timestamp,16);});
+    if(i+BSIZE<unique.length) await new Promise(r=>setTimeout(r,80));
+  }
+  return map;
+}
+
+function renderTxTable(txs,containerId,networkName,mode){
+  const c=document.getElementById(containerId);
+  if(!c) return;
+  if(!txs||txs.length===0){
+    c.innerHTML=`<p style="color:var(--dim);font-size:12px">No ${mode==='deep'?'large ':''}XCN transactions found for DAO wallet on ${networkName}.</p>`;
+    return;
+  }
+  const expTx={Ethereum:'https://etherscan.io/tx/','BNB Chain':'https://bscscan.com/tx/',BASE:'https://basescan.org/tx/'};
+  const expAddr={Ethereum:'https://etherscan.io/address/','BNB Chain':'https://bscscan.com/address/',BASE:'https://basescan.org/address/'};
+  const txBase=expTx[networkName]||'https://etherscan.io/tx/';
+  const addrBase=expAddr[networkName]||'https://etherscan.io/address/';
+  const shown=txs.slice(0,50);
+  const rows=shown.map(tx=>{
+    const out=(tx.from||'').toLowerCase()===DAO.toLowerCase();
+    const dir=out?'<span class="tx-out">OUT ↑</span>':'<span class="tx-in">IN ↓</span>';
+    const counterparty=out?(tx.to||''):(tx.from||'');
+    const label=labelAddr(counterparty);
+    const cpHtml=label
+      ?`<a href="${addrBase+counterparty}" target="_blank" style="color:var(--cyan);font-size:10px;text-decoration:none" title="${counterparty}">${label}</a>`
+      :`<a href="${addrBase+counterparty}" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);text-decoration:none" title="${counterparty}">${fmtAddr(counterparty)}</a>`;
+    const hash=tx.hash||tx.transactionHash||'';
+    const ts=tx.timeStamp||tx.ts||'';
+    const amt=tx.value||tx.amount||'0';
+    return `<tr>
+      <td>${fmtDate(ts)}</td>
+      <td>${dir}</td>
+      <td style="font-family:'JetBrains Mono',monospace;color:${out?'var(--red)':'var(--green)'};font-weight:700">${fmtXCN(amt)}</td>
+      <td>${cpHtml}</td>
+      <td><a class="tx-hash" href="${txBase+hash}" target="_blank" title="${hash}">${fmtAddr(hash)}</a></td>
+    </tr>`;
+  }).join('');
+  c.innerHTML=`<table class="tx-table"><thead><tr><th>Date</th><th>Dir</th><th>Amount</th><th>Counterparty</th><th>Tx ↗</th></tr></thead><tbody>${rows}</tbody></table>
+    <div style="font-size:10px;color:var(--dim);margin-top:6px">Showing ${shown.length} of ${txs.length} transactions${mode==='deep'?' — filtered ≥100K XCN':''}</div>`;
+}
+
+async function runScan(){
+  const btn=document.getElementById('scanNowBtn');
+  btn.disabled=true;
+  setStatus('Fetching balances across all networks…');
+
+  const [ethRaw,xcnEthRaw,xcnBscRaw,xcnBaseRaw]=await Promise.all([
+    getEthBalance(RPC.eth,DAO),
+    getTokenBalance(RPC.eth,XCN_ETH,DAO),
+    getTokenBalance(RPC.bsc,XCN_BSC,DAO),
+    getTokenBalance(RPC.base,XCN_BASE,DAO)
+  ]);
+  setEl('scanBalEth',ethRaw!==null?fmtETH(ethRaw):'RPC err');
+  setEl('scanBalXcnEth',xcnEthRaw!==null?fmtXCN(xcnEthRaw):'RPC err');
+  setEl('scanBalXcnBsc',xcnBscRaw!==null?fmtXCN(xcnBscRaw):'RPC err');
+  setEl('scanBalXcnBase',xcnBaseRaw!==null?fmtXCN(xcnBaseRaw):'RPC err');
+
+  // XCN price CoinGecko (no key needed)
+  setStatus('Fetching XCN price…');
+  try{
+    const pg=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=chain-2&vs_currencies=usd',{signal:AbortSignal.timeout(6000)});
+    const pj=await pg.json();
+    const price=pj['chain-2']?.usd;
+    setEl('scanXcnPrice',price?'$'+price.toFixed(6):'N/A');
+  }catch(e){setEl('scanXcnPrice','N/A');}
+
+  setStatus('Fetching recent transactions via BlockScout…');
+  const [txsEth,txsBsc,txsBase]=await Promise.all([
+    getBlockscoutTxs(BLOCKSCOUT.eth,XCN_ETH,DAO),
+    getBlockscoutTxs(BLOCKSCOUT.bsc,XCN_BSC,DAO),
+    getBlockscoutTxs(BLOCKSCOUT.base,XCN_BASE,DAO)
+  ]);
+
+  if(txsEth) renderTxTable(txsEth,'txEthContainer','Ethereum','recent');
+  else document.getElementById('txEthContainer').innerHTML='<p style="color:var(--amber);font-size:12px">BlockScout timeout — <a href="https://eth.blockscout.com/address/0x61dBb3254C699e480974754971259346e525d5B7?tab=token_transfers" target="_blank" style="color:var(--accent)">view directly ↗</a></p>';
+
+  if(txsBsc) renderTxTable(txsBsc,'txBscContainer','BNB Chain','recent');
+  else document.getElementById('txBscContainer').innerHTML='<p style="color:var(--amber);font-size:12px">BlockScout BSC timeout — <a href="https://bscscan.com/address/0x61dBb3254C699e480974754971259346e525d5B7" target="_blank" style="color:var(--accent)">BscScan ↗</a></p>';
+
+  if(txsBase) renderTxTable(txsBase,'txBaseContainer','BASE','recent');
+  else document.getElementById('txBaseContainer').innerHTML='<p style="color:var(--amber);font-size:12px">BlockScout BASE timeout — <a href="https://basescan.org/address/0x61dBb3254C699e480974754971259346e525d5B7" target="_blank" style="color:var(--accent)">BaseScan ↗</a></p>';
+
+  setStatus('✓ Scan complete — '+new Date().toLocaleTimeString());
+  btn.disabled=false;
+}
+
+// ── DEEP SCAN: full chain eth_getLogs with 100K+ XCN filter ──
+async function runDeepScan(){
+  const btn=document.getElementById('deepScanBtn');
+  if(!deepScanAborted&&btn.textContent.includes('Cancel')){deepScanAborted=true;return;}
+  deepScanAborted=false;
+  btn.textContent='✕ Cancel Scan';
+  btn.onclick=()=>{deepScanAborted=true;};
+
+  document.getElementById('deepScanResults').style.display='block';
+  document.getElementById('deepScanProgress').style.display='block';
+  const label=document.getElementById('deepScanLabel');
+  const bar=document.getElementById('deepScanBar');
+
+  const chains=[
+    {key:'eth',rpc:RPC.eth,contract:XCN_ETH,container:'deepEthContainer',name:'Ethereum',explorer:'https://etherscan.io/tx/'},
+    {key:'bsc',rpc:RPC.bsc,contract:XCN_BSC,container:'deepBscContainer',name:'BNB Chain',explorer:'https://bscscan.com/tx/'},
+    {key:'base',rpc:RPC.base,contract:XCN_BASE,container:'deepBaseContainer',name:'BASE',explorer:'https://basescan.org/tx/'},
+  ];
+
+  let chainsDone=0;
+  const totalChains=chains.length;
+
+  for(const chain of chains){
+    if(deepScanAborted) break;
+    label.textContent=`Scanning ${chain.name} — getting latest block…`;
+
+    const latest=await getLatestBlock(chain.rpc);
+    if(!latest){
+      document.getElementById(chain.container).innerHTML=`<p style="color:var(--red);font-size:12px">RPC error for ${chain.name}</p>`;
+      chainsDone++;bar.style.width=Math.round(chainsDone/totalChains*100)+'%';
+      continue;
+    }
+
+    const start=SCAN_START[chain.key];
+    const totalChunks=Math.ceil((latest-start)/CHUNK);
+    const allLogs=[];
+
+    for(let i=0;i<totalChunks;i++){
+      if(deepScanAborted) break;
+      const from=start+i*CHUNK;
+      const to=Math.min(from+CHUNK-1,latest);
+      label.textContent=`${chain.name} — blocks ${from.toLocaleString()}–${to.toLocaleString()} (${Math.round(i/totalChunks*100)}%)`;
+      bar.style.width=Math.round((chainsDone+i/totalChunks)/totalChains*100)+'%';
+
+      const logs=await getTransferLogs(chain.rpc,chain.contract,from,to);
+      const threshold=getDeepThreshold();
+      const large=logs.filter(log=>{
+        try{return log.data&&log.data!=='0x'&&BigInt(log.data)>=threshold;}catch(e){return false;}
+      });
+      allLogs.push(...large);
+      if(i%4===3) await new Promise(r=>setTimeout(r,40));
+    }
+
+    chainsDone++;
+    bar.style.width=Math.round(chainsDone/totalChains*100)+'%';
+    if(deepScanAborted) break;
+
+    // Fetch timestamps in batch
+    label.textContent=`${chain.name} — fetching timestamps for ${allLogs.length} large transfers…`;
+    const blockNums=[...new Set(allLogs.map(l=>parseInt(l.blockNumber,16)))];
+    const tsMap=await batchTimestamps(chain.rpc,blockNums);
+
+    // Convert log format to tx format
+    const txs=allLogs.map(log=>{
+      const from32=log.topics[1]||'';
+      const to32=log.topics[2]||'';
+      const fromAddr='0x'+from32.slice(26);
+      const toAddr='0x'+to32.slice(26);
+      const bn=parseInt(log.blockNumber,16);
+      const ts=tsMap[bn]?tsMap[bn].toString():null;
+      return {from:fromAddr,to:toAddr,value:log.data&&log.data!=='0x'?BigInt(log.data).toString():'0',
+        hash:log.transactionHash,timeStamp:ts,ts,blockNumber:bn};
+    }).sort((a,b)=>(parseInt(b.timeStamp||0))-(parseInt(a.timeStamp||0)));
+
+    if(txs.length===0)
+      document.getElementById(chain.container).innerHTML=`<p style="color:var(--dim);font-size:12px">No transfers ≥100K XCN found on ${chain.name} for DAO wallet from block ${SCAN_START[chain.key].toLocaleString()}.</p>`;
+    else
+      renderTxTable(txs,chain.container,chain.name,'deep');
+  }
+
+  document.getElementById('deepScanProgress').style.display='none';
+  setStatus(deepScanAborted?'⚠ Deep scan cancelled.':'✓ Deep scan complete — '+new Date().toLocaleTimeString(),deepScanAborted);
+  btn.textContent='⛓ Deep Scan (100K+ XCN)';
+  btn.onclick=()=>runDeepScan();
+}
+
+// ═══ FUND FLOW CANVAS (Interactive) ═══
+let flowNodes=[];
+(function drawFlow(){
+  const canvas=document.getElementById('flowCanvas');
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  const W=canvas.width,H=canvas.height;
+  flowNodes=[];
+
+  const flows=[
+    {key:'Chain.com Dev',label:'Chain.com Dev\n(OIP-38)',amt:7200,color:'#f85149'},
+    {key:'CIP-3 Budget',label:'CIP-3 Budget\n(100M/mo)',amt:4800,color:'#d29922'},
+    {key:'VUSD/Chain',label:'VUSD/Chain\n(OIP-39)',amt:2400,color:'#bc8cff'},
+    {key:'Exchange Liquidity',label:'Exchange\nLiquidity',amt:900,color:'#58a6ff'},
+    {key:'Justin Sun',label:'Justin Sun\n(OIP-52)',amt:500,color:'#f778ba'},
+    {key:'Ambassador & Community',label:'Ambassador\n& Community',amt:200,color:'#39d2c0'},
+    {key:'Marketing',label:'Marketing\n(OIP-63)',amt:100,color:'#7ee787'},
+  ];
+  const total=flows.reduce((s,f)=>s+f.amt,0);
+
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#0d1117';ctx.fillRect(0,0,W,H);
+
+  const srcX=90,srcY=H/2,srcR=44;
+  ctx.beginPath();ctx.arc(srcX,srcY,srcR,0,Math.PI*2);
+  ctx.fillStyle='#f8514922';ctx.fill();
+  ctx.strokeStyle='#f85149';ctx.lineWidth=2;ctx.stroke();
+  ctx.fillStyle='#f85149';ctx.font='bold 11px Inter';ctx.textAlign='center';
+  ctx.fillText('DAO',srcX,srcY-4);
+  ctx.font='9px JetBrains Mono';ctx.fillStyle='#8b949e';
+  ctx.fillText('d5B7',srcX,srcY+10);
+  flowNodes.push({x:srcX,y:srcY,r:srcR,key:'DAO Wallet',data:null,type:'source'});
+
+  const destX=W-100;
+  const spacing=H/(flows.length+1);
+  flows.forEach((f,i)=>{
+    const destY=spacing*(i+1);
+    const r=Math.max(12,Math.min(30,Math.sqrt(f.amt/total)*160));
+    const lineW=Math.max(1,Math.min(18,(f.amt/total)*100));
+
+    ctx.beginPath();
+    ctx.moveTo(srcX+srcR,srcY);
+    const cx1=srcX+srcR+(destX-srcX-srcR)*0.45;
+    const cx2=destX-r-(destX-srcX-srcR)*0.45;
+    ctx.bezierCurveTo(cx1,srcY,cx2,destY,destX-r,destY);
+    ctx.strokeStyle=f.color+'66';ctx.lineWidth=lineW;ctx.stroke();
+
+    ctx.beginPath();ctx.arc(destX,destY,r,0,Math.PI*2);
+    ctx.fillStyle=f.color+'22';ctx.fill();
+    ctx.strokeStyle=f.color;ctx.lineWidth=1.5;ctx.stroke();
+
+    const midX=(srcX+srcR+destX-r)/2;
+    const midY=srcY+(destY-srcY)*0.5;
+    ctx.fillStyle=f.color;ctx.font='bold 10px JetBrains Mono';ctx.textAlign='center';
+    const amtStr=f.amt>=1000?(f.amt/1000).toFixed(1)+'B XCN':f.amt+'M XCN';
+    ctx.fillText(amtStr,midX,midY-3);
+
+    const lines=f.label.split('\n');
+    ctx.fillStyle='#e6edf3';ctx.font='bold 10px Inter';ctx.textAlign='left';
+    lines.forEach((ln,li)=>ctx.fillText(ln,destX+r+6,destY-6+(li*12)));
+
+    flowNodes.push({x:destX,y:destY,r:r+6,key:f.key,data:OIP_RECEIPTS[f.key],type:'dest',color:f.color});
+  });
+
+  ctx.fillStyle='#8b949e';ctx.font='10px Inter';ctx.textAlign='center';
+  ctx.fillText('~'+Math.round(total/1000)+'B XCN authorized',srcX,srcY+srcR+14);
+
+  // ── Interactive click & hover ──
+  canvas.onclick=function(e){
+    const rect=canvas.getBoundingClientRect();
+    const sx=canvas.width/rect.width,sy=canvas.height/rect.height;
+    const mx=(e.clientX-rect.left)*sx,my=(e.clientY-rect.top)*sy;
+    for(const node of flowNodes){
+      if(node.type==='source') continue;
+      const dx=mx-node.x,dy=my-node.y;
+      if(dx*dx+dy*dy<=node.r*node.r){showFlowDetail(node);return;}
+    }
+    document.getElementById('flowNodeDetail').style.display='none';
+  };
+  canvas.onmousemove=function(e){
+    const rect=canvas.getBoundingClientRect();
+    const sx=canvas.width/rect.width,sy=canvas.height/rect.height;
+    const mx=(e.clientX-rect.left)*sx,my=(e.clientY-rect.top)*sy;
+    let hit=false;
+    for(const node of flowNodes){
+      if(node.type==='source') continue;
+      const dx=mx-node.x,dy=my-node.y;
+      if(dx*dx+dy*dy<=node.r*node.r){hit=true;break;}
+    }
+    canvas.style.cursor=hit?'pointer':'default';
+  };
+})();
+
+function showFlowDetail(node){
+  const panel=document.getElementById('flowNodeDetail');
+  if(!node.data){panel.style.display='none';return;}
+  const d=node.data;
+  const c=node.color||'#58a6ff';
+  panel.style.borderLeft='4px solid '+c;
+  panel.innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+      <div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:${c};font-weight:700;background:${c}22;padding:2px 8px;border-radius:4px;border:1px solid ${c}44">${d.oip}</span>
+        <span style="margin-left:8px;font-size:13px;font-weight:700;color:#e6edf3">${node.key}</span>
+      </div>
+      <button onclick="document.getElementById('flowNodeDetail').style.display='none'" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:0 4px;line-height:1">&times;</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+      <div style="background:#0d1117;padding:8px;border-radius:4px">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:3px;text-transform:uppercase;letter-spacing:.5px">Authorized</div>
+        <div style="font-size:14px;font-weight:700;color:${c};font-family:'JetBrains Mono',monospace">${d.authorized}</div>
+      </div>
+      <div style="background:#0d1117;padding:8px;border-radius:4px">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:3px;text-transform:uppercase;letter-spacing:.5px">Purpose</div>
+        <div style="font-size:11px;color:#e6edf3;line-height:1.4">${d.purpose}</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:#8b949e;margin-bottom:8px;line-height:1.6">${d.detail}</div>
+    <div style="font-size:10px;color:var(--dim);background:#0d1117;padding:6px 10px;border-radius:4px;border-left:2px solid ${c}55">
+      &#128247; ${d.txNote}
+    </div>`;
+  panel.style.display='block';
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// ═══ LIVE POLLS TAB ═══
+let livePollsFilter='all';
+
+function filterLivePolls(f,btn){
+  document.querySelectorAll('#livePollsFilterRow .filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  livePollsFilter=f;
+  renderLivePolls();
+}
+
+function renderLivePolls(){
+  const container=document.getElementById('livePollsContainer');
+  if(!container) return;
+  const statuses=getStatuses();
+  let polls=allTrackerPolls.map(p=>({...p,status:statuses[p.id]||'pending'}));
+
+  if(livePollsFilter==='phase1') polls=polls.filter(p=>p.phase===1);
+  else if(livePollsFilter==='phase2') polls=polls.filter(p=>p.phase===2);
+  else if(livePollsFilter==='phase3') polls=polls.filter(p=>p.phase===3);
+  else if(livePollsFilter==='phase4') polls=polls.filter(p=>p.phase===4);
+  else if(livePollsFilter==='innovation') polls=polls.filter(p=>p.phase===99);
+
+  if(polls.length===0){container.innerHTML='<p style="color:var(--dim);font-size:12px;padding:20px 0">No proposals match this filter.</p>';return;}
+
+  const phaseColors={1:'var(--red)',2:'var(--amber)',3:'var(--accent)',4:'var(--green)',0:'var(--muted)',99:'var(--cyan)'};
+  const rows=polls.map(p=>{
+    const sc=STATUS_COLORS[p.status];
+    const pc=phaseColors[p.phase]||'var(--muted)';
+    const pn=getPhaseName(p.phase);
+    return `<tr>
+      <td><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:${pc}">${p.id}</span></td>
+      <td style="font-size:11px;max-width:300px;font-weight:600">${p.title}</td>
+      <td><span style="font-size:10px;color:${pc}">${pn}</span></td>
+      <td><span style="background:${sc}22;color:${sc};border:1px solid ${sc}44;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase">${STATUS_LABELS[p.status]}</span></td>
+      <td><a href="https://polls.onyx.org/#/" target="_blank" style="color:var(--accent);font-size:10px;text-decoration:none">Submit ↗</a></td>
+    </tr>`;
+  }).join('');
+
+  container.innerHTML=`<div class="chart-box" style="overflow-x:auto;padding:0;margin-bottom:0">
+    <table class="tx-table" style="min-width:600px">
+      <thead><tr><th>Poll ID</th><th>Title</th><th>Phase</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div style="font-size:10px;color:var(--dim);padding:8px 10px">Showing ${polls.length} proposals. Update status in the Tracker tab.</div>
+  </div>`;
+}
+
+// Historical community polls data
+const histPolls=[
+  {n:1,q:'Should XCN proposal threshold be lowered?',outcome:'Passed'},
+  {n:2,q:'Should DAO allocate funds for exchange liquidity?',outcome:'Passed'},
+  {n:3,q:'Should development budget be renewed quarterly?',outcome:'Passed'},
+  {n:4,q:'Should Justin Sun partnership be formalized?',outcome:'Contested'},
+  {n:5,q:'Should ambassador program be expanded?',outcome:'Passed'},
+  {n:6,q:'Should treasury hold stablecoins?',outcome:'Failed'},
+  {n:7,q:'Should marketing budget increase?',outcome:'Passed'},
+  {n:8,q:'Should validator rewards be increased?',outcome:'Passed'},
+  {n:9,q:'Should governance quorum be raised?',outcome:'Failed'},
+  {n:10,q:'Should multisig add external member?',outcome:'Failed'},
+  {n:11,q:'Should XCN be listed on additional CEXs?',outcome:'Passed'},
+  {n:12,q:'Should DAO publish quarterly reports?',outcome:'Failed'},
+  {n:13,q:'Should staking APY be reduced?',outcome:'Passed'},
+  {n:14,q:'Should community grants program launch?',outcome:'Passed'},
+  {n:15,q:'Should bridge integrations be prioritized?',outcome:'Passed'},
+  {n:16,q:'Should product roadmap be made public?',outcome:'Failed'},
+  {n:17,q:'Should dev team compensation be disclosed?',outcome:'Failed'},
+  {n:18,q:'Should VUSD peg mechanism be audited?',outcome:'Passed'},
+  {n:19,q:'Should governance voting period be extended?',outcome:'Passed'},
+  {n:20,q:'Should Zealy rewards be increased?',outcome:'Passed'},
+  {n:21,q:'Should ambassador elections be held annually?',outcome:'Passed'},
+  {n:22,q:'Should DAO fund NFT partnerships?',outcome:'Failed'},
+  {n:23,q:'Should proposal submission fee be introduced?',outcome:'Failed'},
+  {n:24,q:'Should treasury diversify to ETH/BTC?',outcome:'Failed'},
+  {n:25,q:'Should governance UI be improved?',outcome:'Passed'},
+  {n:26,q:'Should cross-chain XCN bridge be funded?',outcome:'Passed'},
+  {n:27,q:'Should Goliath development receive priority funding?',outcome:'Passed'},
+  {n:28,q:'Should OIP bundling be prohibited?',outcome:'Failed'},
+  {n:29,q:'Should DAO engage external legal counsel?',outcome:'Failed'},
+  {n:30,q:'Should validator incentive program launch?',outcome:'Passed'},
+  {n:31,q:'Verify Justin Sun 500M XCN lockup compliance',outcome:'Passed — unverified'},
+  {n:32,q:'Should treasury audit be commissioned?',outcome:'Failed'},
+  {n:33,q:'Should XCN burn mechanism be implemented?',outcome:'Failed'},
+  {n:34,q:'Should DAO deploy yield strategy?',outcome:'Failed'},
+  {n:35,q:'Should community polls be binding?',outcome:'Failed'},
+  {n:36,q:'Should governance abstain votes be tracked?',outcome:'Passed'},
+  {n:37,q:'Should multisig be expanded to 7/9?',outcome:'Failed'},
+  {n:38,q:'Should developer bounty program launch?',outcome:'Passed'},
+  {n:39,q:'Should DAO publish monthly financials?',outcome:'Failed'},
+  {n:40,q:'Should Goliath testnet validators receive XCN?',outcome:'Passed'},
+  {n:41,q:'Should XCN liquidity on BASE be seeded?',outcome:'Passed'},
+  {n:42,q:'Should social media manager role be formalized?',outcome:'Failed'},
+  {n:43,q:'Should DEX liquidity be managed by committee?',outcome:'Failed'},
+  {n:44,q:'Should DAO fund ecosystem hackathon?',outcome:'Passed'},
+  {n:45,q:'Should governance forum be upgraded?',outcome:'Passed'},
+  {n:46,q:'Should XCN staking lockup terms be revised?',outcome:'Passed'},
+  {n:47,q:'Should ambassador stipends be increased?',outcome:'Failed'},
+  {n:48,q:'Should treasury wallet be made multi-chain?',outcome:'Passed'},
+  {n:49,q:'Should validator set be capped at 100?',outcome:'Passed'},
+  {n:50,q:'Should community calls be held bi-weekly?',outcome:'Passed'},
+  {n:51,q:'Should DAO hire independent compliance officer?',outcome:'Failed'},
+  {n:52,q:'Should XCN be listed on Coinbase?',outcome:'Passed'},
+  {n:53,q:'Should staking rewards compound automatically?',outcome:'Passed'},
+  {n:54,q:'Should governance proposals require 2-week discussion?',outcome:'Failed'},
+  {n:55,q:'Should DAO fund Goliath validator hardware?',outcome:'Passed'},
+  {n:56,q:'Should XCN emissions schedule be revised?',outcome:'Failed'},
+  {n:57,q:'Should ambassador KPIs be published?',outcome:'Failed'},
+  {n:58,q:'Should treasury risk management policy be adopted?',outcome:'Failed'},
+  {n:59,q:'Should governance participation incentives be introduced?',outcome:'Passed'},
+  {n:60,q:'Should DAO publish OIP implementation status?',outcome:'Failed'},
+  {n:61,q:'Should XCN BSC bridge capacity be increased?',outcome:'Passed'},
+  {n:62,q:'Should governance voting UI be rebuilt?',outcome:'Passed'},
+  {n:63,q:'Should ecosystem fund proposal process be public?',outcome:'Failed'},
+  {n:64,q:'Should validator slashing conditions be defined?',outcome:'Passed'},
+  {n:65,q:'Should DAO fund BASE ecosystem growth?',outcome:'Passed'},
+  {n:66,q:'Should ambassador elections use ranked-choice?',outcome:'Failed'},
+  {n:67,q:'Should multisig signers be publicly doxxed?',outcome:'Failed'},
+  {n:68,q:'Should proposal cooldown period be enforced?',outcome:'Failed'},
+  {n:69,q:'Should XCN staking APY floor be guaranteed?',outcome:'Passed'},
+  {n:70,q:'Should DAO publish counterparty addresses for all disbursements?',outcome:'Failed'},
+  {n:71,q:'Should governance quorum be lowered to 100M?',outcome:'Failed'},
+  {n:72,q:'Should Goliath mainnet launch date be committed publicly?',outcome:'Passed'},
+  {n:73,q:'Should DAO conduct annual governance review?',outcome:'Failed'},
+  {n:74,q:'Should XCN marketing spend be capped at 1B total?',outcome:'Failed'},
+  {n:75,q:'Should validator selection process be transparent?',outcome:'Passed'},
+  {n:76,q:'Should community grant applications be public?',outcome:'Failed'},
+  {n:77,q:'Should OIP-52 Justin Sun lockup be re-verified?',outcome:'Passed — unverified'},
+  {n:78,q:'Should DAO fund DeFi protocol integrations?',outcome:'Passed'},
+  {n:79,q:'Should XCN be integrated with DeFi protocols?',outcome:'Passed'},
+  {n:80,q:'Should DAO establish conflict of interest policy?',outcome:'Failed'},
+  {n:81,q:'Should governance proposals be categorized by spend tier?',outcome:'Failed'},
+  {n:82,q:'Should XCN burn events be scheduled quarterly?',outcome:'Failed'},
+  {n:83,q:'Should DAO publish validator performance metrics?',outcome:'Passed'},
+  {n:84,q:'Should community elections be held every 6 months?',outcome:'Passed'},
+  {n:85,q:'Should governance reform package be prioritized?',outcome:'Passed'},
+];
+
+function renderHistPolls(){
+  const tbody=document.getElementById('histPollsBody');
+  if(!tbody) return;
+  const outcomeColor={
+    'Passed':'var(--green)','Failed':'var(--red)',
+    'Contested':'var(--amber)','Passed — unverified':'var(--pink)'
+  };
+  tbody.innerHTML=histPolls.map(p=>{
+    const c=outcomeColor[p.outcome]||'var(--muted)';
+    return `<tr>
+      <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--muted)">#${p.n}</td>
+      <td style="font-size:11px;max-width:400px">${p.q}</td>
+      <td><span style="color:${c};font-size:10px;font-weight:700">${p.outcome}</span></td>
+      <td><a href="https://polls.onyx.org/#/" target="_blank" style="color:var(--accent);font-size:10px">View ↗</a></td>
+    </tr>`;
+  }).join('');
+}
+
+// ═══ OIP ARCHIVE TAB ═══
+const oipArchiveData=[
+  {id:'OIP-8',title:'Protocol Fee Distribution',cat:'Protocol',outcome:'Passed',xcn:'—',flagged:false,notes:'Early protocol fee governance'},
+  {id:'OIP-9a',title:'Staking Rewards — Tier A',cat:'Staking',outcome:'Passed',xcn:'—',flagged:false,notes:'Initial staking reward structure'},
+  {id:'OIP-9b',title:'Staking Rewards — Tier B',cat:'Staking',outcome:'Passed',xcn:'—',flagged:false,notes:'Secondary tier'},
+  {id:'OIP-10',title:'Community Fund Allocation',cat:'Community',outcome:'Passed',xcn:'~500M',flagged:false,notes:'Early community fund'},
+  {id:'OIP-11',title:'Exchange Liquidity Seeding',cat:'Liquidity',outcome:'Passed',xcn:'~200M',flagged:false,notes:'Initial DEX liquidity'},
+  {id:'OIP-12',title:'Marketing Budget Approval',cat:'Budget',outcome:'Passed',xcn:'~100M',flagged:false,notes:'OIP-12 marketing round'},
+  {id:'OIP-13',title:'Protocol Upgrade Authorization',cat:'Protocol',outcome:'Passed',xcn:'—',flagged:false,notes:'Smart contract upgrade'},
+  {id:'OIP-14',title:'Stablecoin Integration',cat:'Stablecoin',outcome:'Passed',xcn:'—',flagged:false,notes:'VUSD early integration'},
+  {id:'OIP-15',title:'Governance Parameter Update',cat:'Governance',outcome:'Passed',xcn:'—',flagged:false,notes:'Quorum / threshold adjustments'},
+  {id:'OIP-16',title:'Token Bridge Authorization',cat:'Protocol',outcome:'Failed',xcn:'—',flagged:false,notes:'Bridge proposal rejected'},
+  {id:'OIP-17',title:'Ambassador Program Launch',cat:'Community',outcome:'Passed',xcn:'~50M',flagged:false,notes:'First ambassador funding'},
+  {id:'OIP-18',title:'Developer Grant Program',cat:'Budget',outcome:'Passed',xcn:'~100M',flagged:false,notes:'Dev grant round 1'},
+  {id:'OIP-19',title:'Exchange Partnership',cat:'Partnership',outcome:'Passed',xcn:'~200M',flagged:false,notes:'CEX listing partnership'},
+  {id:'OIP-20',title:'Staking APY Revision',cat:'Staking',outcome:'Passed',xcn:'—',flagged:false,notes:'Yield adjustment'},
+  {id:'OIP-21',title:'Community Pool Expansion',cat:'Community',outcome:'Passed',xcn:'~150M',flagged:false,notes:'Expanded community pool'},
+  {id:'OIP-22',title:'Marketing Campaign — Round 2',cat:'Budget',outcome:'Passed',xcn:'~100M',flagged:false,notes:'Continued marketing spend'},
+  {id:'OIP-23',title:'Marketing Budget — Influencers',cat:'Budget',outcome:'Passed',xcn:'~100M',flagged:false,notes:'Influencer campaign'},
+  {id:'OIP-24',title:'Protocol Security Audit',cat:'Protocol',outcome:'Passed',xcn:'~50M',flagged:false,notes:'External audit funding'},
+  {id:'OIP-25',title:'Marketing Budget — Exchange',cat:'Budget',outcome:'Passed',xcn:'~100M',flagged:false,notes:'Exchange-focused marketing'},
+  {id:'OIP-26',title:'Ambassador Expansion',cat:'Community',outcome:'Passed',xcn:'~100M',flagged:false,notes:'Program scale-up'},
+  {id:'OIP-27',title:'Validator Infrastructure',cat:'Protocol',outcome:'Passed',xcn:'~200M',flagged:false,notes:'Node infrastructure'},
+  {id:'OIP-28',title:'Treasury Diversification',cat:'Treasury',outcome:'Failed',xcn:'—',flagged:false,notes:'Diversification rejected'},
+  {id:'OIP-29',title:'DAO Legal Structure',cat:'Governance',outcome:'Failed',xcn:'—',flagged:false,notes:'Legal entity rejected'},
+  {id:'OIP-30',title:'Cross-Chain Bridge v2',cat:'Protocol',outcome:'Passed',xcn:'~300M',flagged:false,notes:'Bridge upgrade funding'},
+  {id:'OIP-31',title:'DEX Liquidity — Uniswap v3',cat:'Liquidity',outcome:'Passed',xcn:'~400M',flagged:false,notes:'Uniswap V3 seeding'},
+  {id:'OIP-32',title:'Governance UI Upgrade',cat:'Governance',outcome:'Passed',xcn:'~50M',flagged:false,notes:'Interface improvement'},
+  {id:'OIP-33',title:'Staking Lock Period Revision',cat:'Staking',outcome:'Passed',xcn:'—',flagged:false,notes:'Lock period change'},
+  {id:'OIP-34',title:'Partnership — DeFi Protocol',cat:'Partnership',outcome:'Passed',xcn:'~200M',flagged:false,notes:'DeFi integration'},
+  {id:'OIP-35',title:'Budget Round — Dev Q3',cat:'Budget',outcome:'Passed',xcn:'~500M',flagged:false,notes:'Quarterly dev budget'},
+  {id:'OIP-36',title:'Marketing — Global Campaign',cat:'Budget',outcome:'Passed',xcn:'~200M',flagged:false,notes:'Broad marketing push'},
+  {id:'OIP-37',title:'Chain.com Preliminary Grant',cat:'Budget',outcome:'Passed',xcn:'~1B',flagged:true,notes:'First major Chain.com allocation'},
+  {id:'OIP-38',title:'Chain.com Development Contract',cat:'Budget',outcome:'Passed',xcn:'7.2B',flagged:true,notes:'Largest single OIP. No independent verification. 12-mo contract.'},
+  {id:'OIP-39',title:'VUSD + Chain Product Development',cat:'Stablecoin',outcome:'Passed',xcn:'2.4B',flagged:true,notes:'VUSD stablecoin + Chain products. Deliverable status unclear.'},
+  {id:'OIP-40',title:'Exchange Liquidity — Round 2',cat:'Liquidity',outcome:'Passed',xcn:'~300M',flagged:false,notes:'Additional liquidity provision'},
+  {id:'OIP-41',title:'Liquidity — CEX Market Making',cat:'Liquidity',outcome:'Passed',xcn:'~200M',flagged:false,notes:'Market-making program'},
+  {id:'OIP-42',title:'Governance — Voting Period',cat:'Governance',outcome:'Failed',xcn:'—',flagged:false,notes:'Period extension failed'},
+  {id:'OIP-43',title:'Community Rewards v2',cat:'Community',outcome:'Passed',xcn:'~100M',flagged:false,notes:'Reward program update'},
+  {id:'OIP-44',title:'Zealy Community Incentives',cat:'Community',outcome:'Passed',xcn:'~100M',flagged:false,notes:'Zealy platform rewards'},
+  {id:'OIP-45',title:'CIP-3 — Ongoing Protocol Budget',cat:'Budget',outcome:'Passed',xcn:'4.8B total',flagged:true,notes:'100M XCN/month recurring. Most contentious ongoing expense.'},
+  {id:'OIP-46',title:'Staking Yield Adjustment',cat:'Staking',outcome:'Passed',xcn:'—',flagged:false,notes:'APY parameter change'},
+  {id:'OIP-47',title:'Bridge — BNB Chain Capacity',cat:'Protocol',outcome:'Passed',xcn:'~100M',flagged:false,notes:'BSC bridge upgrade'},
+  {id:'OIP-48',title:'Partnership — Ecosystem Fund',cat:'Partnership',outcome:'Passed',xcn:'~300M',flagged:false,notes:'Ecosystem partnership'},
+  {id:'OIP-49',title:'Security — Bug Bounty Program',cat:'Protocol',outcome:'Passed',xcn:'~50M',flagged:false,notes:'Bug bounty funding'},
+  {id:'OIP-50',title:'Ambassador Compensation Update',cat:'Community',outcome:'Passed',xcn:'~100M',flagged:false,notes:'Ambassador pay revision'},
+  {id:'OIP-51',title:'Strategic Partnership — Justin Sun [REJECTED]',cat:'Partnership',outcome:'Failed',xcn:'500M (proposed)',flagged:true,notes:'FAILED. 460M AGAINST. Identical to OIP-52. Swing voters flipped 6 days later.'},
+  {id:'OIP-52',title:'Strategic Partnership — Justin Sun [PASSED]',cat:'Partnership',outcome:'Passed',xcn:'500M',flagged:true,notes:'PASSED. 979M FOR, 16.5M AGAINST. Same proposal as OIP-51. Lockup never verified.'},
+  {id:'OIP-53',title:'Treasury Multi-Chain Expansion',cat:'Treasury',outcome:'Passed',xcn:'—',flagged:false,notes:'Multi-chain treasury setup'},
+  {id:'OIP-54',title:'Dev Budget — Q4 2022',cat:'Budget',outcome:'Passed',xcn:'~500M',flagged:false,notes:'Quarterly dev allocation'},
+  {id:'OIP-55',title:'Validator Incentive Program',cat:'Protocol',outcome:'Passed',xcn:'~1B',flagged:false,notes:'Validator rewards program'},
+  {id:'OIP-56',title:'Community Vote — Quorum Change',cat:'Governance',outcome:'Failed',xcn:'—',flagged:false,notes:'Quorum increase rejected'},
+  {id:'OIP-57',title:'Marketing — 2023 Q1 Budget',cat:'Budget',outcome:'Passed',xcn:'~300M',flagged:false,notes:'2023 marketing allocation'},
+  {id:'OIP-58',title:'XCN Tokenomics Review',cat:'Tokenomics',outcome:'Passed',xcn:'—',flagged:false,notes:'Emission / supply review'},
+  {id:'OIP-59',title:'Ecosystem Development Fund',cat:'Budget',outcome:'Passed',xcn:'~500M',flagged:false,notes:'Ecosystem support pool'},
+  {id:'OIP-60',title:'Governance Threshold Reduction',cat:'Governance',outcome:'Passed',xcn:'—',flagged:false,notes:'Threshold lowered to 1M'},
+  {id:'OIP-61',title:'Bridge Expansion — BASE Network',cat:'Protocol',outcome:'Passed',xcn:'~200M',flagged:false,notes:'BASE bridge deployment'},
+  {id:'OIP-62',title:'Ambassador Elections — 2024',cat:'Community',outcome:'Passed',xcn:'—',flagged:false,notes:'Elections recently held (close results)'},
+  {id:'OIP-63',title:'Marketing Budget — 2024',cat:'Budget',outcome:'Passed',xcn:'~100M',flagged:false,notes:'Latest marketing allocation'},
+  {id:'OIP-64',title:'Protocol Parameters — Goliath Prep',cat:'Protocol',outcome:'Passed',xcn:'—',flagged:false,notes:'Goliath mainnet preparation'},
+];
+
+let oipFilter='all';
+function filterOIPs(f,btn){
+  document.querySelectorAll('#oipFilterRow .filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  oipFilter=f;
+  renderOIPArchive();
+}
+
+function renderOIPArchive(){
+  const tbody=document.getElementById('oipArchiveBody');
+  if(!tbody) return;
+  let data=oipArchiveData;
+  if(oipFilter==='passed') data=data.filter(o=>o.outcome==='Passed');
+  else if(oipFilter==='failed') data=data.filter(o=>o.outcome==='Failed'||o.id==='OIP-51');
+  else if(oipFilter==='treasury') data=data.filter(o=>o.xcn!=='—'&&o.xcn!=='');
+  else if(oipFilter==='flagged') data=data.filter(o=>o.flagged);
+
+  tbody.innerHTML=data.map(o=>{
+    const oc=o.outcome==='Passed'?'var(--green)':o.outcome==='Failed'?'var(--red)':'var(--amber)';
+    const fl=o.flagged?'<span style="background:var(--red)22;color:var(--red);border:1px solid var(--red)44;border-radius:3px;font-size:9px;font-weight:700;padding:1px 5px;margin-left:5px">FLAG</span>':'';
+    return `<tr style="${o.flagged?'background:#f8514908':''}" >
+      <td style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px;white-space:nowrap">
+        <a href="https://app.onyx.org/en/governance" target="_blank" style="color:var(--accent);text-decoration:none">${o.id}</a>${fl}
+      </td>
+      <td style="font-size:11px;max-width:280px">${o.title}</td>
+      <td style="font-size:10px;color:var(--muted)">${o.cat}</td>
+      <td><span style="color:${oc};font-size:10px;font-weight:700">${o.outcome}</span></td>
+      <td style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);font-weight:700">${o.xcn}</td>
+      <td style="font-size:10px;color:var(--muted);max-width:200px">${o.notes}</td>
+    </tr>`;
+  }).join('');
+}
+
+// Render on page load
+document.addEventListener('DOMContentLoaded',()=>{
+  renderHistPolls();
+  renderOIPArchive();
+  renderLivePolls();
+});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,3320 @@
+Update Chain Token Release Schedules and Repurpose
+Passed
+0xe864...6d73 admin
+In Onyx XCN DAO · 4y ago · #6AzD4
+
+Chain proposes to add additional token lock ups and repurpose the main distribution allocation. Details below:
+
+According to Chain’s token economics document (chain.com/token.pdf known as the “Tokenomics”) there are 50,000,000 CHN tokens allocated to the distribution to Sequence clients retroactively and for future clients. While the original allocation was distributed to those users there’s 15,429,918 CHN that can be freely distributed with no vesting schedules. So in theory this allocation is unlocked. (“Distribution Allocation”)
+
+Chain proposes to take the Distribution Allocation and add a monthly release schedule set at 100,000 CHN per month. This will give a more predictable supply release schedule whereas currently there are no technical nor articulated release schedules for this allocation. Chain also proposes that this Distribution Allocation be enabled for every product that is launched or acquired by Chain to be able to receive rewards or distributions from this allocation.
+
+The Chain Team has also previously received 15,000,000 CHN unlocked and 15,000,000 locked via time lock smart contracts based on the Tokenomics. 2,500,000 has already been released into the company’s hot wallet and used/allocated for various purposes leaving 12,500,000 unlocked, still able to be used. While this number is very high in monetary terms, we also propose to add a more controlled release schedule for even the unlocked portion of this allocation. Chain proposes to add a monthly release cap of 250,000 CHN so this allocation can also be tracked via a predictable release schedule alongside the time lock allocation. (“Team Allocation”)
+
+Chain has implemented these changes ahead of the polling to Team allocation and the Distribution Allocation smart contracts.
+
+Lastly, based on the Tokenomics, there are 10,000,000 CHN allocated to the Founders, community members and advisors of the project. This allocation is entirely unlocked. However, given market dynamics, we propose that 50% of this allocation become locked in a time lock smart contract with a monthly release of 100,000 if this proposal passes.
+3 votes ·
+Results
+For
+5.4m
+100%
+Against
+0
+0%
+Timeline
+Created
+Feb 7, 2022 · 4:49 PM
+Start
+Feb 7, 2022 · 5:49 PM
+End
+Feb 9, 2022 · 5:49 PM
+
+
+
+CIP-2: Token burns and XCN Re-Denomination
+Passed
+0xe864...6d73 admin
+In Onyx XCN DAO · 4y ago · #bvbQD
+
+The Chain Token Re-Denomination Proposal (CIP-2) is now deployed on the main Ethereum network. This re-denomination plan is to support the upcoming Chain Staking and Governance launch so that rewards for staking are denominated in whole numbers rather then sub-decimal places. This will optimize user experience without diluting the current supply in any capacity. Rather, the entire re-denomination will be proportional and executed by a trust-less smart contract that anyone on the Ethereum blockchain can interact with. Furthermore, the original token smart contract also lacked inherent governance controls built into the codebase. With this upgrade we are able to integrate native governance functionality that the previous Chain Token Smart Contract did not have.
+
+The Chain Token is the native cryptocurrency to the Chain ecosystem and is used as a currency for payment. In order to properly follow global standardization for currency based ticker reporting, we will update the ticker of the smart contact to XCN. The alphanumeric code requirements set by the ISO for the universal representation of currencies enables Chain to join other globally accepted forms of money with a standard symbol and naming convention. Since there is no country assigned to the Chain Token, being a decentralized border less currency, we are required to assign the letter “X” per ISO 4217. To keep the 3 ticker symbol for global money standards in tact, the new ticker will be: XCN
+
+Every one(1) CHN token can be redeemed for one thousand (1,000) XCN. As As previously described, all the unclaimed CHN from the initial distribution will be burned. In addition to this burn, the Chain Team per CIP-2, has gone ahead in anticipation of its approval, will burn an additional ten million (10,000,000) CHN tokens from the supply. With these two allocation of burns and the total supply of CHN is 68,895,442. The new circulating supply from the unclaimed allocation burn results to 14,483,748.
+
+Therefore, the total and max supply of XCN will be 68,895,442,185. Chain will launch a revised token document to reflect these changes respectively.
+
+Since a large portion of CHN tokens, 20,000,000, are in time lock smart contracts those allocations will be premined and the ownership of those token smart contracts will be set to the burn address on Ethereum. Thereafter, those tokens will be re deposited into the new time lock smart contracts verified on-chain. The XCN token distribution is outlined below:
+
+Chain Distribution - 15,174,183,177 with 100,000,000 monthly release time lock release beginning April 1, 2022 to Chain Rewards programs as described in CIP-1.
+
+Chain Team Distribution - 15,000,000,000 with 100,000,000 monthly release beginning March 1st, 2023.
+
+Chain Founders - 5,000,000,000 with 50,000,000 monthly release beginning March 1, 2023.
+
+Chain DAO - 10,000,000,000 Deposited into the Chain Governance Smart Contract and controlled by the community.
+
+Circulating Supply: 14,483,748,828
+
+Once the XCN Token Contract concludes it’s audit by CertiK, we will announce an official migration guide for the swap.
+
+Any digital asset exchange supporting CHN will make a separate announcement on their support plans for the XCN token swap.
+3 votes ·
+Results
+For
+4.9m
+100%
+Against
+0
+0%
+Timeline
+Created
+Mar 1, 2022 · 4:47 PM
+Start
+Mar 1, 2022 · 4:47 PM
+End
+Mar 3, 2022 · 4:47 PM
+
+
+
+CIP-3: Enact The Chain Community Constitution
+Passed
+0xe864...6d73 admin
+In Onyx XCN DAO · 4y ago · #V8NzE
+
+ABSTRACT: CIP-3 aims to codify into the Blockchain a set of rules and regulations that the Chain community will adhere to when participating in Chain Governance. It’s important that there are these foundational policies so that new users coming into the ecosystem know the processes of how to go about improvements and suggestions for the protocol.
+
+This proposal also sets the stage for the DAO Treasury of 10 billion XCN (roughly $800 million at todays market rate) to be sent to a smart contract that will be in control of the community which has been audited by CertiK. It also includes a monetary budget of 100M XCN per month for the Chain DAO and a 25M XCN budget for monthly rewards to Chain Governance stakers.
+
+Discussion Reference: https://forum.chain.xyz/t/cip-3-enact-the-chain-community-constitution/
+Discussion
+https://forum.chain.xyz/t/cip-3-enact-the-chain-community-constitution/
+5 votes ·
+Results
+For
+4.5b
+100%
+Against
+0
+0%
+Quorum: 14.9k%
+Timeline
+Created
+Apr 2, 2022 · 1:43 PM
+Start
+Apr 2, 2022 · 1:43 PM
+End
+Apr 4, 2022 · 1:43 PM
+
+
+
+Activate Onyx Points
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #f339b
+
+Activate Onyx Points
+Implement the Points Dashboard for XCN Ledger
+
+The Onyx Points system is designed to provide users with a dynamic and engaging way to participate in the Onyx ecosystem. By integrating seamlessly with the Onyx decentralized application (dApp), this system empowers users to view their accumulated Onyx Points and track their progress over time. Through a user-friendly interface, participants will be able to access real-time updates about their points, achievements, and available activities, enhancing transparency and motivation within the platform.
+
+Earning Onyx Points is a key aspect of user engagement and incentivization. Participants can accumulate points by completing specific tasks or actions that are verified through onchain instructions. These actions may include interacting with smart contracts, participating in governance, staking assets, or other forms of decentralized engagement that contribute to the health and growth of the Onyx ecosystem. Each action is securely recorded on the blockchain, ensuring accuracy, transparency, and resistance to fraud or manipulation.
+
+Ultimately, the Onyx Points system serves as both a rewards mechanism and a gamified experience that encourages active participation. As users follow onchain instructions and accumulate points, they may gain access to exclusive features, tiers, or even governance rights within the platform. This structure not only supports a more vibrant community but also aligns user incentives with the broader success of the Onyx protocol. By making participation both meaningful and rewarding, the Onyx Points system aims to foster long-term commitment and deeper involvement from users across the decentralized landscape.
+
+• Vote “For” if you support establishing the Onyx Points system.
+
+• Vote “Against” if you do not support the creation of this process or believe that different approaches should be explored.
+13 votes ·
+· (edited)
+Results
+For
+218.6m
+100%
+Against
+0
+0%
+Quorum: 109%
+Timeline
+Created
+May 5, 2025 · 5:39 PM
+Start
+May 6, 2025 · 5:39 PM
+End
+May 8, 2025 · 5:39 PM
+
+Create Official XCN Discord
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #0a9db
+
+This poll is being conducted to gauge the level of interest within the XCN community in establishing an official Discord channel. While Telegram has served as our primary platform for communication and community engagement, we recognize that preferences evolve and that members may seek alternative or complementary spaces for interaction. Discord, with its robust features and organized structure, has been increasingly mentioned as a desired option by community members.
+
+Understanding and addressing the needs of our community is a top priority. By participating in this poll, you are helping us assess whether launching an official Discord server would be a valuable and welcomed addition to our communication channels. Your feedback is essential in guiding our decision-making and ensuring we continue to build inclusive, accessible spaces for all members of the XCN ecosystem.
+9 votes ·
+Results
+For
+13.2m
+72.95%
+Against
+4.9m
+27.05%
+Quorum: 9.05%
+Timeline
+Created
+May 5, 2025 · 6:07 PM
+Start
+May 6, 2025 · 6:07 PM
+End
+May 8, 2025 · 6:07 PM
+
+Create Official XCN Subreddit
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #0307a
+
+This poll is intended to gauge community interest in the creation of an official XCN Subreddit. The idea of establishing a presence on Reddit has been mentioned by several members of the community as a way to expand our reach and provide a space for open discussion, updates, and resource sharing in a more structured format.
+
+If created, the subreddit would be managed by official XCN ambassadors, moderators, and members of the DAO to ensure that it remains a reliable and well-moderated environment for both newcomers and long-time supporters. Your input will help us determine whether Reddit is the right next step in enhancing our community infrastructure and engagement.
+8 votes ·
+Results
+For
+18m
+100%
+Against
+0
+0%
+Quorum: 8.97%
+Timeline
+Created
+May 5, 2025 · 6:10 PM
+Start
+May 6, 2025 · 6:10 PM
+End
+May 8, 2025 · 6:10 PM
+
+Continue XCN Public Zealy Program
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #59dc6
+
+This poll is intended to determine community sentiment around the ongoing XCN Public Zealy program and whether there is strong interest in continuing it for the remainder of 2025 and beyond. The program has been well-received by many participants, offering an engaging way to contribute to the ecosystem while earning recognition and rewards.
+
+While we plan to continue running Zealy through the end of 2025, we want to ensure it remains valuable and aligned with community expectations. Your feedback through this poll will help us assess its impact and guide decisions on its future. Let us know if you believe the Zealy program should remain a core part of the XCN engagement strategy.
+11 votes ·
+Results
+For
+207.3m
+94.84%
+Against
+11.3m
+5.16%
+Quorum: 109%
+Timeline
+Created
+May 5, 2025 · 6:14 PM
+Start
+May 6, 2025 · 6:14 PM
+End
+May 8, 2025 · 6:14 PM
+
+Expand Onyx DAO Moderator Team
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #451d3
+
+This poll is intended to gauge community support for expanding the XCN moderator team by adding two additional moderators. While our current moderators have done an excellent job maintaining a positive and well-managed environment across our social channels, we believe additional support could help ensure continued responsiveness and coverage as the community grows.
+
+Expanding the team would help us better cater to the needs of our global community, ensuring all members feel heard and supported. It also strengthens our ability to keep our channels safe, friendly, and informative. Your input will help us determine if this step aligns with community expectations and needs as we continue to build a strong and inclusive ecosystem.
+10 votes ·
+Results
+For
+14.3m
+100%
+Against
+0
+0%
+Quorum: 7.14%
+Timeline
+Created
+May 5, 2025 · 6:17 PM
+Start
+May 6, 2025 · 6:17 PM
+End
+May 8, 2025 · 6:17 PM
+
+Bring XCN Ambassador Program Under Poll Control
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #0f86e
+
+This poll is intended to gauge community support for bringing the XCN Ambassador Program under the control of the polling system. By doing so, we aim to further democratize the program and ensure that ambassadors are truly selected from, for, and by the community. This change would empower the community to use polls to nominate or remove ambassadors (within the established 10-member limit), suggest or remove tasks, and play a more direct role in shaping the program based on shared values and expectations.
+
+While the program would continue to be overseen and managed by the DAO and the DAO will retain discretionary authority in the event of bad actors, this transition would give the community significantly more influence over how the Ambassador Program operates. The goal is to create a more transparent, accountable, and community-driven initiative where representation aligns closely with the standards and voice of the XCN ecosystem.
+12 votes ·
+Results
+For
+217.9m
+99.32%
+Against
+1.5m
+0.68%
+Quorum: 109%
+Timeline
+Created
+May 5, 2025 · 6:22 PM
+Start
+May 6, 2025 · 6:22 PM
+End
+May 8, 2025 · 6:22 PM
+
+Tiered Staking Rewards for Staking
+Closed
+0x966c...4e6c
+In Onyx XCN DAO · 9mo ago · #3b3fe
+
+Introduce a simplified multiplier-based staking system.
+
+Example:
+Month 1 - Current staking APR + 2%
+Month 2 - Current staking APR + 4%
+Month 3 - Current staking APR + 6%
+And so on..
+Longer staking duration = higher APR.
+
+This strengthens user commitment, reduces sell pressure, and supports XCN tokenomics.
+
+Why Support This?
+• Easy to understand, easy to implement.
+• Encourages stronger hands.
+• Reduces token circulation.
+Discussion
+TikTok - Make Your Day
+TikTok - Make Your Day
+12 votes ·
+· (edited)
+Results
+Yes
+15m
+100%
+No
+0
+0%
+Quorum: 7.5%
+Timeline
+Created
+May 5, 2025 · 6:25 PM
+Start
+May 6, 2025 · 6:25 PM
+End
+May 8, 2025 · 6:25 PM
+
+Justin Sun to have a formal smart contract to ensure investor protection.
+Closed
+0x966c...4e6c
+In Onyx XCN DAO · 9mo ago · #837f5
+
+This proposal mandates the creation and deployment of an onchain smart contract to enforce the two-year lockup period for the 500 million XCN granted to Justin Sun and HTX in OIP-52. It also stipulates that these granted tokens will not be eligible for staking APR during the lockup period, as they were acquired via DAO allocation rather than market participation.
+
+Rationale
+
+OIP-52 allocated 500 million XCN to Justin Sun and HTX with the stated condition of a two-year lockup. As of now, no smart contract has been deployed to enforce this lockup, and there is no public guarantee that the tokens are non-transferable or non-stakable during the lockup period.
+
+In the absence of an enforced smart contract, the DAO cannot verify that these tokens are secure, inactive, or excluded from staking rewards — which would create an unfair dynamic compared to users who purchased and locked tokens at market price.
+
+This proposal reinforces the original agreement, preserves tokenomics fairness, and restores community trust by ensuring the lockup is technically enforced and economically neutral during its duration.
+
+Specification
+
+A smart contract will be deployed to hold the 500 million XCN with the following conditions:
+
+Tokens will be non-transferable and non-stakable for a period of 730 days from the date of lockup execution.
+
+Tokens may not accrue staking rewards (APR) during this time.
+
+Contract code will enforce a strict unlock date and publish this date via a public method such as unlockDate().
+
+After the 730-day lockup period, the recipient may withdraw the tokens and stake them if desired. Only then may APR begin accruing.
+
+Implementation
+
+The OnyxDAO core developers or an approved third party will:
+
+Deploy the contract within 14 days of proposal approval.
+
+Transfer the 500M XCN into the lockup contract in a publicly verifiable transaction.
+
+Verify and publish the contract source code and lockup parameters.
+
+Financial Impact
+
+No new tokens are created. This proposal enforces restrictions on an existing allocation and prevents inappropriate APR accrual on non-purchased tokens.
+
+Benefits
+
+Enforces the original lockup commitment made in OIP-52.
+
+Ensures fairness by excluding granted tokens from staking APR during the lockup.
+
+Enhances trust and transparency through onchain enforcement.
+
+Aligns DAO policy with best practices around large-scale token distributions.
+16 votes ·
+· (edited)
+Results
+Yes
+20.7m
+100%
+No
+0
+0%
+Quorum: 10.3%
+Timeline
+Created
+May 5, 2025 · 6:51 PM
+Start
+May 6, 2025 · 6:51 PM
+End
+May 8, 2025 · 6:51 PM
+
+Implement Poll Framework
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #a761b
+
+This poll is intended to gauge community support for implementing formal rules and regulations around the XCN polling system. As the use of polls continues to grow as a powerful tool for community-driven governance, it’s important that we introduce clear guidelines to maintain quality, integrity, and inclusivity across all proposals.
+
+Proposed regulations include: no spamming or flooding the system with unnecessary content; avoiding repetitive or duplicate proposals; and upholding basic standards of conduct—meaning no profanity, nudity, hate speech, racism, or other inappropriate material. These rules would help ensure the polling system remains a productive, respectful, and effective space for collective decision-making. Your input will help us shape a governance structure that protects the community while empowering it.
+11 votes ·
+Results
+For
+213.6m
+100%
+Against
+0
+0%
+Quorum: 106%
+Timeline
+Created
+May 5, 2025 · 7:10 PM
+Start
+May 6, 2025 · 7:10 PM
+End
+May 8, 2025 · 7:10 PM
+
+Create Ambassador Leader Role
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #3b08f
+
+This poll is intended to gauge community support for implementing a dedicated Ambassador Leader role within the XCN Ambassador Program. As the program continues to grow, having a clear point of leadership can help ensure better coordination, consistency, and accountability among ambassadors.
+
+The Ambassador Leader would work closely with both the DAO and the broader community to guide the program’s direction, support active ambassadors, and help onboard new members. This role would not replace community input or DAO oversight but would serve to enhance the structure and effectiveness of the program. Your vote will help determine if the community supports introducing this leadership position to strengthen the ambassador initiative.
+9 votes ·
+Results
+For
+12.9m
+100%
+Against
+0
+0%
+Quorum: 6.44%
+Timeline
+Created
+May 5, 2025 · 7:16 PM
+Start
+May 6, 2025 · 7:16 PM
+End
+May 8, 2025 · 7:16 PM
+
+
+Refresh Existing Smart Contract Audits
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #1e10e
+
+This poll is intended to gauge community interest in obtaining fresh audits of existing XCN smart contracts. While the contracts have already been audited by multiple reputable platforms, we recognize that some community members have expressed interest in renewing these audits for added assurance.
+
+Refreshing the audits would serve as a proactive step toward reinforcing transparency and maintaining community confidence in the integrity of the ecosystem. Your input will help determine whether there is strong support for moving forward with updated contract audits.
+11 votes ·
+Results
+For
+13.4m
+100%
+Against
+0
+0%
+Quorum: 6.72%
+Timeline
+Created
+May 5, 2025 · 7:25 PM
+Start
+May 6, 2025 · 7:25 PM
+End
+May 8, 2025 · 7:25 PM
+
+
+Add Polls to Onyx App Website
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #1587a
+
+This poll is intended to gauge community support for adding the new XCN Polls website to the sidebar of the official app.onyx.org platform. As polls have become a central tool for community governance and decision-making, improving visibility and accessibility is a natural next step.
+
+Including the polls site in the sidebar would allow users to easily access, participate in, and stay informed about active proposals directly from the main app interface. Your feedback will help determine whether the community supports integrating this feature into the app experience.
+13 votes ·
+Results
+For
+213.6m
+100%
+Against
+0
+0%
+Quorum: 106%
+Timeline
+Created
+May 5, 2025 · 7:35 PM
+Start
+May 6, 2025 · 7:35 PM
+End
+May 8, 2025 · 7:35 PM
+
+Community Requested AMAs
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #d4b4d
+
+This poll is intended to gauge community support for enabling community-requested Ask Me Anything (AMA) sessions through the XCN polling system. While AMAs are typically scheduled at the discretion of the DAO, this proposal would allow the community to formally request a live AMA session outside of the usual schedule when needed.
+
+If approved, any poll that reaches a quorum of 200 million votes would trigger an AMA to be held within 7 days of the poll’s conclusion. To maintain structure and prevent overuse, this would be limited to one community-requested AMA per calendar month.
+
+This mechanism would provide a transparent and timely way for the community to engage directly with the DAO when there is strong collective interest.
+16 votes ·
+Results
+For
+217.5m
+100%
+Against
+0
+0%
+Quorum: 108%
+Timeline
+Created
+May 5, 2025 · 7:43 PM
+Start
+May 6, 2025 · 7:43 PM
+End
+May 8, 2025 · 7:43 PM
+
+
+Create the XCN Marketing Team
+Closed
+0x966c...4e6c
+In Onyx XCN DAO · 9mo ago · #d4f06
+
+This proposal will create an official XCN Marketing Team to grow awareness for XCN and the Onyx ecosystem. The team will run marketing campaigns, manage social media, and bring more attention to the project — all funded and overseen by the DAO.
+
+⸻
+
+Why We Need This:
+• XCN has strong tech, but not enough people know about it.
+• We need a small team focused only on spreading the word.
+• Other projects are winning just because they market better.
+
+⸻
+
+What the Team Will Do:
+• Run social media campaigns
+• Partner with creators and influencers
+• Make content about XCN (memes, videos, posts)
+• Share updates and progress with the community
+
+⸻
+
+Team Setup:
+• 5 trusted community members, voted in by the DAO
+• Team rotates every 3 months (or gets re-elected)
+• Weekly updates + monthly reports required
+
+⸻
+
+Funding:
+• Start with 25,000,000 XCN
+• Team uses funds for marketing (not giveaways)
+• Public wallet everyone can track
+• Spending over 1M XCN needs DAO vote
+• DAO can replace team members if needed
+
+⸻
+
+Why Vote YES:
+• We finally get a real team focused on growth
+• It’s all transparent and DAO-controlled
+• This helps bring in new users and holders
+• No more silence — it’s time to push XCN forward
+14 votes ·
+Results
+For
+29.4m
+100%
+Against
+0
+0%
+Quorum: 14.6%
+Timeline
+Created
+May 6, 2025 · 7:29 PM
+Start
+May 7, 2025 · 7:29 PM
+End
+May 9, 2025 · 7:29 PM
+
+Improve XCN Bridge Support
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #f0549
+
+This poll is intended to gauge community support for allocating 200 million XCN to enhance cross-chain bridge infrastructure and increase liquidity on the base chain.
+
+If approved, the funds would be used to enhance bridge support and strengthen base chain liquidity.
+
+This initiative aims to make it easier and more secure for users to move assets across chains, while ensuring that the base chain remains a well-supported, liquid environment for XCN activity.
+8 votes ·
+Results
+For
+23.5m
+100%
+Against
+0
+0%
+Quorum: 11.7%
+Timeline
+Created
+May 7, 2025 · 5:27 PM
+Start
+May 8, 2025 · 5:27 PM
+End
+May 10, 2025 · 5:27 PM
+
+
+Add XCN Solana Support
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #cd50c
+
+This poll is intended to gauge community support for expanding the XCN ecosystem by enabling XCN support on the Solana blockchain. As one of the fastest-growing and highest-throughput Layer 1 networks, Solana offers a unique opportunity to increase adoption, accessibility, and use cases for XCN.
+
+If approved, this proposal would authorize any necessary technical work, bridging support, and any necessary funding to bring XCN to the Solana ecosystem.
+
+Adding Solana support aligns with the DAO’s broader goal of cross-chain interoperability and positions XCN for broader reach and use cases on the Solana ecosystem.
+12 votes ·
+Results
+For
+16.6m
+68.67%
+Against
+7.6m
+31.33%
+Quorum: 12%
+Timeline
+Created
+May 7, 2025 · 5:31 PM
+Start
+May 8, 2025 · 5:31 PM
+End
+May 10, 2025 · 5:31 PM
+
+
+Continue XCN Ambassador Program
+Closed
+0xec39...9708 admin
+In Onyx XCN DAO · 9mo ago · #dac5f
+
+This proposal seeks community approval to continue the XCN Ambassador Program for the remainder of 2025, including funding support for the ten active ambassadors. The program has played a key role in expanding global awareness, community engagement, and ecosystem education for XCN.
+
+If approved, the program would continue through December 2025 with a monthly allocation of $3,000 in total Ambassador allocations.
+
+This proposal requests funding equal to the required amount to the end of 2025 minus any currently available, unused ambassador program funds held by the DAO. Total requested funds after subtracting remaining, existing Ambassador funds will be published in the OIP if successful.
+
+Renewing the program ensures continued community growth, localized support, and brand presence in key regions, aligned with the DAO’s broader mission.
+8 votes ·
+Results
+For
+22.4m
+100%
+Against
+0
+0%
+Quorum: 11.2%
+Timeline
+Created
+May 7, 2025 · 5:38 PM
+Start
+May 8, 2025 · 5:38 PM
+End
+May 10, 2025 · 5:38 PM
+
+Enable Voter Incentives via Snapshot + Zealy Governance Quests
+Closed
+0x966c...4e6c
+In Onyx XCN DAO · 9mo ago · #95b96
+
+To increase participation in Onyx DAO governance, this proposal introduces a system that rewards Snapshot voters through two participation paths:
+1. Zealy Quests – For users who want to earn XP by completing governance-related tasks
+2. Direct Snapshot Tracking – For users who vote but do not use Zealy
+
+Either path will be eligible for the same core incentives such as:
+• Onyx Points bonus in Season 2
+• Early access to dApps and governance tools
+• And more
+
+Implementation Plan:
+• Launch Zealy governance quests
+• Begin tracking voter participation via Snapshot
+• Distribute perks at the end of each season (e.g., pre-mainnet phase, Season 2)
+
+Goal of This Proposal:
+
+To increase meaningful participation in Onyx DAO governance by rewarding active voters and to build long-term DAO engagement ahead of mainnet.
+5 votes ·
+Results
+For
+19m
+100%
+Against
+0
+0%
+Quorum: 9.52%
+Timeline
+Created
+May 17, 2025 · 9:06 AM
+Start
+May 18, 2025 · 9:06 AM
+End
+May 20, 2025 · 9:06 AM
+
+
+
+Reinstate Wes as Onyx Ambassador
+Closed
+0x966c...4e6c
+In Onyx XCN DAO · 9mo ago · #87b48
+
+Wes has been a dedicated and positive force within the Onyx community, especially active in Telegram and YouTube, consistently sharing valuable updates and insights. As a beloved OG member, many in the community have expressed interest in seeing him return as an official ambassador.
+
+Rationale:
+Wes helped educate and grow the community during key moments. His presence has been missed, and if he’s willing, we believe his reinstatement would strengthen the ambassador program.
+3 votes ·
+Results
+For
+11.7m
+100%
+Against
+0
+0%
+Quorum: 5.83%
+Timeline
+Created
+May 21, 2025 · 10:21 AM
+Start
+May 22, 2025 · 10:21 AM
+End
+May 24, 2025 · 10:21 AM
+
+
+Reinstate Chain as Lead Developer for the DAO
+Passed
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #734ac
+
+This proposal seeks community approval to reinstate Chain as the lead developer for the DAO, effective immediately. Chain’s role will encompass development leadership, ISO compliance oversight, AMA engagement, and strategic coordination across all major DAO initiatives.
+
+⸻
+
+Background on Chain
+
+Chain is a blockchain-based technology company founded in 2014 with a mission to enable a smarter and more connected economy. The company specializes in building cryptographic ledgers and cloud infrastructure that power transformative financial products and Web3 services.
+
+Over the years, Chain has raised more than $40 million in funding from top-tier institutions such as Khosla Ventures, Pantera Capital, Capital One, Citigroup, Nasdaq, Fiserv, Orange, and Visa. Initially acquired by Stellar in 2018 to form Interstellar, Chain was re-acquired in 2020 to continue its independent mission of reshaping global financial infrastructure using blockchain technology.
+
+Chain’s products and solutions have been trusted by companies across multiple industries—including payments, sports, retail, and banking—with work done with major brands and institutions such as Tiffany & Co., Citi, MUFG, State Street, and the Miami Heat.
+
+⸻
+
+Scope of Responsibilities
+
+If approved, Chain will resume a leadership position in guiding the DAO’s technical and strategic development. This includes:
+
+• Development Oversight: Chain will lead the design, execution, and maintenance of DAO infrastructure, ensuring secure, scalable, and forward-compatible architecture.
+
+• Goliath Development: Following the release of the white paper, Chain will assist in architecting and building the Goliath platform to align with DAO objectives and long-term sustainability.
+
+• ISO Compliance & Governance: Chain will ensure all development work aligns with international standards for data security, financial compliance, and operational reliability.
+
+• AMA and Community Engagement: Chain will co-host regular Ask-Me-Anything (AMA) sessions with DAO contributors to foster transparency and encourage inclusive dialogue.
+
+• Cross-functional Support: Chain will also contribute to marketing strategy, ecosystem coordination, partner onboarding, and technical documentation.
+
+⸻
+
+Financial Structure
+
+To support this role, this proposal includes a financial package with both performance-based and governance-based components:
+
+• One-Time Staking Allocation: A one-time allocation of 200 million XCN will be transferred to Chain, to be staked for governance participation. This ensures aligned incentives and long-term commitment to the DAO’s mission and decision-making framework.
+
+Incentive Model:
+
+Chain’s compensation will be derived from:
+• Staking rewards/fees earned from the 200M XCN stake.
+
+• Quarterly performance-based payouts, subject to the DAO’s token performance benchmarks and subject to DAO approval each quarter.
+
+This model ensures cost-efficiency for the DAO while incentivizing Chain based on long-term ecosystem growth and token health.
+
+⸻
+
+Why This Matters
+
+Bringing Chain back as lead developer reinforces the DAO’s commitment to professional-grade execution, compliance readiness, and credible technical governance. The benefits include:
+
+• Continuity of development leadership during a critical phase of expansion.
+
+• Increased accountability and alignment through on-chain governance participation.
+
+• Community engagement and transparency via structured AMAs and open technical planning.
+
+• Accelerated delivery of high-impact projects like Goliath.
+
+• Adherence to international standards such as ISO frameworks for regulatory and institutional readiness.
+
+⸻
+
+Conclusion
+
+This proposal offers a strategic opportunity to re-engage Chain’s industry-leading expertise within a governance-aligned, performance-based compensation model. By doing so, the DAO secures the development continuity, institutional credibility, and community trust required to scale responsibly in 2025 and beyond.
+
+We invite the community to support this proposal and ensure a capable, compliant, and connected future for the DAO ecosystem.
+20 votes ·
+Results
+For
+299.7m
+100%
+Against
+0
+0%
+Quorum: 149%
+Timeline
+Created
+Jun 10, 2025 · 6:15 PM
+Start
+Jun 11, 2025 · 6:15 PM
+End
+Jun 13, 2025 · 6:15 PM
+
+
+Create Dedicated Poll Management Role
+Rejected
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #74844
+
+This proposal seeks community approval to establish a Poll Manager role dedicated to improving the effectiveness and visibility of DAO polls. The responsibilities of this role would include:
+
+• Creating and managing all official DAO polls
+• Promoting polls across social media to increase awareness and participation
+• Collecting community feedback on proposed polls
+• Determining whether a poll should escalate to a full DAO vote based on engagement and relevance
+
+The aim is to ensure higher quality, better-informed polls that reflect the priorities and interests of the community while increasing transparency and voter turnout.
+
+If approved, this role would be active through December 2025 with an additional poll to renew the role. A separate funding proposal would follow, outlining compensation based on scope and available resources.
+
+Creating this role aligns with the DAO’s mission of fostering decentralized decision-making, stronger community input, and operational clarity.
+8 votes ·
+Results
+For
+54.3m
+97.58%
+Against
+1.3m
+2.42%
+Quorum: 27.8%
+Timeline
+Created
+Jun 13, 2025 · 8:47 PM
+Start
+Jun 14, 2025 · 8:47 PM
+End
+Jun 16, 2025 · 8:47 PM
+
+Create Community Forum Manager Role
+Rejected
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #7241c
+
+This proposal seeks community approval to create a Community Forum Manager role responsible for the moderation, organization, and strategic development of the DAO’s official forum at community.onyx.org.
+
+Core responsibilities would include:
+• Moderating discussions to ensure respectful, constructive participation
+• Organizing topics and posts to improve usability and discoverability
+• Onboarding new members and encouraging forum engagement
+• Ensuring alignment of forum activity with DAO priorities
+• Acting as a bridge between forum discussions and DAO governance processes
+
+The goal of this role is to strengthen the community hub at community.onyx.org, promote thoughtful dialogue, and ensure that the forum remains a trusted, well-maintained space for community coordination.
+
+If approved, the role would run through December 2025, with the option to extend via an additional poll. Compensation and scope to be detailed in a follow-up funding proposal if successful.
+10 votes ·
+Results
+For
+54.9m
+97.61%
+Against
+1.3m
+2.39%
+Quorum: 28.1%
+Timeline
+Created
+Jun 13, 2025 · 8:50 PM
+Start
+Jun 14, 2025 · 8:50 PM
+End
+Jun 16, 2025 · 8:50 PM
+
+
+Diversify DAO Treasury
+Rejected
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #6bf86
+
+This proposal seeks community approval to diversify the DAO’s treasury by allocating a portion of its holdings into a basket of multiple cryptocurrencies.
+
+If this proposal passes, follow-up polls will be conducted to determine which specific assets to include, along with allocation percentages and operational details (e.g. custody, conversion timing, and risk management strategies).
+19 votes ·
+Results
+For
+54.9m
+80.82%
+Against
+13m
+19.18%
+Quorum: 33.9%
+Timeline
+Created
+Jun 13, 2025 · 8:52 PM
+Start
+Jun 14, 2025 · 8:52 PM
+End
+Jun 16, 2025 · 8:52 PM
+
+
+
+Create Partnerships Role and Process
+Rejected
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #d6c32
+
+This proposal seeks community approval to establish a Partnerships Manager role focused on improving transparency, coordination, and community input around potential ecosystem partnerships.
+
+Key responsibilities of this role would include:
+
+• Sourcing and reviewing potential partnership opportunities
+• Launching exploratory polls to gauge community interest in specific partnerships
+• Ensuring all partnership discussions are openly shared with the community to promote transparency and dialogue
+
+The goal of this role is to create a more participatory and transparent partnership process, allowing the community to help shape the DAO’s strategic collaborations while supporting the BD and community teams with structured input.
+
+If approved, the Partnerships Manager would serve through December 2025 with the ability to renew with an additional poll. Funding details would follow in a separate proposal if successful.
+21 votes ·
+Results
+For
+81.7m
+99.38%
+Against
+509.5k
+0.62%
+Quorum: 41%
+Timeline
+Created
+Jun 13, 2025 · 8:56 PM
+Start
+Jun 14, 2025 · 8:56 PM
+End
+Jun 16, 2025 · 8:56 PM
+
+
+Increase Funding for Public Zealy Program
+Rejected
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #5b067
+
+This proposal seeks community approval to increase the monthly allocation for the public Zealy campaign from $1,000 to $2,000, in recognition of the program’s strong performance, growing participation, and positive impact on community engagement.
+
+The Zealy program has consistently driven:
+
+• Increased social visibility and brand awareness
+• Meaningful community contributions across key channels
+• Onboarding of new, active members into the ecosystem
+
+Doubling the budget would allow for more competitive rewards, incentivize higher-quality participation, and sustain momentum around DAO-driven campaigns.
+
+If approved, the updated $2,000/month budget would be submitted to an official OIP for approval.
+16 votes ·
+Results
+For
+60.6m
+97.34%
+Against
+1.7m
+2.66%
+Abstain
+0
+0%
+Quorum: 31.1%
+Timeline
+Created
+Jun 13, 2025 · 8:58 PM
+Start
+Jun 14, 2025 · 8:58 PM
+End
+Jun 16, 2025 · 8:58 PM
+
+Bridge XCN to Additional Chains
+Rejected
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #84fe4
+
+This proposal seeks community approval for the DAO to investigate additional blockchain networks that the DAO and broader community may benefit from bridging to.
+
+This effort follows the successful expansion to Binance Smart Chain (BSC), Base, and others, which have demonstrated strong engagement and ecosystem growth.
+
+If approved, the DAO will begin exploring opportunities on other chains by:
+
+• Researching networks with strong developer communities, liquidity, and alignment with DAO goals
+• Gathering community feedback on preferred chains to bridge to
+• Evaluating technical, strategic, and economic factors for each option
+
+Subsequent polls will be launched for any recommended or community-requested chains before any bridging actions are taken.
+
+The goal is to ensure that expansion efforts are community-driven, strategically sound, and aligned with ecosystem growth.
+23 votes ·
+Results
+For
+107.1m
+99.82%
+Against
+195.3k
+0.18%
+Quorum: 53.6%
+Timeline
+Created
+Jun 13, 2025 · 9:01 PM
+Start
+Jun 14, 2025 · 9:01 PM
+End
+Jun 16, 2025 · 9:01 PM
+
+Incentivize Poll Participation With Zealy
+Rejected
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #323a4
+
+This proposal seeks community approval to reward Zealy XP for participating in DAO polls, with the goal of increasing voter turnout, raising awareness of governance activity, and strengthening community alignment.
+
+Polls require no gas fees, making them easily accessible, and participation data shows that many active Zealy users also hold XCN, with Zealy winners being rewarded in XCN, indicating strong overlap.
+
+If approved, the DAO will add a new Zealy quest that rewards XP for verifiable poll participation. This initiative aims to:
+
+• Encourage consistent voting and engagement
+• Make governance more inclusive and rewarding
+• Strengthen the feedback loop between Zealy users and the DAO
+16 votes ·
+Results
+For
+60.3m
+97.32%
+Against
+1.7m
+2.68%
+Quorum: 30.9%
+Timeline
+Created
+Jun 13, 2025 · 9:05 PM
+Start
+Jun 14, 2025 · 9:05 PM
+End
+Jun 16, 2025 · 9:05 PM
+
+
+Provide $1M Liquidity for XCN/USDT and XCN/BNB Pairs on PancakeSwap
+Passed
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #df081
+
+This proposal seeks community approval for the DAO to provide liquidity on PancakeSwap (https://pancakeswap.finance) for two key trading pairs: XCN/USDT and XCN/BNB. The total liquidity to be deployed will be $2 million, consisting of:
+
+• $500,000 in XCN and $500,000 in USDT for the XCN/USDT pair
+• $500,000 in XCN and $500,000 in BNB for the XCN/BNB pair
+
+This initiative aims to support the Binance Smart Chain (BSC) ecosystem and improve the trading experience for XCN token holders by deepening liquidity and reducing slippage.
+
+If approved, the DAO will allocate the proposed liquidity positions for PancakeSwap. The objectives of this initiative are to:
+
+• Enhance the accessibility and usability of XCN within the BSC DeFi ecosystem
+• Facilitate smoother and more efficient trading of XCN for both USDT and BNB
+• Strengthen the token’s presence and adoption on one of the leading decentralized exchanges on BSC
+• Support broader community participation by ensuring liquidity is available on-chain, 24/7
+
+By deploying this liquidity, this proposal reinforces the DAO’s commitment to decentralization, usability, and strategic growth within the broader DeFi landscape. It aligns with long-term goals of improving market efficiency, supporting token velocity, and integrating XCN into top-tier DeFi platforms.
+
+We invite the community to vote in support of this initiative as a proactive step toward growing the XCN ecosystem.
+30 votes ·
+Results
+For
+325.4m
+100%
+Against
+0
+0%
+Quorum: 162%
+Timeline
+Created
+Jun 16, 2025 · 1:47 PM
+Start
+Jun 17, 2025 · 1:47 PM
+End
+Jun 19, 2025 · 1:47 PM
+
+
+Adjust XCN Emissions Rate
+Passed
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #ed1a8
+
+This proposal seeks community approval to lower staking rates by adjusting daily emissions to 2.5M XCN, with the goal of eliminating farming arbitrage via futures markets and promoting a healthier, more sustainable long-term ecosystem.
+
+Current staking dynamics create opportunities for short-term arbitrage that distort the market and undermine the value of long-term participation. By reducing emissions to 2.5M per day, we aim to discourage exploitative strategies while preparing for the rollout of more robust locked staking mechanisms.
+
+If approved, the DAO will implement the new emission rate as an interim measure to:
+
+• Disincentivize yield farming arbitrage with derivatives
+• Promote organic staking aligned with long-term growth
+• Support market sustainability until locked staking is in place
+
+This change is intended to align incentives with the project’s long-term vision and ensure fairer distribution of rewards among committed participants.
+14 votes ·
+Results
+For
+210.4m
+82.15%
+Against
+45.7m
+17.85%
+Quorum: 128%
+Timeline
+Created
+Jun 19, 2025 · 5:16 PM
+Start
+Jun 20, 2025 · 5:16 PM
+End
+Jun 22, 2025 · 5:16 PM
+
+
+
+
+Onyx Gas Free Polling Direct Integration
+Passed
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #1c79e
+
+This proposal seeks community approval to integrate gas-free polling directly into the Onyx Dapp, with the goal of enhancing governance accessibility, improving participation security, and strengthening DAO engagement at the protocol level.
+
+While current off-platform polling tools are useful, they introduce friction and trust assumptions that may deter participation. Integrating gas-free voting natively into the Onyx Dapp would allow users to securely participate in governance without leaving the app or incurring additional costs.
+
+If approved, the DAO will begin development of in-Dapp polling functionality to:
+
+• Make governance voting seamless and trustless
+• Increase voter turnout by reducing barriers
+• Provide a more secure and transparent participation experience
+
+This upgrade is part of the broader vision to decentralize governance while maintaining the integrity and usability of the Onyx ecosystem.
+15 votes ·
+Results
+For
+256.1m
+100%
+Against
+0
+0%
+Quorum: 128%
+Timeline
+Created
+Jun 19, 2025 · 9:11 PM
+Start
+Jun 20, 2025 · 9:11 PM
+End
+Jun 22, 2025 · 9:11 PM
+
+Extend Gas Refund Program for Onyx Governance
+Passed
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #4456a
+
+This proposal seeks community approval to extend the Gas Refund Program within the Onyx ecosystem, with the goal of enhancing governance accessibility, reducing participation costs, and increasing engagement across staking and voting activities.
+
+While current gas costs are a known barrier to participation, this program aims to eliminate that friction by reimbursing users for key interactions, making governance more inclusive and cost-effective.
+
+If approved, the DAO will allocate $50,000 USD to fund monthly gas reimbursements for:
+
+• Staking
+• Voting
+
+Unstaking and reward claim interactions will not be reimbursed.
+
+This initiative supports the broader mission to decentralize governance and improve the usability and fairness of the Onyx protocol.
+
+Gas refunds would occur on the first full weekend of each month.
+17 votes ·
+Results
+For
+257m
+100%
+Against
+0
+0%
+Quorum: 128%
+Timeline
+Created
+Jun 19, 2025 · 10:14 PM
+Start
+Jun 20, 2025 · 10:14 PM
+End
+Jun 22, 2025 · 10:14 PM
+
+Implement Goliath White Paper
+Passed
+0xec39...9708 admin
+In Onyx XCN DAO · 8mo ago · #7dda4
+
+This proposal seeks community approval through a governance poll to implement the Goliath White Paper within the Onyx ecosystem, with the goal of advancing protocol scalability, enhancing economic alignment, and strengthening long-term sustainability.
+
+The Goliath White Paper, now officially published at https://onyx.org/Goliath.pdf, outlines a comprehensive framework for the next phase of Onyx’s evolution.
+
+This initiative reflects the Onyx community’s commitment to progressive decentralization and to building a more resilient and adaptive protocol infrastructure.
+
+A successful vote will authorize core contributors and relevant working groups to begin implementation as detailed in the white paper.
+28 votes ·
+Results
+For
+324.4m
+100%
+Against
+0
+0%
+Quorum: 162%
+Timeline
+Created
+Jun 27, 2025 · 5:52 PM
+Start
+Jun 28, 2025 · 5:52 PM
+End
+Jun 30, 2025 · 5:52 PM
+
+
+
+Onyx Gas-free Wallet Provider
+Rejected
+0xec39...9708 admin
+In Onyx XCN DAO · 7mo ago · #6c665
+
+This proposal seeks community approval for Chain to host the infrastructure supporting the upcoming Onyx Gas-Free Smart Wallet.
+
+The Onyx Gas-Free Wallet is a key milestone in improving user experience and enabling gasless interactions that lower the barrier to entry for new users.
+
+To support its deployment, this proposal recommends Chain as the infrastructure host, providing the operational backend and expertise required to run and deploy the wallet efficiently and reliably.
+
+This setup aligns with Onyx’s development objectives around scalability, accessibility, and performance.
+
+A successful vote will authorize core contributors and infrastructure teams to move forward with deployment preparations using Chain as the apps provider.
+21 votes ·
+Results
+For
+94.3m
+100%
+Against
+0
+0%
+Quorum: 47.1%
+Timeline
+Created
+Jul 1, 2025 · 9:01 PM
+Start
+Jul 2, 2025 · 9:01 PM
+End
+Jul 4, 2025 · 9:01 PM
+
+
+
+Activate Onyx Points for XCN Stakers on Ethereum & Deploy Onyx Gas-Free Wallet
+Passed
+0xec39...9708 admin
+In Onyx XCN DAO · 7mo ago · #51b95
+
+This proposal seeks community approval to activate the Onyx Points system for XCN stakers on Ethereum. The Points system is designed to reward users for onchain engagement, with a transparent, gamified experience directly integrated into the Onyx dApp. Points will be tracked in real time, unlocking achievements, access tiers, and more to increase participation and long-term alignment with the protocol’s growth. This points system will enable XCN stakers to participate.
+
+In parallel, this proposal also approves Chain as the project manager for the upcoming Onyx Gas-Free Smart Wallet. This wallet is ready for deployment with thirdweb integrations, passkey and phone number login, Google and Apple authentication, as well as NFT and token support on the Onyx Ledger, all gas-free.
+
+Chain will manage setup, deployment, security, infrastructure maintenance, and ongoing updates to ensure reliability and scalability.
+
+While the previous poll to make Chain the infrastructure provider for the upcoming gas-free wallet was limited in scope, this poll if successful gives Chain full oversight of the upcoming gas-free wallet in parallel with the DAO, taking responsibility for infrastructure, deployment, management and ongoing updates.
+25 votes ·
+Results
+For
+320.4m
+100%
+Against
+0
+0%
+Quorum: 160%
+Timeline
+Created
+Jul 6, 2025 · 12:47 PM
+Start
+Jul 7, 2025 · 12:47 PM
+End
+Jul 9, 2025 · 12:47 PM
+
+
+
+Add AstroDaze as 10th XCN Ambassador
+Passed
+0xec39...9708 admin
+In Onyx XCN DAO · 7mo ago · #67a35
+
+This poll is intended to gauge community support for welcoming AstroDaze as a new ambassador within the XCN Ambassador Program. As the program continues to grow, bringing in active and engaged members like AstroDaze can help strengthen the community, broaden outreach, and energize ongoing initiatives.
+
+AstroDaze has shown strong alignment with the values of the program and a consistent presence in the community. By becoming an ambassador, AstroDaze would contribute to promoting the mission of the DAO, supporting fellow members, and helping onboard new participants. Your vote will help determine if the community supports bringing AstroDaze into this important role to further the impact of the ambassador initiative.
+
+You can view their profile at https://t.me/Dave2Diamond
+13 votes ·
+Results
+For
+237m
+99.81%
+Against
+461k
+0.19%
+Quorum: 118%
+Timeline
+Created
+Jul 25, 2025 · 9:11 AM
+Start
+Jul 26, 2025 · 9:11 AM
+End
+Jul 28, 2025 · 9:11 AM
+
+
+Create Decentralized DAO Registry
+Passed
+0xE4eD...00EE
+In Onyx XCN DAO · 6mo ago · #3f2ca
+
+This proposal seeks community approval to create a decentralized registry of service providers supporting the Onyx protocol, maintained transparently on Ethereum and governed exclusively by XCN token holders.
+
+Overview:
+
+Onyx relies on multiple service providers to deliver critical infrastructure such as:
+
+• Node infrastructure and RPC endpoints
+
+• API hosting and indexing services
+
+• Web hosting and domain operations
+
+• Analytics, monitoring, and other off-chain services
+
+Currently, visibility into these providers is limited. This proposal aims to codify provider relationships in a transparent and modifiable Ethereum smart contract, controlled by governance.
+
+What This Proposal Enables:
+
+• Creation of a Smart Contract-Based Registry:
+
+An Ethereum contract that lists all third-party or community service providers supporting the Onyx ecosystem.
+
+• DAO Governance Control:
+
+DAO members will vote to add, remove, or update providers and their metadata (e.g., service type, contact, wallet address, scope of work).
+
+• Transparency & Accountability:
+
+Anyone can view the contract to see which entities are currently servicing critical components of Onyx, and under what terms.
+
+Delegation:
+
+This registry could later be used to direct payments, assign reputation, or determine delegation rights for infrastructure responsibilities.
+
+Implementation Details:
+
+• The smart contract will be deployed on Ethereum.
+
+• A simple governance module (e.g., controlled by the DAO or a multisig governed by the DAO) will manage updates.
+
+• Only providers approved via DAO vote will appear in the registry.
+
+Benefits:
+
+• Strengthens transparency and trust in the Onyx infrastructure layer
+
+• Empowers the community to make decisions about critical services
+
+• Provides an auditable, on-chain source of truth for who is powering the ecosystem
+24 votes ·
+Results
+For
+187.6m
+100%
+Against
+0
+0%
+Quorum: 187%
+Timeline
+Created
+Aug 8, 2025 · 12:32 PM
+Start
+Aug 8, 2025 · 12:33 PM
+End
+Aug 10, 2025 · 12:33 PM
+
+
+Expand Chains Supporting XCN Gas-Free & Governance
+Passed
+0xE4eD...00EE
+In Onyx XCN DAO · 6mo ago · #beb4a
+
+This proposal seeks community approval to evolve the existing Gas Refund Program to better align with Onyx’s long-term vision for Layer 3 adoption, cross-chain utility, and incentivized governance.
+
+Key Changes Proposed:
+
+• Exclusivity: Only users interacting through the Onyx Layer 3 wallet will be eligible.
+
+• Expanded Scope: Users will benefit from gas-free transactions for XCN activity on Base, BNB Chain, and Ethereum.
+
+• Governance Incentives: Gas reimbursements related to Governance will apply only when users vote on proposals on Ethereum using the Onyx Layer 3 wallet.
+
+Goals:
+
+• Increase adoption of the Onyx Layer 3 wallet
+
+• Promote governance engagement
+
+• Eliminate gas cost barriers for active XCN participants
+
+• Strengthen the fairness and accessibility of the Onyx governance process
+24 votes ·
+Results
+For
+188.1m
+100%
+Against
+0
+0%
+Quorum: 188%
+Timeline
+Created
+Aug 8, 2025 · 12:35 PM
+Start
+Aug 8, 2025 · 12:36 PM
+End
+Aug 10, 2025 · 12:36 PM
+
+
+Conclude Onyx Points Season 1
+Passed
+0xE4eD...00EE
+In Onyx XCN DAO · 6mo ago · #f030c
+
+Season 1 of the Onyx Points program introduced a new way for users to engage with the Onyx ecosystem through onchain activity, gamified incentives, and real-time progress tracking.
+
+This proposal seeks community approval to:
+
+Formally conclude Season 1 of the Onyx Points program.
+
+Review and analyze Season 1 participation and outcomes to inform improvements.
+
+Approve the development of Season 2, which will include expanded activities, new reward tiers, and continued real-time tracking through the Points Dashboard.
+
+Continue integrating the Points system into the Onyx dApp, enhancing transparency, engagement, and long-term alignment with the protocol.
+
+Vote Options:
+
+• For — Conclude Season 1 and begin preparation for Season 2 with an expanded and improved Points system.
+
+• Against — Do not conclude Season 1 or proceed with Season 2 planning at this time.
+21 votes ·
+Results
+For
+181.3m
+100%
+Against
+0
+0%
+Quorum: 181%
+Timeline
+Created
+Aug 8, 2025 · 12:36 PM
+Start
+Aug 8, 2025 · 12:37 PM
+End
+Aug 10, 2025 · 12:37 PM
+
+
+Reverse the previous emissions rate change implemented in OIP59
+Rejected
+0x96C3...82ED
+In Onyx XCN DAO · 6mo ago · #68879
+
+OIP reduced the emissions rate for staking with the intention of mitigating price pressures due to arbitrage between XCN futures and XCN staking rewards.
+
+As of August 13, there is no evidence that price pressures have been alleviated.
+
+In addition, the prior poll on this subject had a majority of votes (7 of 13) and voting power AGAINST the change, when excluding the DAO wallet.
+
+A Vote FOR is to restore the emission rate on staking to what it was prior to OIP59
+
+A Vote AGAINST is to leave the current emission rate as it is.
+7 votes ·
+Results
+Against
+100.6m
+84.81%
+For
+18m
+15.19%
+Abstain
+0
+0%
+Quorum: 118%
+Timeline
+Created
+Aug 13, 2025 · 12:05 PM
+Start
+Aug 13, 2025 · 12:06 PM
+End
+Aug 15, 2025 · 12:06 PM
+
+
+Select Infrastructure Partner for Onyx Ledger
+Passed
+0xD4aa...7223
+In Onyx XCN DAO · 6mo ago · #6539f
+
+This poll is intended to finalize the community’s decision to select Conduit as our official Rollup Sequencer partner. As the Onyx ecosystem continues to expand, the importance of securing a sequencer that is not only reliable and secure, but also technically world-class, cannot be overstated.
+
+Conduit brings deep, proven expertise in rollups and blockchain infrastructure, standing out as a trusted leader in this critical space. By partnering with Conduit, we position our network to benefit from their operational excellence, strong developer support, and enduring alignment with the long-term values of our community. Their track record reflects a commitment not only to performance, but also to resilience and innovation—qualities that will serve Onyx well as we grow.
+
+Formally designating Conduit as our Rollup Sequencer partner marks a decisive step forward. It promises greater throughput, improved reliability, and a stronger foundation upon which future growth can flourish. Most importantly, it empowers the Onyx community to move ahead with confidence, knowing our sequencing layer is backed by a partner who shares our vision and can deliver on it at scale.
+
+Your vote in this poll is more than a confirmation, it is an investment in the future of Onyx. By ratifying Conduit’s role, you help ensure that our network continues to evolve with strength, security, and the collective determination of our community.
+
+Vote Options:
+
+• For — Confirm Conduit as the official Rollup Sequencer partner.
+
+• Against — Do not confirm Conduit as the Rollup Sequencer partner at this time.
+15 votes ·
+Results
+For
+146.9m
+100%
+Against
+0
+0%
+Quorum: 146%
+Timeline
+Created
+Aug 19, 2025 · 12:11 PM
+Start
+Aug 19, 2025 · 12:12 PM
+End
+Aug 21, 2025 · 12:12 PM
+
+
+Set up MultiSig DAO
+Passed
+0xD4aa...7223
+In Onyx XCN DAO · 6mo ago · #89de4
+
+This poll represents a pivotal moment for the Onyx community as we take the next step toward strengthening our decentralized governance framework. By establishing a 3-of-5 MultiSig DAO-sponsored wallet, we anchor our collective decision-making power in a structure that is both transparent and resilient.
+
+The creation of this wallet will not only safeguard community assets but also symbolize the trust and collaboration that lie at the heart of the Onyx ecosystem. Through this initiative, we will allocate 100M XCN to be staked and governed directly by the DAO-sponsored wallet. This ensures that the community itself maintains oversight and authority over a significant portion of resources, further decentralizing control while aligning incentives for long-term growth.
+
+A MultiSig arrangement with 3-of-5 signers balances security with efficiency: no single individual can act alone, but the DAO retains the ability to move decisively when opportunities or challenges arise. This design strengthens accountability while reflecting the cooperative values of our network.
+
+By approving this proposal, the community empowers itself with greater autonomy, a fortified treasury, and a governance structure built to endure. It represents a clear step toward self-determination, giving Onyx the tools to flourish with confidence in the years to come.
+
+Your vote here is not just procedural—it is a declaration of commitment to decentralized stewardship. Together, we affirm that Onyx’s future will be guided by the community, safeguarded by the community, and grown by the community.
+
+Vote Options:
+
+• For — Establish the 3/5 MultiSig DAO-sponsored wallet and stake 100M XCN under its governance.
+
+• Against — Do not establish the DAO-sponsored MultiSig wallet or stake 100M XCN at this time.
+17 votes ·
+Results
+For
+163.4m
+100%
+Against
+0
+0%
+Quorum: 163%
+Timeline
+Created
+Aug 19, 2025 · 12:17 PM
+Start
+Aug 19, 2025 · 12:18 PM
+End
+Aug 21, 2025 · 12:18 PM
+
+
+
+Select AI Provider for Onyx AI agent
+Passed
+0xD4aa...7223
+In Onyx XCN DAO · 6mo ago · #2b5dd
+
+This poll seeks to finalize the community’s decision to designate OpenAI as the official AI provider for the Onyx AI Agent, a defining step in the evolution of our network.
+
+By entrusting its foundation to OpenAI, the Onyx AI Agent gains access to world-class models, reliable infrastructure, and a culture of continuous innovation. OpenAI’s unparalleled expertise ensures the Agent will not only perform at scale, but also adapt and grow alongside the ambitions of our community. With this partnership, the Agent can become smarter, faster, and more capable of serving as the connective tissue of the Onyx ecosystem.
+
+Confirming OpenAI as the AI provider is not simply a technical choice; it is a declaration of confidence in the Onyx AI Agent as a pillar of our future. It ensures the Agent can rise to meet the challenges ahead, delivering on the promise of a network empowered by intelligence, adaptability, and shared vision.
+
+Your vote is an investment in the growth of the Onyx AI Agent, and by extension, in the prosperity of the entire Onyx community.
+
+Vote Options:
+
+• For — Confirm OpenAI as the official AI provider for the Onyx AI Agent.
+
+• Against — Do not confirm OpenAI as the AI provider at this time.
+18 votes ·
+Results
+For
+175.3m
+93.72%
+Against
+11.8m
+6.28%
+Quorum: 187%
+Timeline
+Created
+Aug 19, 2025 · 12:22 PM
+Start
+Aug 19, 2025 · 12:23 PM
+End
+Aug 21, 2025 · 12:23 PM
+
+
+Set up MultiSig Guardian
+Passed
+0xD4aa...7223
+In Onyx XCN DAO · 6mo ago · #0c303
+
+This poll seeks to establish a 3-of-5 MultiSig Guardian for the Onyx protocol—a safeguard designed to protect our community from malicious governance proposals and potential Sybil attacks. As our ecosystem grows in size and significance, strengthening the resilience of our governance structures becomes not just prudent, but essential.
+
+The Guardian will serve as a protective layer for the protocol, empowered to intervene only in the rare cases where proposals pose a clear threat to the security, integrity, or continuity of Onyx. By requiring the consensus of 3 out of 5 trusted signers, this design ensures that no single actor holds unilateral power, while still enabling rapid, collective action when our protocol is at risk.
+
+Introducing a MultiSig Guardian provides the assurance that our shared governance process cannot be easily compromised by hostile actors or manipulated through Sybil-based exploits. It balances freedom with defense, ensuring the community’s vision can continue to flourish without disruption.
+
+By voting to implement this safeguard, the Onyx community takes a proactive step toward protecting the long-term sustainability of our network. It reflects our collective responsibility to secure what we are building, so that innovation can thrive in a trusted and resilient environment.
+
+Your vote is more than just support for a mechanism, it is a declaration that the Onyx protocol deserves both openness and protection. With a MultiSig Guardian in place, we can move forward with confidence, knowing that our governance process is shielded from bad actors while remaining firmly in the hands of the community.
+
+Vote Options:
+
+• For — Establish a 3/5 MultiSig Guardian to protect the protocol from malicious proposals and Sybil attacks.
+
+• Against — Do not establish a MultiSig Guardian at this time.
+19 votes ·
+Results
+For
+187.7m
+100%
+Against
+0
+0%
+Quorum: 187%
+Timeline
+Created
+Aug 19, 2025 · 12:25 PM
+Start
+Aug 19, 2025 · 12:26 PM
+End
+Aug 21, 2025 · 12:26 PM
+
+
+Select Chain for Goliath testnet provider
+Passed
+0xD4aa...7223
+In Onyx XCN DAO · 6mo ago · #6177f
+
+This poll seeks to confirm Chain as the official launch partner for the Goliath Testnet, a bold new chapter in the Onyx ecosystem. Goliath is not just another testnet, it is a high-performance proving ground designed to validate the strength, speed, and adaptability of our protocol as we scale into the future.
+
+At its core, Goliath embodies the values of throughput, resilience, and interoperability. It demonstrates Onyx’s readiness for mass adoption. Its resilient security framework protects against malicious activity, ensuring that tests and applications can operate in a stable, trusted environment.
+
+By selecting Chain as the Goliath Testnet provider, we align Goliaths world-class features with a partner who brings deep infrastructure expertise, reliable operations, and a commitment to supporting builders at scale. Chain’s proven track record ensures that Goliath is not only technically robust, but also positioned to serve the needs of developers, validators, and the community with real-world readiness and stability.
+
+This partnership is more than a launch, it is a strategic alignment that elevates Goliath into a showcase of what Onyx can achieve. With Chain’s support, Goliath will demonstrate the ecosystem’s ability to deliver scalable performance, durable security, and the flexibility to evolve alongside the community’s vision. It strengthens the backbone of our network and ensures that our journey forward is powered by excellence.
+
+Your vote affirms Chain as the launch partner for Goliath, and secures a testnet that embodies strength, stability, and possibility.
+
+Vote Options:
+
+• For — Confirm Chain as the official Goliath Testnet launch partner.
+
+• Against — Do not confirm Chain as the Goliath Testnet provider at this time.
+21 votes ·
+Results
+For
+189.9m
+100%
+Against
+0
+0%
+Quorum: 189%
+Timeline
+Created
+Aug 19, 2025 · 12:32 PM
+Start
+Aug 19, 2025 · 12:33 PM
+End
+Aug 21, 2025 · 12:33 PM
+
+
+
+Launch Onyx Points Season 2
+Passed
+0xD4aa...7223
+In Onyx XCN DAO · 6mo ago · #5d36a
+
+After the strong success of Onyx Points Season 1, we are excited to propose the launch of Onyx Points Season 2, a continuation of our commitment to reward and engage participants across the Onyx ecosystem. This new season is designed to further strengthen community involvement while maintaining fairness and simplicity.
+
+Season 2 Program Details
+
+Ethereum Chain
+
+• Seamless participation: no enrollment required, simply stake XCN to be eligible.
+
+• Points will be calculated based on the amount of XCN staked by each participant.
+
+• Rewards distribution: 5 million points allocated per 7,200 blocks each day.
+
+Onyx Ledger
+
+• Follows the established framework from Season 1, where enrollment in the system remains mandatory.
+• Rewards distribution: 5 million points allocated per 86,400 blocks each day.
+
+Why Season 2 Matters
+
+Season 1 demonstrated the power of incentivized participation in strengthening the Onyx ecosystem. With Season 2, we aim to build on that momentum by ensuring broader accessibility, continued fairness, and consistent rewards for active contributors.
+
+We look forward to launching Season 2 and rewarding all who continue to drive growth and activity within Onyx.
+
+• Vote “For” if you support the launch of Onyx Points Season 2.
+
+• Vote “Against” if you oppose continuing the program or would prefer exploring alternative initiatives.
+22 votes ·
+Results
+For
+189.7m
+100%
+Against
+0
+0%
+Quorum: 189%
+Timeline
+Created
+Aug 19, 2025 · 12:41 PM
+Start
+Aug 19, 2025 · 12:42 PM
+End
+Aug 21, 2025 · 12:42 PM
+
+
+Create Official Ambassador Leader Role
+Passed
+0xD4aa...7223
+In Onyx XCN DAO · 6mo ago · #7b03d
+
+This poll seeks to confirm Shawn as the official Ambassador Leader, solidifying a role that has already been shaped by his years of dedication to the Onyx community. With 10 ambassadors now active and operating under community control, there is a clear need for defined leadership to guide, support, and ensure accountability within the program.
+
+The ambassador initiative represents growth, participation, and shared responsibility. It is a cornerstone of how the community scales—by empowering members while providing them the structure and mentorship to succeed. To thrive, it requires both a guiding hand and a trusted leader.
+
+Shawn is already well known across the community for his long-standing role as a moderator, and for his consistent involvement alongside VT, the Onyx Community Leader. Beyond moderation, Shawn has taken direct responsibility for the ambassador program: overseeing tasks, approving or denying submissions, adding new opportunities, mentoring ambassadors, and ensuring the program operates smoothly.
+
+His reputation for fairness, dedication, and approachability has earned the trust of both ambassadors and the broader community.
+
+By transitioning Shawn from Moderator to Ambassador Leader, we formally recognize the leadership he has already been providing. This new role clarifies responsibilities—VT continues to lead the community broadly, while Shawn officially takes charge of the ambassador program. Together, this structure ensures clarity, accountability, and a stronger foundation for the community’s growth.
+
+Your vote affirms Shawn as the official Ambassador Leader, recognizing his contributions, strengthening our organizational structure, and ensuring the ambassador program continues to flourish under trusted leadership.
+
+Vote Options:
+
+• For — Confirm Shawn as the official Ambassador Leader.
+• Against — Do not confirm Shawn as the Ambassador Leader at this time.
+16 votes ·
+Results
+For
+184.4m
+100%
+Against
+0
+0%
+Quorum: 184%
+Timeline
+Created
+Aug 19, 2025 · 7:42 PM
+Start
+Aug 19, 2025 · 7:43 PM
+End
+Aug 21, 2025 · 7:43 PM
+
+Increase XCN Native Staking rate to 40%
+Passed
+0xD4aa...7223
+In Onyx XCN DAO · 5mo ago · #dd9fc
+
+This poll represents a significant milestone for the Onyx community as we consider an adjustment to our native staking framework. By increasing the XCN Native Staking rate to 40%, we aim to strengthen protocol security while rewarding participants with higher yields.
+
+This initiative directly benefits users who stake their ERC-20 XCN through the Onyx Protocol app (https://app.onyx.org/#/stake), aligning incentives to secure the network and further decentralize participation. A higher staking rate not only enhances protocol robustness but also demonstrates our collective commitment to long-term sustainability.
+
+At the same time, the DAO will actively monitor for potential market abuse, including risks of futures arbitrage, to ensure that this adjustment maintains fairness and integrity across the ecosystem. By balancing increased rewards with vigilant oversight, we reinforce the trust and transparency that define the Onyx community.
+
+Approving this proposal means embracing stronger network security, more attractive staking opportunities, and a governance process that adapts thoughtfully to evolving market dynamics. It is a declaration that our community is ready to secure Onyx’s future with confidence, resilience, and shared prosperity.
+
+Your vote is not just about yields—it is about affirming Onyx’s values of decentralized stewardship and adaptive governance. Together, we can ensure that growth is both sustainable and community-driven.
+
+Vote Options:
+
+• For — Increase the XCN Native Staking rate to 40%, with DAO monitoring to prevent abuse and safeguard the protocol.
+
+• Against — Do not increase the XCN Native Staking rate at this time.
+63 votes ·
+Results
+For
+317.6m
+99.3%
+Against
+2.3m
+0.7%
+Quorum: 319%
+Timeline
+Created
+Sep 19, 2025 · 11:33 AM
+Start
+Sep 19, 2025 · 11:34 AM
+End
+Sep 21, 2025 · 11:34 AM
+
+
+XCN Global Brand Acceleration Campaign
+Passed
+0x0778...374C
+In Onyx XCN DAO · 5mo ago · #7af3b
+
+Allocate $1M USD equivalent (in XCN and/or stables) from the DAO treasury to launch a 12-month strategic marketing campaign. This initiative will drive global awareness, expand governance participation, and establish Onyx (XCN) as a recognizable brand in the crypto ecosystem.
+
+Need for visibility: Onyx tech is advancing (gas-free wallet, Onyx Points), but brand recognition lags behind competitors.
+
+Treasury resources: The DAO has capacity to fund meaningful marketing without threatening reserves.
+
+Timing: A coordinated push during 2025 can compound adoption momentum.
+
+    Media & Ads...
+
+Targeted placements on CoinTelegraph, CoinDesk, CMC, and CoinGecko.
+Paid campaigns on Twitter, TikTok, YouTube, and Reddit focused on education + adoption.
+
+    Influencer & KOL Partnerships....
+
+Work with mid-tier KOLs (50k–500k followers) to maximize ROI.
+Sponsorships on select podcasts (Bankless, Unchained).
+
+    Events & Sponsorships....
+
+Sponsor 2–3 strategic crypto conferences (e.g., ETHGlobal, Consensus).
+Run community meetups in 3 major regions (Asia, LATAM, MENA).
+
+    Community Growth Engine....
+
+$200k bounty pool via Zealy quests, meme contests, governance explainers.
+Incentivize verified governance participation through small rewards.
+
+    PR & Branding....
+
+Engage boutique PR agency for coverage in at least 3 major outlets.
+Quarterly transparency + progress reports to boost institutional credibility.
+
+Budget Allocation (12 Months – $1M Equivalent)....
+
+35% Media & Ads ($350k)
+25% KOL & Influencers ($250k)
+15% Events & Sponsorships ($150k)
+15% Community Bounties ($150k)
+10% PR & Brand Strategy ($100k)
+
+KPIs....
+
+5M+ ad impressions across crypto/web2 platforms.
+5,000+ new verified users on app.onyx.org.
+2x increase in governance participation at polls.onyx.org.
+Coverage in 3+ Tier-1 crypto outlets.
+Regional community hubs in at least 3 countries with 10k+ combined members.
+
+Risks & Mitigations....
+
+Limited budget vs. ambition → mitigate with ROI tracking and milestone funding.
+
+Overreliance on influencers → spread spend across media, events, and PR.
+
+Execution risk → appoint DAO marketing sub-committee to oversee agencies.
+12 votes ·
+Results
+For
+141m
+100%
+Against
+0
+0%
+Quorum: 141%
+Timeline
+Created
+Sep 22, 2025 · 2:53 PM
+Start
+Sep 22, 2025 · 2:54 PM
+End
+Sep 24, 2025 · 2:54 PM
+
+Onyx Marketing Global Activation
+Passed
+0xD4aa...7223
+In Onyx XCN DAO · 4mo ago · #ec95d
+
+This poll represents a significant milestone for the Onyx community as we consider allocating 300M XCN toward a dedicated marketing budget. Marketing is more than an expense; it is an investment in the visibility, credibility, and growth of our ecosystem. By strengthening our outreach, we aim to accelerate adoption, deepen engagement, and position Onyx for sustainable long-term success in an increasingly competitive environment.
+
+The proposed budget encompasses listings, education, Goliath incentives, and promotional activities, each of which plays a vital role in advancing our shared mission. Listings expand market access and strengthen liquidity by ensuring Onyx is available on leading platforms. Education empowers both new and seasoned participants to fully understand and engage with the protocol, reducing barriers to entry while fostering confident usage. Goliath incentives reward and mobilize ecosystem champions, aligning community members with the long-term success of Onyx. Promotions spread awareness globally, amplifying our voice and establishing Onyx as a recognized leader within the broader blockchain landscape. Together, these elements create a coordinated, multi-faceted strategy designed to drive visibility, adoption, and participation at scale.
+
+This initiative directly benefits the community by expanding the reach of our network while creating stronger alignment between stakeholders and the protocol itself. By investing in education and incentives, we ensure that growth is not only about numbers, but also about building a knowledgeable, committed base of participants who can carry Onyx forward. At the same time, the DAO will actively oversee allocation and execution, upholding the principles of accountability and transparency. Every expenditure will be measured against impact, ensuring that the marketing budget delivers maximum value without compromising Onyx’s long-term sustainability.
+
+Approving this proposal means more than simply funding marketing; it signals our collective determination to invest in Onyx’s future. It is a statement that we are prepared to scale responsibly, to reach new audiences, and to compete on the global stage with confidence and resilience. By combining resources with vision, we affirm that Onyx is not just a protocol but a movement—rooted in community, governed by shared values, and propelled by innovation.
+
+Your vote is not just about approving a budget—it is about affirming our shared belief in Onyx’s potential, our willingness to grow together, and our readiness to meet the challenges of tomorrow with purpose and unity. Together, we can ensure that the expansion of Onyx is sustainable, strategic, and community-driven, laying the foundation for a future of enduring prosperity.
+
+Vote Options:
+
+• For — Allocate 300M XCN to marketing (listings, education, Goliath incentives, promotions, etc.)
+
+• Against — Do not allocate the proposed marketing budget at this time.
+30 votes ·
+Results
+For
+204.1m
+67.04%
+Against
+100.4m
+32.96%
+Quorum: 304%
+Timeline
+Created
+Oct 2, 2025 · 3:42 PM
+Start
+Oct 2, 2025 · 3:43 PM
+End
+Oct 4, 2025 · 3:43 PM
+
+
+Goliath Testnet Rewards Program
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 1mo ago · #37de5
+
+This Poll is the first in a series of community votes to determine whether the Onyx community wishes to pursue the creation of a Goliath Testnet rewards (airdrop) program.
+
+The purpose of this initial poll is to confirm community support for exploring a rewards program in principle. Active discussion is currently underway to gather feedback on potential design considerations, including eligibility, participation metrics, reward allocation, distribution size, and other relevant factors. Insights from this discussion will inform whether the Onyx team proceeds with drafting an official Poll before creating an Onyx Improvement Proposal (OIP) with the final voted upon plan.
+
+Community discussion is ongoing here:
+https://community.onyx.org/t/onyx-goliath-testnet-rewards-program-community-discussion/3176
+
+If this poll indicates support, a subsequent poll will be presented proposing a more detailed testnet rewards framework in the coming weeks. Following that, and closer to mainnet launch, a formal OIP would be introduced for approval of the final rewards program.
+
+This process is specific to the Onyx Goliath Testnet and gauging community interest, it does not approve any final reward parameters at this stage.
+
+Vote Options:
+
+• For — Create a Goliath Testnet Rewards Program subject to community approval.
+
+• Against — Do not create a Goliath Testnet Rewards Program
+Discussion
+Onyx Goliath Testnet Rewards Program – Community Discussion
+Onyx Goliath Testnet Rewards Program – Community Discussion
+This thread serves as the official forum for community discussion regarding the design and implementation of a potential airdrop program for the Onyx Goliath Testnet. The objective of this discussion is to gather community input on how such a program should be structured, including but not limited to the anticipated number of participants, eligibility criteria, performance and participation metrics, reward allocation methodology, total reward distribution, and any other considerations the commu...
+21 votes ·
+Results
+For
+138.7m
+99.29%
+Against
+985.1k
+0.71%
+Quorum: 139%
+Timeline
+Created
+Jan 7, 2026 · 2:59 PM
+Start
+Jan 7, 2026 · 3:00 PM
+End
+Jan 9, 2026 · 3:00 PM
+
+Concentration of liquidity on Ethereum from BNB Chain
+Rejected
+0x61dB...d5B7
+In Onyx XCN DAO · 7d ago · #2c4b3
+
+This Poll seeks to determine whether the XCN community supports concentrating XCN liquidity on Ethereum by migrating liquidity currently located on BNB Chain. This consideration arises in response to the removal of BNB Chain support by certain exchanges, which has impacted accessibility and liquidity distribution for XCN across supported trading venues.
+
+The purpose of this poll is to confirm community support, in principle, for consolidating XCN liquidity onto Ethereum as a primary settlement layer. Concentrating liquidity on Ethereum may help improve overall liquidity depth, reduce fragmentation across networks, enhance market efficiency, and provide a more consistent trading experience for XCN holders operating within the Ethereum ecosystem.
+
+This poll is intended to provide clear direction from the community on whether such a consolidation should move forward. If this poll indicates support, the team would proceed with implementing a plan to concentrate XCN liquidity on Ethereum, taking into account operational considerations and feedback raised through community discussion.
+
+This poll is limited in scope to the placement and concentration of XCN liquidity in response to changes in exchange support. It does not introduce, alter, or approve any changes to XCN token economics, supply, or governance parameters beyond liquidity deployment.
+
+Vote Options:
+
+• For — Concentrate XCN liquidity on Ethereum by migrating liquidity from BNB Chain.
+
+• Against — Do not concentrate XCN liquidity on Ethereum and maintain liquidity on BNB Chain.
+3 votes ·
+Results
+For
+2.1m
+100%
+Against
+0
+0%
+Quorum: 2.09%
+Timeline
+Created
+Feb 6, 2026 · 6:41 PM
+Start
+Feb 6, 2026 · 6:42 PM
+End
+Feb 8, 2026 · 6:42 PM
+
+
+Development/Marketing Funds to further collaborate with Robinhood & Others
+Rejected
+0x61dB...d5B7
+In Onyx XCN DAO · 7d ago · #926a9
+
+This Poll seeks to determine whether the XCN community supports allocating 100,000,000 XCN toward development and marketing initiatives aimed at further strengthening collaboration with Robinhood and other strategic partners.
+
+The purpose of this poll is to confirm community support for dedicating a defined and deliberate allocation of XCN toward initiatives that are intended to expand adoption, increase visibility, and support the continued growth of the XCN ecosystem. This allocation is proposed as a means of ensuring that XCN is well-positioned to build on existing partnerships and broaden its reach across major platforms.
+
+The proposed funds would be used to support activities such as partner-facing development efforts, ecosystem integrations, marketing campaigns, educational initiatives, and other strategic actions designed to improve awareness, accessibility, and the long-term utility of XCN. By proactively investing in these areas, the community may enable XCN to more effectively capitalize on recent exchange listings and strengthen its overall presence within the broader digital asset ecosystem.
+
+This poll is intended to provide clear direction from the community on whether this allocation should be approved in principle. If this poll indicates support, the team would proceed with deploying the 100,000,000 XCN toward development and marketing initiatives aligned with these objectives, while maintaining transparency around the use of funds and associated outcomes.
+
+Vote Options:
+
+• For — Allocate 100,000,000 XCN for development and marketing initiatives to further collaboration with Robinhood and other major partners.
+
+• Against — Do not allocate 100,000,000 XCN for development and marketing initiatives at this time.
+3 votes ·
+Results
+For
+2.1m
+100%
+Against
+0
+0%
+Quorum: 2.09%
+Timeline
+Created
+Feb 6, 2026 · 6:43 PM
+Start
+Feb 6, 2026 · 6:44 PM
+End
+Feb 8, 2026 · 6:44 PM
+
+Farm & Staking Upgrades to enable Liquid Staking and automatic interest compounding
+Rejected
+0x61dB...d5B7
+In Onyx XCN DAO · 7d ago · #a7281
+
+This Poll seeks to determine whether the XCN community supports preparing upgrades to the XCN/WETH Farm and XCN staking systems to enable liquid staking and automatic interest compounding.
+
+The purpose of this poll is to confirm community support, in principle, for enhancing the existing XCN/WETH Farm and XCN staking infrastructure in a way that improves usability, efficiency, and the overall user experience. Enabling liquid staking and automatic interest compounding would allow users to earn rewards without the need to continuously claim or manually manage accrued funds.
+
+These proposed upgrades are intended to streamline participation in XCN staking and farming by reducing operational friction for users, while maintaining alignment with existing staking and reward mechanisms. By allowing rewards to compound automatically and enabling greater flexibility through liquid staking, the community can explore improvements that make long-term participation more accessible and convenient.
+
+This poll is intended to provide clear direction from the community on whether preparation for these upgrades should move forward. If this poll indicates support, the team would proceed with planning and development work required to upgrade the XCN/WETH Farm and XCN staking systems in line with these objectives.
+
+Vote Options:
+
+• For — Prepare upgrades to the XCN/WETH Farm and XCN staking to enable liquid staking and automatic interest compounding.
+
+• Against — Do not proceed with preparing these upgrades at this time.
+3 votes ·
+Results
+For
+2.1m
+100%
+Against
+0
+0%
+Quorum: 2.09%
+Timeline
+Created
+Feb 6, 2026 · 6:46 PM
+Start
+Feb 6, 2026 · 6:47 PM
+End
+Feb 8, 2026 · 6:47 PM
+
+Reward Ambassadors in XCN instead of USDT
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 5d ago · #57b27
+
+This Poll seeks to determine whether the XCN community supports rewarding XCN ambassadors in XCN instead of USDT.
+
+The purpose of this poll is to confirm community support, in principle, for making XCN the reward currency for XCN ambassadors. As ambassadors represent and support the XCN ecosystem, compensating them in XCN more accurately reflects their role and aligns rewards with the network they help grow.
+
+This proposed change is limited to the reward currency only and does not introduce changes to ambassador responsibilities, reward structures, or contribution requirements. Rewards would continue to be earned based on existing criteria, with the only adjustment being that rewards are provided in XCN rather than USDT.
+
+This poll is intended to provide clear direction from the community on whether ambassador rewards should be paid in XCN going forward. If this poll indicates support, ambassador compensation would be issued in XCN instead of USDT.
+
+Vote Options:
+
+• For — Reward XCN ambassadors in XCN instead of USDT.
+
+• Against — Continue rewarding ambassadors in USDT.
+8 votes ·
+Results
+For
+249.2m
+100%
+Against
+0
+0%
+Quorum: 249%
+Timeline
+Created
+Feb 9, 2026 · 1:17 PM
+Start
+Feb 9, 2026 · 1:18 PM
+End
+Feb 11, 2026 · 1:18 PM
+
+Remove Ambassador Apollo
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 5d ago · #f0f28
+
+This Poll seeks to determine whether the XCN community supports removing the ambassador Apollo from the XCN Ambassador Program.
+
+The purpose of this poll is to confirm community support, in principle, for taking action in response to ongoing inactivity and concerns raised by moderators regarding Apollo’s participation as an ambassador. Maintaining a high standard of engagement, accountability, and alignment with community expectations is essential to the effectiveness of the ambassador program.
+
+Ambassadors are expected to remain active, contribute consistently, and uphold the values of the XCN community. When concerns arise related to inactivity or performance, it is important to have a transparent and structured process for addressing them. This poll is intended to provide that clarity and allow the community to guide the appropriate next step.
+
+This poll is intended to provide clear direction from the community on whether Apollo should be removed from the ambassador role at this time. If this poll indicates support, Apollo would be formally removed from the XCN Ambassador Program.
+
+Vote Options:
+
+• For — Remove Apollo from the XCN Ambassador Program.
+
+• Against — Retain Apollo as an XCN ambassador.
+7 votes ·
+Results
+For
+249.2m
+100%
+Against
+0
+0%
+Quorum: 249%
+Timeline
+Created
+Feb 9, 2026 · 1:21 PM
+Start
+Feb 9, 2026 · 1:22 PM
+End
+Feb 11, 2026 · 1:22 PM
+
+Add Korean Speaking Onyx Ambassador
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 5d ago · #e4ce7
+
+This Poll seeks to determine whether the XCN community supports recruiting a South Korean ambassador who is fluent in Korean to support the Onyx ecosystem’s expansion into South Korea.
+
+The purpose of this poll is to confirm community support, in principle, for expanding the ambassador program to include a representative with local language skills and regional familiarity. As the Onyx ecosystem continues to grow internationally, having a Korean-speaking ambassador would help improve communication, outreach, and engagement within the South Korean market.
+
+A dedicated South Korean ambassador would support localized community building, assist with regional onboarding and education efforts, and help represent Onyx and XCN more effectively to Korean-speaking users. This role is intended to strengthen Onyx’s presence in South Korea by ensuring messaging and support are accessible, culturally aligned, and responsive to local community needs.
+
+This poll is intended to provide clear direction from the community on whether recruitment for a Korean-speaking South Korean ambassador should move forward. If this poll indicates support, the team would proceed with identifying, evaluating, and onboarding a suitable ambassador to support Onyx’s expansion efforts in South Korea.
+
+Vote Options:
+
+• For — Proceed with recruiting a Korean-speaking South Korean ambassador to support Onyx expansion.
+
+• Against — Do not proceed with recruiting a South Korean ambassador at this time.
+7 votes ·
+Results
+For
+249.2m
+100%
+Against
+0
+0%
+Quorum: 249%
+Timeline
+Created
+Feb 9, 2026 · 1:23 PM
+Start
+Feb 9, 2026 · 1:24 PM
+End
+Feb 11, 2026 · 1:24 PM
+
+
+
+Increase Ambassador Slots to 11 from 10
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 5d ago · #9cea4
+
+This Poll seeks to determine whether the XCN community supports increasing the number of available ambassador slots from 10 to 11.
+
+The purpose of this poll is to confirm community support, in principle, for expanding the XCN Ambassador Program by one additional slot. As the ecosystem continues to grow and expand into new regions and initiatives, a modest increase in ambassador capacity may help support ongoing community engagement and outreach efforts.
+
+This proposed change is limited to increasing the total number of ambassador positions and does not alter existing ambassador responsibilities, reward structures, or performance expectations. The intent is to provide flexibility for the program to accommodate additional needs without materially changing its current structure.
+
+This poll is intended to provide clear direction from the community on whether the ambassador program should be expanded from 10 to 11 total slots. If this poll indicates support, the additional ambassador position would be made available in accordance with existing ambassador selection and onboarding processes.
+
+Vote Options:
+
+• For — Increase the number of ambassador slots from 10 to 11.
+
+• Against — Keep the number of ambassador slots at 10.
+8 votes ·
+Results
+For
+249.2m
+99.78%
+Against
+550.1k
+0.22%
+Quorum: 249%
+Timeline
+Created
+Feb 9, 2026 · 1:26 PM
+Start
+Feb 9, 2026 · 1:27 PM
+End
+Feb 11, 2026 · 1:27 PM
+
+
+Keep Goliath Testnet Updates in Dedicated News Channel
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 5d ago · #7927e
+
+This Poll seeks to determine whether the XCN community supports continuing to post Goliath testnet updates in a dedicated Goliath news channel rather than the main Onyx news channel.
+
+The purpose of this poll is to confirm community support, in principle, for maintaining the current communication structure for Goliath testnet updates. This approach was adopted following user queries and moderator suggestions, with the intention of improving clarity and organization within the community’s news channels.
+
+By keeping Goliath testnet–specific updates in a dedicated channel, users who are actively following testnet development can more easily access relevant information, while the main Onyx news channel remains focused on broader ecosystem announcements. This separation is intended to reduce noise and ensure that different types of updates are delivered in the most appropriate context.
+
+This poll is intended to provide clear direction from the community on whether this communication approach should continue going forward. If this poll indicates support, Goliath testnet updates would continue to be shared exclusively in the dedicated Goliath news channel.
+
+Vote Options:
+
+• For — Continue posting Goliath testnet updates in the dedicated Goliath news channel.
+
+• Against — Move Goliath testnet updates to the main Onyx news channel.
+14 votes ·
+Results
+For
+258.5m
+100%
+Against
+8.2k
+0%
+Quorum: 258%
+Timeline
+Created
+Feb 9, 2026 · 1:31 PM
+Start
+Feb 9, 2026 · 1:32 PM
+End
+Feb 11, 2026 · 1:32 PM
+
+
+Concentration of liquidity on Ethereum from BNB Chain
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 5d ago · #771df
+
+This Poll seeks to determine whether the XCN community supports concentrating XCN liquidity on Ethereum by migrating liquidity currently located on BNB Chain. This consideration arises in response to the removal of BNB Chain support by certain exchanges, which has impacted accessibility and liquidity distribution for XCN across supported trading venues.
+
+The purpose of this poll is to confirm community support, in principle, for consolidating XCN liquidity onto Ethereum as a primary settlement layer. Concentrating liquidity on Ethereum may help improve overall liquidity depth, reduce fragmentation across networks, enhance market efficiency, and provide a more consistent trading experience for XCN holders operating within the Ethereum ecosystem.
+
+This poll is intended to provide clear direction from the community on whether such a consolidation should move forward. If this poll indicates support, the team would proceed with implementing a plan to concentrate XCN liquidity on Ethereum, taking into account operational considerations and feedback raised through community discussion.
+
+This poll is limited in scope to the placement and concentration of XCN liquidity in response to changes in exchange support. It does not introduce, alter, or approve any changes to XCN token economics, supply, or governance parameters beyond liquidity deployment.
+
+Vote Options:
+
+• For — Concentrate XCN liquidity on Ethereum by migrating liquidity from BNB Chain.
+
+• Against — Do not concentrate XCN liquidity on Ethereum and maintain liquidity on BNB Chain.
+15 votes ·
+Results
+For
+255.1m
+100%
+Against
+0
+0%
+Quorum: 255%
+Timeline
+Created
+Feb 9, 2026 · 1:33 PM
+Start
+Feb 9, 2026 · 1:34 PM
+End
+Feb 11, 2026 · 1:34 PM
+
+
+Development/Marketing Funds to further collaborate with Robinhood & Others
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 5d ago · #2eb36
+
+This Poll seeks to determine whether the XCN community supports allocating 100,000,000 XCN toward development and marketing initiatives aimed at further strengthening collaboration with Robinhood and other strategic partners.
+
+The purpose of this poll is to confirm community support for dedicating a defined and deliberate allocation of XCN toward initiatives that are intended to expand adoption, increase visibility, and support the continued growth of the XCN ecosystem. This allocation is proposed as a means of ensuring that XCN is well-positioned to build on existing partnerships and broaden its reach across major platforms.
+
+The proposed funds would be used to support activities such as partner-facing development efforts, ecosystem integrations, marketing campaigns, educational initiatives, and other strategic actions designed to improve awareness, accessibility, and the long-term utility of XCN. By proactively investing in these areas, the community may enable XCN to more effectively capitalize on recent exchange listings and strengthen its overall presence within the broader digital asset ecosystem.
+
+This poll is intended to provide clear direction from the community on whether this allocation should be approved in principle. If this poll indicates support, the team would proceed with deploying the 100,000,000 XCN toward development and marketing initiatives aligned with these objectives, while maintaining transparency around the use of funds and associated outcomes.
+
+Vote Options:
+
+• For — Allocate 100,000,000 XCN for development and marketing initiatives to further collaboration with Robinhood and other major partners.
+
+• Against — Do not allocate 100,000,000 XCN for development and marketing initiatives at this time.
+15 votes ·
+Results
+For
+258.5m
+100%
+Against
+0
+0%
+Quorum: 258%
+Timeline
+Created
+Feb 9, 2026 · 1:34 PM
+Start
+Feb 9, 2026 · 1:35 PM
+End
+Feb 11, 2026 · 1:35 PM
+
+
+Farm & Staking Upgrades to enable Liquid Staking and automatic interest compounding
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 5d ago · #603cb
+
+This Poll seeks to determine whether the XCN community supports preparing upgrades to the XCN/WETH Farm and XCN staking systems to enable liquid staking and automatic interest compounding.
+
+The purpose of this poll is to confirm community support, in principle, for enhancing the existing XCN/WETH Farm and XCN staking infrastructure in a way that improves usability, efficiency, and the overall user experience. Enabling liquid staking and automatic interest compounding would allow users to earn rewards without the need to continuously claim or manually manage accrued funds.
+
+These proposed upgrades are intended to streamline participation in XCN staking and farming by reducing operational friction for users, while maintaining alignment with existing staking and reward mechanisms. By allowing rewards to compound automatically and enabling greater flexibility through liquid staking, the community can explore improvements that make long-term participation more accessible and convenient.
+
+This poll is intended to provide clear direction from the community on whether preparation for these upgrades should move forward. If this poll indicates support, the team would proceed with planning and development work required to upgrade the XCN/WETH Farm and XCN staking systems in line with these objectives.
+
+Vote Options:
+
+• For — Prepare upgrades to the XCN/WETH Farm and XCN staking to enable liquid staking and automatic interest compounding.
+
+• Against — Do not proceed with preparing these upgrades at this time.
+17 votes ·
+Results
+For
+270.1m
+100%
+Against
+0
+0%
+Quorum: 270%
+Timeline
+Created
+Feb 9, 2026 · 1:35 PM
+Start
+Feb 9, 2026 · 1:36 PM
+End
+Feb 11, 2026 · 1:36 PM
+
+Goliath Mainnet Validator Rewards
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 5d ago · #d94cf
+
+This Poll seeks to determine whether the XCN community supports authorizing the team to plan, propose, and finalize a mainnet validator rewards structure for Goliath, distinct from the rewards mechanisms currently utilized on the testnet.
+
+The purpose of this poll is to confirm community support for initiating formal planning around a mainnet-appropriate validator rewards framework. As the Goliath network progresses toward mainnet readiness, it is important to evaluate and design a rewards structure that is aligned with long-term network security, validator participation, and sustainable economic incentives, rather than relying on structures designed specifically for testnet experimentation.
+
+This poll provides a signal from the community allowing the team to engage in the necessary research, modeling, and proposal development required to define a mainnet validator rewards framework. This may include evaluating validator incentives, reward distribution mechanics, and other considerations relevant to a production network environment. The outcome of this process would be a finalized mainnet rewards proposal presented to the community for transparency and awareness.
+
+This poll does not approve any specific reward parameters, emission rates, or economic changes at this stage. Its scope is limited to authorizing the team to plan and finalize a mainnet validator rewards structure to replace testnet-specific mechanisms ahead of or in conjunction with mainnet launch.
+
+Vote Options:
+
+• For — Authorize the team to plan, propose, and finalize a mainnet validator rewards structure for Goliath, distinct from testnet rewards.
+
+• Against — Do not authorize planning and finalization of a mainnet validator rewards structure at this time.
+15 votes ·
+Results
+For
+264.9m
+100%
+Against
+0
+0%
+Quorum: 264%
+Timeline
+Created
+Feb 9, 2026 · 1:37 PM
+Start
+Feb 9, 2026 · 1:38 PM
+End
+Feb 11, 2026 · 1:38 PM
+
+
+Onyx Ambassador Vetting & Accountability Framework
+Active
+0x61dB...d5B7
+In Onyx XCN DAO · 13h ago · #d6b70
+
+This Poll seeks to determine whether the XCN community supports formalizing and maintaining a vetting and accountability framework for the Onyx Ambassador Program, applicable to both existing and future ambassadors.
+
+As the Onyx ecosystem grows, ambassadors serve as public-facing representatives of the community. Their role includes educating participants on governance, sharing official information, explaining technical concepts, and facilitating constructive discussion. Given this visibility, it is important that all ambassadors operate under a clear and consistent communication standard designed to protect the credibility of the protocol and the broader ecosystem.
+
+This poll affirms that the Ambassador Program will operate under a structured vetting and oversight framework that applies equally to current ambassadors and all future participants.
+
+Ambassador Expectations
+
+Ambassadors are expected to:
+
+• Educate on how governance works
+• Share links to official proposals and verified resources
+• Explain technical concepts accurately
+• Engage and complete Zealy tasks supporting the community
+• Summarize publicly confirmed updates with citations
+
+Ambassadors must not:
+
+• Announce partnerships, listings, or roadmap items before official confirmation
+• Imply internal or privileged access to the team
+• Encourage token purchases or use promotional investment language
+• Provide investment advice
+• Make definitive legal or compliance claims
+• Engage in other behavior unbecoming of a community representative
+
+When discussing protocol direction, token matters, or governance interpretation, ambassadors are encouraged to use simple clarifying language where appropriate, such as:
+
+• “Speaking personally, not on behalf of the DAO.”
+• “This is my interpretation of the proposal—please read the original post.”
+• “Not financial advice. Do your own research.”
+
+Ongoing Participation & Monitoring
+
+Ambassador participation will not rely on rigid rubrics or fixed KPIs. Instead, eligibility and standing within the program will be monitored on an ongoing basis through:
+
+• Zealy points and completed tasks
+• Submitted contributions
+• Public ambassador activity and engagement
+• Adherence to published communication standards
+• Feedback from the community
+
+Continued participation in the program is conditional upon alignment with these expectations.
+
+This poll does not appoint or remove any specific ambassadors. It affirms that all current and future ambassadors operate within a clearly defined framework designed to support:
+
+• Accuracy over hype
+• Transparency over ambiguity
+• Process over personality
+• Community-first behavior
+
+In addition, this poll will also pause existing ambassadors until a new poll for each ambassador is passed by the community under this framework.
+
+Vote Options:
+
+• For — Affirm that the Onyx Ambassador Program, including existing and future ambassadors, will operate under the described vetting and accountability framework.
+
+• Against — Do not affirm this structured vetting framework at this time.
+2 votes ·
+Cast your vote
+Voting power:
+Results
+For
+1.4m
+100%
+Against
+0
+0%
+Quorum: 1.37%
+Timeline
+Created
+Feb 13, 2026 · 1:23 PM
+Start
+Feb 13, 2026 · 1:24 PM
+End
+Feb 15, 2026 · 1:24 PM
+
+Implement a Join Captcha in the Official Onyx Telegram Group
+Active
+0x61dB...d5B7
+In Onyx XCN DAO · 13h ago · #30cfa
+
+This Poll seeks to determine whether the XCN community supports implementing a captcha requirement for new entrants to the official Onyx Telegram group (https://t.me/Onyx) using the existing Onyx bot, as requested by members of the community.
+
+The purpose of this poll is to confirm community support for adding additional anti-spam and anti-bot friction step at the point of entry, while keeping the group publicly visible and accessible. Telegram communities are frequent targets for automated spam, scam links, and impersonation attempts; requiring a simple captcha upon entry can potentially reduce unwanted activity, improve moderation effectiveness, and enhance overall community safety without restricting public discovery but could potentially interrupt legitimate users.
+
+Under this change, the Telegram group would remain publicly visible and searchable. However, all users would be required to complete a captcha immediately upon entering the group in order to participate (and/or remain in the group), enforced via the existing Onyx bot.
+
+This poll does not change group visibility, membership policy, or governance rights. Its scope is limited to implementing a captcha gate for all incoming users to improve security and reduce spam.
+
+Vote Options:
+
+• For — Implement a captcha requirement for all users upon entering the official Onyx Telegram group (group remains publicly visible), using the existing Onyx bot.
+
+• Against — Do not implement a captcha requirement for Telegram group entry at this time.
+1 vote ·
+Cast your vote
+Voting power:
+Results
+For
+1.4m
+100%
+Against
+0
+0%
+Quorum: 1.37%
+Timeline
+Created
+Feb 13, 2026 · 1:26 PM
+Start
+Feb 13, 2026 · 1:27 PM
+End
+Feb 15, 2026 · 1:27 PM
+
+Adjust the XCN Requirement to Create a Poll on polls.onyx.org
+Active
+0x61dB...d5B7
+In Onyx XCN DAO · 11h ago · #7e2fd
+
+This Poll seeks to determine whether the XCN community supports reducing the XCN threshold required to create a poll on polls.onyx.org to 1,000,000 XCN.
+
+The purpose of this poll is to confirm community support for lowering the proposal creation requirement in order to encourage broader governance participation while maintaining a meaningful stake requirement for initiating formal polls.
+
+Currently, a minimum XCN balance is required to create a poll on polls.onyx.org. This requirement exists to prevent spam, ensure proposers have aligned economic interest, and maintain the quality of governance discussions.
+
+This vote addresses only the XCN amount required to create a poll.
+
+No other components of the poll system are being modified, including but not limited to:
+
+• Voting mechanics
+• Quorum requirements
+• Vote duration
+• Execution processes
+• Governance permissions
+• Platform functionality
+
+If approved, the only change implemented will be reducing the minimum XCN balance required to create a poll to 1,000,000 XCN.
+
+This poll does not retroactively alter previous proposals or voting outcomes. Its scope is strictly limited to adjusting the XCN threshold for poll creation.
+
+Vote Options:
+
+• For — Reduce the minimum XCN required to create a poll on polls.onyx.org to 1,000,000 XCN.
+
+• Against — Maintain the current XCN requirement to create a poll.
+0 votes ·
+Cast your vote
+Voting power:
+Results
+For
+0
+0%
+Against
+0
+0%
+Quorum: 0%
+Timeline
+Created
+Feb 13, 2026 · 3:44 PM
+Start
+Feb 13, 2026 · 3:45 PM
+End
+Feb 15, 2026 · 3:45 PM
+
+Community Request for OnyxDAO AMA / X Spaces on XCN Roadmap, Plans, and Timelines
+Passed
+0xF889...37Df
+In Onyx XCN DAO · 17d ago · #ab7be
+
+This poll seeks to determine whether the XCN community supports formally requesting that OnyxDAO host a public AMA or X Spaces session to provide enhanced engagement, transparency, and accountability regarding the XCN token and broader ecosystem.
+
+The purpose of this poll is to assess community support for a structured live session in which OnyxDAO representatives can share updates, address questions, and discuss development priorities, strategic direction, and indicative timelines for XCN and ecosystem initiatives.
+
+Currently, announcements and updates are primarily communicated through Telegram channels and posts on X. While these channels provide valuable information, they are largely one-directional and asynchronous. This proposal aims to supplement existing communication by encouraging a live, interactive session that enables direct dialogue and deeper community engagement.
+
+The XCN development team has previously indicated a preference to remain anonymous. This proposal acknowledges that position while seeking to strengthen transparency and accountability through open communication without requiring disclosure of personal identities.
+
+This vote addresses only whether the community supports requesting that OnyxDAO organize such a session.
+
+No other components of governance or platform functionality are being modified, including but not limited to:
+
+• Governance mechanics
+• Voting requirements
+• Quorum thresholds
+• DAO permissions
+• Tokenomics design
+• Execution processes
+• Platform infrastructure
+
+If approved, the outcome will represent a community signal requesting that OnyxDAO organize an AMA or X Spaces session designed to:
+
+• Provide development updates and progress insights
+• Share indicative timelines where feasible
+• Clarify roadmap priorities and ecosystem strategy
+• Address community questions and concerns in real time
+• Improve transparency, trust, and two-way engagement
+
+This poll does not mandate disclosure of developer identities, enforce binding commitments, or retroactively affect prior governance decisions. Its scope is strictly limited to measuring community support for requesting a transparency-focused AMA or X Spaces session.
+
+Vote Options:
+
+• For — Support requesting that OnyxDAO host a public AMA or X Spaces session to improve engagement, transparency, and accountability regarding XCN development, plans, and timelines.
+
+• Against — Do not request an AMA or X Spaces session and maintain existing communication channels without additional engagement measures.
+5 votes ·
+Results
+For
+122.3m
+100%
+Against
+0
+0%
+Quorum: 122%
+Timeline
+Created
+Feb 19, 2026 · 4:58 PM
+Start
+Feb 19, 2026 · 4:59 PM
+End
+Feb 21, 2026 · 4:59 PM
+
+Align Onyx Polling Quorum With OIP Quorum
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 4d ago · #dd13d
+
+This Poll seeks to determine whether the XCN community supports aligning the poll quorum requirement on polls.onyx.org with the OIP quorum of 200,000,000 XCN, increasing it from the current 100,000,000 XCN.
+
+The purpose of this poll is to bring the polling system into alignment with the quorum standard used for Onyx OIPs, ensuring consistency across governance processes while strengthening the integrity of community signaling.
+
+Historically, polls were intended to serve as a mechanism for gauging meaningful community sentiment prior to or alongside formal governance proposals. Aligning the poll quorum with the 200M XCN OIP quorum better reflects this original governance concept by requiring broader participation for a poll to reach quorum.
+
+Increasing the quorum threshold also helps reduce the potential for outcomes to be disproportionately influenced by a small number of large wallets, ensuring that poll results more accurately represent wider community participation.
+
+Currently, polls on polls.onyx.org require 100,000,000 XCN participation to reach quorum. This proposal would increase that requirement to 200,000,000 XCN.
+
+This vote addresses only the poll quorum requirement.
+
+No other components of the poll system are being modified, including but not limited to:
+
+• Voting mechanics
+• Proposal creation requirements
+• Vote duration
+• Execution processes
+• Governance permissions
+• Platform functionality
+
+If approved, the only change implemented will be increasing the poll quorum requirement from 100,000,000 XCN to 200,000,000 XCN.
+
+This poll does not retroactively alter previous proposals or voting outcomes. Its scope is strictly limited to adjusting the quorum requirement for polls.
+
+Vote Options:
+
+• For — Increase the poll quorum requirement on polls.onyx.org from 100,000,000 XCN to 200,000,000 XCN, aligning it with the OIP quorum.
+
+• Against — Maintain the current 100,000,000 XCN poll quorum requirement.
+11 votes ·
+Results
+For
+122.3m
+52.36%
+Against
+111.3m
+47.64%
+Quorum: 233%
+Timeline
+Created
+Mar 3, 2026 · 6:40 PM
+Start
+Mar 3, 2026 · 6:41 PM
+End
+Mar 5, 2026 · 6:41 PM
+
+Reaffirm Gedet as Onyx Ambassador
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 4d ago · #6704a
+
+This Poll seeks to determine whether the XCN community supports reaffirming the following individual as an Onyx Ambassador.
+
+Onyx Ambassadors are community members, not team members, who help represent and support the broader community. Their role includes educating users about governance, sharing official resources, explaining technical concepts, and encouraging constructive discussion. Ambassadors also participate in the Onyx Telegram community and contribute through the Onyx Ambassador Zealy program.
+
+**Ambassador Profile
+**
+Name: Gedet_27
+Region: Africa (Nigeria)
+Language : English
+Twitter : Gedet_27
+Telegram : Gedet_27
+YouTube : Gedet_27
+Medium : Gedet
+
+Community members may review the ambassador’s activity and contributions through these platforms.
+
+**Ambassador Expectations
+**
+Ambassadors are expected to:
+
+• Educate the community on governance
+• Share official proposals and verified resources
+• Explain technical topics accurately
+• Participate in the Telegram community
+• Complete contributions through the Onyx Ambassador Zealy
+
+Ambassadors must not announce unconfirmed information, imply internal access to the team, encourage token purchases, provide investment advice, or make legal/compliance claims on behalf of Onyx.
+
+The original Ambassador Program poll can be found here:
+
+https://polls.onyx.org/#/proposal/0xd6b70644d88b900f8ca596cbbd4004c96c0378fad6790cee2dfe36ff392e66b5
+
+**Onyx Position
+**
+Onyx intends to vote For this ambassador based on their consistent and constructive participation in the community. However, to maintain neutrality, Onyx will not vote on any future polls related to this ambassador if additional community polls are created.
+
+**Vote Options
+**
+• For — Affirm this individual as an Onyx Ambassador.
+• Against — Do not affirm this individual as an ambassador at this time.
+11 votes ·
+Results
+For
+122.9m
+52.88%
+Against
+109.5m
+47.12%
+Quorum: 232%
+Timeline
+Created
+Mar 3, 2026 · 6:40 PM
+Start
+Mar 3, 2026 · 6:41 PM
+End
+Mar 5, 2026 · 6:41 PM
+
+Reaffirm Andrew as Onyx Ambassador
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 4d ago · #2320b
+
+This Poll seeks to determine whether the XCN community supports reaffirming the following individual as an Onyx Ambassador.
+
+Onyx Ambassadors are community members, not team members, who help represent and support the broader community. Their role includes educating users about governance, sharing official resources, explaining technical concepts, and encouraging constructive discussion. Ambassadors also participate in the Onyx Telegram community and contribute through the Onyx Ambassador Zealy program.
+
+Ambassador Profile
+
+Name: Andrew
+Region: South East Asia
+Language : English
+Twitter : Andrewxcn
+Telegram : Andrew_onyx
+Medium : Andrew
+
+Community members may review the ambassador’s activity and contributions through these platforms.
+
+Ambassador Expectations
+
+Ambassadors are expected to:
+
+• Educate the community on governance
+• Share official proposals and verified resources
+• Explain technical topics accurately
+• Participate in the Telegram community
+• Complete contributions through the Onyx Ambassador Zealy
+
+Ambassadors must not announce unconfirmed information, imply internal access to the team, encourage token purchases, provide investment advice, or make legal/compliance claims on behalf of Onyx.
+
+The original Ambassador Program poll can be found here:
+
+https://polls.onyx.org/#/proposal/0xd6b70644d88b900f8ca596cbbd4004c96c0378fad6790cee2dfe36ff392e66b5
+
+Onyx Position
+
+Onyx intends to vote For this ambassador based on their consistent and constructive participation in the community. However, to maintain neutrality, Onyx will not vote on any future polls related to this ambassador if additional community polls are created.
+
+Vote Options
+
+• For — Affirm this individual as an Onyx Ambassador.
+• Against — Do not affirm this individual as an ambassador at this time.
+10 votes ·
+Results
+For
+232.4m
+100%
+Against
+0
+0%
+Quorum: 232%
+Timeline
+Created
+Mar 3, 2026 · 6:41 PM
+Start
+Mar 3, 2026 · 6:42 PM
+End
+Mar 5, 2026 · 6:42 PM
+
+Reaffirm AstroDaze as Onyx Ambassador
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 4d ago · #98753
+
+This Poll seeks to determine whether the XCN community supports reaffirming the following individual as an Onyx Ambassador.
+
+Onyx Ambassadors are community members, not team members, who help represent and support the broader community. Their role includes educating users about governance, sharing official resources, explaining technical concepts, and encouraging constructive discussion. Ambassadors also participate in the Onyx Telegram community and contribute through the Onyx Ambassador Zealy program.
+
+Ambassador Profile
+
+Name: AstroDaze
+Region: United States
+Languages: English
+Twitter/X: none (not using)
+Telegram: Dave2Diamond
+Youtube: none
+
+Community members may review the ambassador’s activity and contributions through these platforms.
+
+Ambassador Expectations
+
+Ambassadors are expected to:
+
+• Educate the community on governance
+• Share official proposals and verified resources
+• Explain technical topics accurately
+• Participate in the Telegram community
+• Complete contributions through the Onyx Ambassador Zealy
+
+Ambassadors must not announce unconfirmed information, imply internal access to the team, encourage token purchases, provide investment advice, or make legal/compliance claims on behalf of Onyx.
+
+The original Ambassador Program poll can be found here:
+
+https://polls.onyx.org/#/proposal/0xd6b70644d88b900f8ca596cbbd4004c96c0378fad6790cee2dfe36ff392e66b5
+
+Onyx Position
+
+Onyx intends to vote For this ambassador based on their consistent and constructive participation in the community. However, to maintain neutrality, Onyx will not vote on any future polls related to this ambassador if additional community polls are created.
+
+Vote Options
+
+• For — Affirm this individual as an Onyx Ambassador.
+• Against — Do not affirm this individual as an ambassador at this time.
+10 votes ·
+Results
+For
+125.5m
+54%
+Against
+106.9m
+46%
+Quorum: 232%
+Timeline
+Created
+Mar 3, 2026 · 6:42 PM
+Start
+Mar 3, 2026 · 6:43 PM
+End
+Mar 5, 2026 · 6:43 PM
+
+Reaffirm Saviola as Onyx Ambassador
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 4d ago · #04e02
+
+This Poll seeks to determine whether the XCN community supports reaffirming the following individual as an Onyx Ambassador.
+
+Onyx Ambassadors are community members, not team members, who help represent and support the broader community. Their role includes educating users about governance, sharing official resources, explaining technical concepts, and encouraging constructive discussion. Ambassadors also participate in the Onyx Telegram community and contribute through the Onyx Ambassador Zealy program.
+
+Ambassador Profile
+
+Name: saviolarh
+Region: South Korea
+Languages: Korean and English
+Twitter/X: Faveberry113486
+Telegram: saviolarh
+Youtube: Saviola12-v7g
+Medium: Saviola
+
+Community members may review the ambassador’s activity and contributions through these platforms.
+
+Ambassador Expectations
+
+Ambassadors are expected to:
+
+• Educate the community on governance
+• Share official proposals and verified resources
+• Explain technical topics accurately
+• Participate in the Telegram community
+• Complete contributions through the Onyx Ambassador Zealy
+
+Ambassadors must not announce unconfirmed information, imply internal access to the team, encourage token purchases, provide investment advice, or make legal/compliance claims on behalf of Onyx.
+
+The original Ambassador Program poll can be found here:
+
+https://polls.onyx.org/#/proposal/0xd6b70644d88b900f8ca596cbbd4004c96c0378fad6790cee2dfe36ff392e66b5
+
+Onyx Position
+
+Onyx intends to vote For this ambassador based on their consistent and constructive participation in the community. However, to maintain neutrality, Onyx will not vote on any future polls related to this ambassador if additional community polls are created.
+
+Vote Options
+
+• For — Affirm this individual as an Onyx Ambassador.
+• Against — Do not affirm this individual as an ambassador at this time.
+9 votes ·
+Results
+For
+232.3m
+100%
+Against
+0
+0%
+Quorum: 232%
+Timeline
+Created
+Mar 3, 2026 · 6:42 PM
+Start
+Mar 3, 2026 · 6:43 PM
+End
+Mar 5, 2026 · 6:43 PM
+
+Reaffirm Nurulla as Onyx Ambassador
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 4d ago · #a1b78
+
+This Poll seeks to determine whether the XCN community supports reaffirming the following individual as an Onyx Ambassador.
+
+Onyx Ambassadors are community members, not team members, who help represent and support the broader community. Their role includes educating users about governance, sharing official resources, explaining technical concepts, and encouraging constructive discussion. Ambassadors also participate in the Onyx Telegram community and contribute through the Onyx Ambassador Zealy program.
+
+Ambassador Profile
+
+Name: Nurulla (Nurik)
+Region: Eastern Europe
+Languages: English, German, Turkish, Russian
+Twitter/X: nurikcrypto
+Telegram: @nurikmatyakubov
+Youtube: https://youtube.com/c/Nurullah7
+Medium: https://medium.com/@nurikmatyakubov
+Reddit: https://www.reddit.com/u/Nurullahjan
+
+Community members may review the ambassador’s activity and contributions through these platforms.
+
+Ambassador Expectations
+
+Ambassadors are expected to:
+
+• Educate the community on governance
+• Share official proposals and verified resources
+• Explain technical topics accurately
+• Participate in the Telegram community
+• Complete contributions through the Onyx Ambassador Zealy
+
+Ambassadors must not announce unconfirmed information, imply internal access to the team, encourage token purchases, provide investment advice, or make legal/compliance claims on behalf of Onyx.
+
+The original Ambassador Program poll can be found here:
+
+https://polls.onyx.org/#/proposal/0xd6b70644d88b900f8ca596cbbd4004c96c0378fad6790cee2dfe36ff392e66b5
+
+Onyx Position
+
+Onyx intends to vote For this ambassador based on their consistent and constructive participation in the community. However, to maintain neutrality, Onyx will not vote on any future polls related to this ambassador if additional community polls are created.
+
+Vote Options
+
+• For — Affirm this individual as an Onyx Ambassador.
+• Against — Do not affirm this individual as an ambassador at this time.
+11 votes ·
+Results
+For
+122.3m
+52.56%
+Against
+110.4m
+47.44%
+Quorum: 232%
+Timeline
+Created
+Mar 3, 2026 · 6:44 PM
+Start
+Mar 3, 2026 · 6:45 PM
+End
+Mar 5, 2026 · 6:45 PM
+
+Reaffirm Opa as Onyx Ambassador
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 4d ago · #2f2b5
+
+This Poll seeks to determine whether the XCN community supports reaffirming the following individual as an Onyx Ambassador.
+
+Onyx Ambassadors are community members, not team members, who help represent and support the broader community. Their role includes educating users about governance, sharing official resources, explaining technical concepts, and encouraging constructive discussion. Ambassadors also participate in the Onyx Telegram community and contribute through the Onyx Ambassador Zealy program.
+
+Ambassador Profile
+
+Name: Opa
+Region: Nigeria
+Languages: English, Yoruba
+X: Opa007i
+Telegram: @Opaqunklie
+Substack: @opa0
+
+Community members may review the ambassador’s activity and contributions through these platforms.
+
+Ambassador Expectations
+
+Ambassadors are expected to:
+
+• Educate the community on governance
+• Share official proposals and verified resources
+• Explain technical topics accurately
+• Participate in the Telegram community
+• Complete contributions through the Onyx Ambassador Zealy
+
+Ambassadors must not announce unconfirmed information, imply internal access to the team, encourage token purchases, provide investment advice, or make legal/compliance claims on behalf of Onyx.
+
+The original Ambassador Program poll can be found here:
+
+https://polls.onyx.org/#/proposal/0xd6b70644d88b900f8ca596cbbd4004c96c0378fad6790cee2dfe36ff392e66b5
+
+Onyx Position
+
+Onyx intends to vote For this ambassador based on their consistent and constructive participation in the community. However, to maintain neutrality, Onyx will not vote on any future polls related to this ambassador if additional community polls are created.
+
+Vote Options
+
+• For — Affirm this individual as an Onyx Ambassador.
+• Against — Do not affirm this individual as an ambassador at this time.
+11 votes ·
+Results
+For
+122.3m
+52.56%
+Against
+110.4m
+47.44%
+Quorum: 232%
+Timeline
+Created
+Mar 3, 2026 · 6:45 PM
+Start
+Mar 3, 2026 · 6:46 PM
+End
+Mar 5, 2026 · 6:46 PM
+
+Add Nuclear (xplo333) as an XCN Ambassador
+Passed
+0x53eE...8929
+In Onyx XCN DAO · 4d ago · #ac809
+
+This poll is intended to gauge community support for welcoming Nuclear (@xplo333) as the newest ambassador within the XCN Ambassador Program. Expanding the ambassador team with engaged members like Nuclear can help drive outreach and keep the community connected.
+
+Nuclear have shown strong alignment with the values of the program and a consistent presence in the community. By becoming ambassadors, Nuclear would contribute to promoting the mission of the DAO, supporting fellow members, and helping onboard new participants.
+
+Your vote will help determine if the community supports bringing Nuclear into this important role to further the impact of the ambassador initiative.
+
+You can view their profile at:
+https://t.me/xplo333
+12 votes ·
+Results
+For
+232m
+100%
+Against
+0
+0%
+Abstain
+0
+0%
+Quorum: 231%
+Timeline
+Created
+Mar 3, 2026 · 9:15 PM
+Start
+Mar 3, 2026 · 9:16 PM
+End
+Mar 5, 2026 · 9:16 PM
+
+Add Papa John (@PappaJohn45) as an XCN Ambassador
+Passed
+0x53eE...8929
+In Onyx XCN DAO · 4d ago · #153c1
+
+This poll is intended to gauge community support for welcoming Papa John (@PappaJohn45) as the newest ambassador within the XCN Ambassador Program. Expanding the ambassador team with engaged members like Papa John can help drive outreach and keep the community connected.
+
+Papa John have shown strong alignment with the values of the program and a consistent presence in the community. By becoming ambassadors, Papa John would contribute to promoting the mission of the DAO, supporting fellow members, and helping onboard new participants.
+
+Your vote will help determine if the community supports bringing Papa John into this important role to further the impact of the ambassador initiative.
+
+You can view their profile at:
+https://t.me/PappaJohn45
+12 votes ·
+Results
+For
+232m
+100%
+Against
+0
+0%
+Abstain
+0
+0%
+Quorum: 231%
+Timeline
+Created
+Mar 3, 2026 · 9:19 PM
+Start
+Mar 3, 2026 · 9:20 PM
+End
+Mar 5, 2026 · 9:20 PM
+
+Add SKS (@sks21560) as an Ambassador
+Passed
+0x29Db...60B1
+In Onyx XCN DAO · 4d ago · #9b055
+
+SKS has been an active participant in the Onyx ecosystem, and is putting his name forward to serve as an ambassador because he truly believes in the project's vision and wants to see it thrive.
+
+What SKS Brings to the Table:
+
+Community Support: SKS believes a strong community is the heartbeat of a project, and is dedicated to keeping the Onyx community helpful and welcoming.
+
+Vision for Success: SKS as an ambassador would act as a connection between the community and the dev team. Using his technical background to provide clear feedback while helping new users navigate the Onyx ecosystem.
+
+Technical Contribution: As an Android mobile developer, SKS has understanding of the tech stack. He has been actively identifying and reporting bugs and suggested UI/UX improvements in both the web app and wallet app to ensure a smoother experience for all users.
+12 votes ·
+Results
+For
+231m
+100%
+Against
+0
+0%
+Abstain
+0
+0%
+Quorum: 231%
+Timeline
+Created
+Mar 4, 2026 · 3:38 AM
+Start
+Mar 4, 2026 · 3:39 AM
+End
+Mar 6, 2026 · 3:39 AM
+
+Onyx Wallet Beta Testing Program
+Passed
+0x61dB...d5B7
+In Onyx XCN DAO · 3d ago · #1351c
+
+This poll seeks to establish whether the Onyx community supports launching a beta testing program for the new and improved Onyx Wallet, an important step toward ensuring the next generation of our wallet infrastructure is secure, stable, and fully aligned with the needs of our growing ecosystem.
+
+The updated Onyx Wallet represents a significant improvement over previous versions, introducing enhanced performance, improved usability, and other additional features.
+
+A structured beta testing program allows us to identify potential issues, refine the user experience, and ensure that the wallet performs reliably across different environments and use cases.
+
+The purpose of this poll is to determine whether the community supports initiating such a program and inviting qualified participants to help test the wallet in a controlled beta phase. Beta testers would play a crucial role by providing feedback, reporting bugs, and helping validate new functionality before the wallet is rolled out to the broader ecosystem.
+
+Establishing a beta program reflects a commitment to responsible development and community collaboration. By involving users directly in the testing process, we strengthen the reliability of the tools we depend on while ensuring that improvements are guided by real-world usage and community insight.
+
+Your vote will help determine whether the Onyx community wishes to move forward with this beta testing initiative and take the next step toward delivering the next generation of the Onyx Wallet.
+
+Vote Options:
+
+• For — Launch a community beta testing program for the new Onyx Wallet to gather feedback, identify issues, and prepare for a full public release.
+
+• Against — Do not launch a beta testing program for the new Onyx Wallet at this time.
+31 votes ·
+Your vote
+Results
+For
+242.9m
+100%
+Against
+0
+0%
+Quorum: 242%
+Timeline
+Created
+Mar 5, 2026 · 6:02 AM
+Start
+Mar 5, 2026 · 6:03 AM
+End
+Mar 7, 2026 · 6:03 AM
+
+Appoint Saviola (@saviolarh) to the Korean Ambassador Slot
+Active
+0x2BE7...dFfC
+In Onyx XCN DAO · 2d ago · #d49b1
+
+This poll ratifies the appointment of Saviola (@saviolarh) to the dedicated South Korean ambassador slot, following the earlier community poll that passed in favor of adding a Korean-speaking ambassador.
+
+The role is designed to:
+-Support outreach, education, and engagement within the South Korean crypto and DeFi community
+-Provide localized communication in Korean
+-Assist with regional onboarding, content translation, AMAs, and Zealy or task promotion. Saviola (@saviolarh) has been nominated for this position.
+
+If approved, Saviola (@saviolarh) would continue under the existing vetting and accountability framework recently affirmed by the community, receive standard compensation, and be subject to the same expectations, Zealy tasks, and review process as other ambassadors while prioritizing Korean-language support.
+
+Vote Options:
+
+For — Appoint Saviola (@saviolarh) to the Korean-speaking Onyx Ambassador role.
+Against — Do not appoint Saviola (@saviolarh) at this time and continue the search or leave the slot vacant.
+18 votes ·
+Your vote
+Results
+For
+221.5m
+100%
+Against
+0
+0%
+Abstain
+0
+0%
+Quorum: 110%
+Timeline
+Created
+Mar 6, 2026 · 3:54 PM
+Start
+Mar 6, 2026 · 3:55 PM
+End
+Mar 8, 2026 · 4:55 PM
+
+Unban Vladimir Putin from Onyx Telegram & DAO Channels
+Active
+0x2BE7...dFfC
+In Onyx XCN DAO · 2d ago · #a6936
+
+This poll seeks community approval to unban the user known as Vladimir Putin from the official Onyx Telegram group (t.me/Onyx) and any related Onyx DAO communication channels. Vladimir Putin is reportedly banned for making threats and related behavior.
+
+Several weeks ago, DAO representatives stated he would be unbanned, but this did not occur. Community members have since been directed to create this poll to formally address the matter.
+
+Vladimir Putin is a heavily invested participant in the Onyx / XCN ecosystem and has consistently provided feedback to help improve the protocol.
+
+Unbanning him would restore his access under the condition that he follows all existing community rules including no threats, no spam, no hate speech, and no investment advice. This does not override future moderation actions if new violations occur.
+
+Vote Options:
+
+For — Unban Vladimir Putin from the Onyx Telegram group and related DAO channels, allowing re-entry subject to standard rules.
+
+Against — Maintain the current ban on Vladimir Putin and leave moderation to the existing team / ambassadors.
+23 votes ·
+Your vote
+Results
+For
+137.7m
+63.4%
+Against
+79.5m
+36.6%
+Abstain
+0
+0%
+Quorum: 108%
+Timeline
+Created
+Mar 6, 2026 · 3:57 PM
+Start
+Mar 6, 2026 · 3:58 PM
+End
+Mar 8, 2026 · 4:58 PM
+
+Open up a UK 🇬🇧 Ambassador slot and elect BeardedCrypto
+Active
+0xac3A...23Ae
+In Onyx XCN DAO · 2d ago · #aed32
+
+The Onyx XCN Project is a DAO represented worldwide across all timezones and governed in parts by UK law as detailed on the Onyx Website. Currently there are no representations from Ambassadors in the UK - where there is an opportunity to promote this project in an already well established Crypto space. @beardedcrypt0 is UK 🇬🇧 based, an active participant of the Onyx XCN Project and bring years of extensive financial software project management and testing experience to the table.
+
+Community support: BeardedCrypto is and will continue to be an active member of the telegram and wider community on X. He currently participates regularly in community issues on the support page and promotes XCN regularly on X (away from Zealy community tasks) as he is a strong believer in this project.
+
+For transparency, Bearded Crypto currently operates the below social profiles which can be validated before voting in favour or against:
+
+X: https://x.com/baldbeardcrypto
+Telegram: @Beardedcrypt0
+
+Vote For: Appointing BeardedCrypto to a UK Ambassador slot.
+
+Vote Against: Do not appoint BeardedCrypto to a UK Ambassador slot.
+22 votes ·
+Your vote
+Results
+For
+222.9m
+100%
+Against
+0
+0%
+Quorum: 111%
+Timeline
+Created
+Mar 6, 2026 · 4:12 PM
+Start
+Mar 6, 2026 · 4:13 PM
+End
+Mar 8, 2026 · 5:13 PM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
