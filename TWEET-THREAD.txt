@@ -1,0 +1,217 @@
+ONYX DAO REFORM PACKAGE — TWEET THREAD
+Nuclear (@xplo333)
+Ready to post — 18 tweets
+
+===
+
+1/
+Onyx DAO has distributed 16,000,000,000+ XCN since inception.
+
+Zero independent audits. Zero outside verification. One MultiSig where every single guardian is an insider.
+
+I audited all 58 OIPs and 85 polls. Here's what I found. 🧵
+
+---
+
+2/
+OIP-51: Proposal to send 1B XCN to Justin Sun / HTX.
+Community voted. REJECTED. 51% against.
+
+Same month. OIP-52: Same deal, 500M XCN instead.
+PASSED. 98% for.
+
+Between those two votes: +540M FOR votes appeared. 443M AGAINST votes vanished.
+
+How?
+
+---
+
+3/
+The voter address count changed too.
+
+OIP-51: 170 FOR addresses, 22 AGAINST.
+OIP-52: 231 FOR addresses, 8 AGAINST.
+
+Same proposal. Same counterparty. One month apart.
+
+61 new FOR addresses. 14 AGAINST addresses gone.
+
+No explanation has ever been provided.
+
+---
+
+4/
+May 2025: Community voted 100% to require a verified lockup smart contract for Justin Sun's allocation.
+
+100% approval. Every vote FOR.
+
+As of March 2026: No contract address has been published. No disclosure. Nothing.
+
+The vote is in the record. The compliance isn't.
+
+---
+
+5/
+Now look at the quorum pattern.
+
+Insider spending proposals: 149% to 319% quorum.
+Community improvement polls (97-100% approval): 27% to 53% quorum.
+
+Poll Manager: 97% FOR, 28% quorum. Failed.
+Forum Manager: 99% FOR, 28% quorum. Failed.
+Diversify Treasury: 100% FOR, 34% quorum. Failed.
+
+The whales vote when it benefits them. They don't when it doesn't.
+
+---
+
+6/
+The math on exclusion:
+
+Original threshold: 10M XCN → ~73 wallets can create proposals
+Current threshold: 1M XCN → ~730 wallets can create proposals
+60,709 total XCN holders
+
+At 1 million XCN, 98.8% of holders STILL can't create a single proposal.
+
+---
+
+7/
+The MultiSig controls the treasury. 5 signers, 3-of-5 required to execute:
+
+1. Chain.com — paid by the DAO
+2. @dolph1779 — DAO representative
+3. Shawn — appointed
+4. VT — appointed
+5. AstroDaze — appointed (54/46% margin)
+
+Chain + OnyxDAO + any 1 insider = full treasury control.
+
+Zero independent oversight.
+
+---
+
+8/
+Rejected proposal? Rename it.
+
+OIP-36: "Onyxchain L3" — rejected 80% AGAINST.
+7 months later.
+OIP-54: "XCN Ledger L3" — passed 100% FOR.
+
+Same concept. New name. No acknowledgment, no cooling period, no disclosure.
+
+This happened more than once.
+
+---
+
+9/
+Bundled proposals make it worse.
+
+OIP-62: One yes/no vote for 6 unrelated items.
+Staking rate + MultiSig change + marketing + DAO registry + ambassador pay + misc.
+
+OIP-63: Another bundle of 5.
+Want the validator proposal but not the 100M marketing budget? Tough.
+
+One item, one vote. That's what good governance looks like.
+
+---
+
+10/
+The foundation was built by 3 people.
+
+CIP-1, CIP-2, CIP-3 — establishing the DAO, the constitution, 10B XCN in treasury.
+All passed with 3 to 5 voting addresses.
+
+Those decisions still govern 60,000+ holders today.
+
+---
+
+11/
+I audited all 58 OIPs and 85 polls and wrote 48 proposals.
+
+45 governance accountability reforms across 4 phases.
+3 innovation proposals for the Goliath ecosystem.
+
+This is the reform package. Here's what it covers.
+
+---
+
+12/
+PHASE 1 — Vote on these NOW:
+
+Poll 1.1: Lower threshold to 500K XCN (1,500 wallets qualify, vs 730 today)
+Poll 1.4: ENFORCE the Justin Sun lockup vote from May 2025
+Poll 1.5: First independent treasury audit in DAO history
+Poll 1.6: Minimum quorum standards — close the selective abstention loophole
+
+---
+
+13/
+Poll 1.5 in particular matters.
+
+16B+ XCN distributed. No audit. Ever.
+
+Budget for the audit: up to 50M XCN.
+Deliverable: public report with specific findings.
+Methodology: blockchain forensics, not balance sheets.
+
+The community funded this treasury. The community deserves to verify it.
+
+---
+
+14/
+INNOVATION PROPOSALS — the offensive half:
+
+I.1: 500M XCN Ecosystem Fund — developer grants, hackathons, Goliath builders
+I.2: 200M XCN Early Validator Program — 2x rewards for first 100 validators pre-mainnet
+I.3: 2% quarterly treasury diversification — protect operational runway in bear markets
+
+Fix what's broken AND build what's missing.
+
+---
+
+15/
+Goliath is launching without an ecosystem fund.
+
+Ethereum Foundation: funded builders from day one.
+Solana Foundation: $40M+ in early ecosystem grants.
+Polygon: Dedicated zkEVM ecosystem fund pre-launch.
+
+Goliath: Nothing.
+
+You can't attract builders with good vibes alone.
+
+---
+
+16/
+Everything in this thread is on-chain verifiable.
+
+OIP-51/52 data: Ethereum blockchain.
+Quorum numbers: polls.onyx.org voting records.
+MultiSig signers: publicly disclosed.
+
+I'm not making claims. I'm reading the data that already exists.
+
+---
+
+17/
+To be clear: none of this requires bad faith to explain.
+
+It just requires no accountability.
+
+These 48 proposals build accountability. The community votes. We win it from within.
+
+---
+
+18/
+Full governance analytics dashboard: onyx-dao-dashboard
+Built by Nuclear (@xplo333)
+
+58 OIPs · 85 polls · 48 proposals · full anomaly charts
+
+All 48 proposals with vote options are ready. Phase 1 goes to polls.onyx.org after community review.
+
+Review. Comment. Vote.
+
+#OnyxDAO #XCN #DAOGovernance

@@ -48,7 +48,7 @@ The following wallet addresses are believed to be DAO-controlled or DAO-adjacent
 
 | Wallet Description | Source | Notes |
 |---|---|---|
-| Primary DAO Treasury MultiSig | OIP disclosures | 5/5 MultiSig, 3-of-5 threshold |
+| Primary DAO Treasury MultiSig | OIP disclosures | 5-signer MultiSig, 3-of-5 threshold |
 | CIP-3 Operational Budget Wallet | CIP-3 text | Recipient of ~100M XCN/month budget |
 | OIP-38 Development Wallet | OIP-38 text | Chain.com development budget recipient |
 | OIP-39 VUSD / Chain Operational Wallet | OIP-39 text | Secondary development budget |

@@ -25,15 +25,15 @@ APP_FLAGS=(
 )
 
 if command -v brave-browser &>/dev/null; then
-  brave-browser "${APP_FLAGS[@]}" &
+  brave-browser "${APP_FLAGS[@]}" 2>/dev/null &
 elif command -v chromium-browser &>/dev/null; then
-  chromium-browser "${APP_FLAGS[@]}" &
+  chromium-browser "${APP_FLAGS[@]}" 2>/dev/null &
 elif command -v chromium &>/dev/null; then
-  chromium "${APP_FLAGS[@]}" &
+  chromium "${APP_FLAGS[@]}" 2>/dev/null &
 elif command -v google-chrome-stable &>/dev/null; then
-  google-chrome-stable "${APP_FLAGS[@]}" &
+  google-chrome-stable "${APP_FLAGS[@]}" 2>/dev/null &
 elif command -v google-chrome &>/dev/null; then
-  google-chrome "${APP_FLAGS[@]}" &
+  google-chrome "${APP_FLAGS[@]}" 2>/dev/null &
 else
   echo "No Chromium-based browser found. Falling back to xdg-open..."
   xdg-open "$HTML" &

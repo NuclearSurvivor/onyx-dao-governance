@@ -95,9 +95,9 @@
 ## THE CORE ARGUMENT (for when you pitch this)
 > The DAO has distributed 16B+ XCN with zero independent verification.
 > 99%+ of holders can't create proposals.
-> 5/5 MultiSig guardians are insiders.
+> All 5 MultiSig guardians (3-of-5 threshold) are insiders.
 > Rejected proposals get renamed and resubmitted.
 > Community improvement polls die from selective whale abstention.
 >
 > None of this requires bad faith to explain. It just requires no accountability.
-> These 48 proposals build accountability. The community votes. We win it within it.
+> These 48 proposals build accountability. The community votes. We win it from within.

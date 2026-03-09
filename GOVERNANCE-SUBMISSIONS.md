@@ -52,7 +52,7 @@ Reduce the XCN governance poll creation threshold from 1,000,000 XCN to 500,000 
 In May 2025, the Onyx DAO community voted 100% in favor of requiring a verified lockup smart contract for the XCN allocated to Justin Sun / HTX under OIP-52. That vote passed. No contract address has been published. This proposal sets a binding 14-day deadline from passage for the contract address to be publicly disclosed, with specific compliance requirements, and defines the community's response if the deadline is not met.
 
 **Background:**
-OIP-52 passed in [month] 2024, allocating 500,000,000 XCN to Justin Sun / HTX. The stated rationale was protocol development and ecosystem support. The vote result was 98% FOR — though the original proposal (OIP-51, 1,000,000,000 XCN to the same counterparty) was rejected 51% AGAINST the prior month, making OIP-52 a rare case of a modified resubmission of a rejected proposal passing in the same governance cycle.
+OIP-52 passed in February 2025, allocating 500,000,000 XCN to Justin Sun / HTX. The stated rationale was protocol development and ecosystem support. The vote result was 98% FOR — though the original proposal (OIP-51, 1,000,000,000 XCN to the same counterparty) was rejected 51% AGAINST the prior month, making OIP-52 a rare case of a modified resubmission of a rejected proposal passing in the same governance cycle.
 
 In May 2025, a community poll passed with 100% approval requiring that a lockup smart contract be created and verified for this allocation. The requirements as understood from that vote:
 - A smart contract governing the release schedule of the 500M XCN allocation
