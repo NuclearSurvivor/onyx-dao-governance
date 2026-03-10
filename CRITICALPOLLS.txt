@@ -1491,6 +1491,56 @@ Recipients must:
 
 ---
 
+## POLL S.5: Standardize Live Onyx Points to 1 XCN = 1 Point
+
+### Decentralization Rationale
+The current live Onyx Points system distributes a fixed shared pool (5 million points per day) proportionally among stakers. This creates a zero-sum dynamic where early participants' points are diluted as more stakers join — participants are competing against each other for a fixed allocation rather than earning based on their own contribution. A pooled distribution system obscures what a point is actually worth, makes it impossible for participants to calculate their rewards in advance, and creates incentive structures that favor large whales (who capture a larger share of the fixed pool) over consistent smaller participants. The 1 XCN = 1 Point standard eliminates this hidden complexity: your rewards are a direct, transparent function of your own stake. It is the same fair, simple, verifiable standard proposed for the testnet in Poll S.4. One protocol, one standard. Consistency in reward rules is a decentralization principle — it means no insider knowledge, no hidden multipliers, no gaming the pool size window.
+
+### Summary
+Adopt the 1 XCN = 1 Point standard for the live (Season 3+) Onyx Points program, replacing the current fixed-pool proportional distribution on both Ethereum and Onyx Ledger. Aligns the live system with the testnet standard established in Poll S.4.
+
+### Current State (Season 2)
+| Chain | Current Method | Problem |
+|-------|---------------|---------|
+| Ethereum | 5M points shared per day (proportional to stake) | Zero-sum; diluted as participation grows; rewards unpredictable |
+| Onyx Ledger | 5M points shared per day (proportional to stake) | Same issue |
+
+### Proposed Change (Season 3+)
+
+**Live Onyx Points: 1 XCN = 1 Point**
+
+| Activity | Points |
+|----------|--------|
+| XCN Staked on Ethereum | 1 point per XCN per day |
+| XCN Staked on Onyx Ledger | 1 point per XCN per day |
+| XCN Held in Onyx Gas-Free Wallet | 1 point per XCN per day |
+| Governance Vote Cast | 10,000 points per vote |
+| Zealy Task Completed (verified) | Points per task as published |
+
+**What Changes:**
+- Points are no longer pooled and split — each participant earns directly from their own stake
+- No dilution as more participants join — your rewards are your own
+- Reward calculation is transparent and verifiable by any participant in advance
+
+**What Stays the Same:**
+- Seamless participation — no enrollment required for staking-based points
+- Real-time tracking in Onyx dApp
+- Season structure continues
+
+### Transition
+- Season 2 completes under current rules; no retroactive changes
+- Season 3 launches under 1 XCN = 1 Point standard
+- Minimum 14-day notice before Season 3 start date
+
+### Consistency with Testnet (Poll S.4)
+This poll mirrors the testnet standard exactly for mainnet activity. Both systems: same rate (1:1), same transparency, same simplicity. The only difference is the activity types (live staking vs. testnet staking/validation).
+
+### Vote Options
+- **For** — Adopt 1 XCN = 1 Point for live Onyx Points starting Season 3
+- **Against** — Continue fixed pool proportional distribution
+
+---
+
 ## POLL S.4: Testnet Points System (1 XCN = 1 Point)
 
 ### Decentralization Rationale
@@ -1695,9 +1745,9 @@ Assuming all polls pass on same date:
 | Phase 2: Short-Term | 15 | 30-90 days |
 | Phase 3: Medium-Term | 15 | 90-180 days |
 | Phase 4: Long-Term | 5 | 180+ days |
-| Strategic | 4 | Immediate |
+| Strategic | 5 | Immediate |
 | Innovation | 3 | Concurrent with Phase 1 |
-| **TOTAL** | **48** | |
+| **TOTAL** | **49** | |
 
 ---
 
@@ -1707,7 +1757,7 @@ Assuming all polls pass on same date:
 
 This document represents the complete, bulletproof reform package.
 
-**Polls**: 48 comprehensive proposals (45 accountability reforms + 3 innovation)
+**Polls**: 49 comprehensive proposals (45 accountability reforms + 1 points standardization + 3 innovation)
 **Vulnerabilities Addressed**: 55+
 **Exploits Closed**: 55+
 **Contradictions Resolved**: All
