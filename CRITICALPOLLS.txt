@@ -1540,6 +1540,126 @@ No complex multipliers. No insider advantages. Simple, fair, transparent.
 ---
 
 # ═══════════════════════════════════════════════════════════════
+# INNOVATION PROPOSALS
+# 3 Forward-Looking Proposals for Goliath Ecosystem Growth
+# ═══════════════════════════════════════════════════════════════
+
+---
+
+## POLL I.1: Goliath Ecosystem Development Fund
+
+### Decentralization Rationale
+Every successful Layer 1 blockchain launched with a dedicated ecosystem fund to attract builders: Ethereum Foundation, Solana Foundation, Polygon's zkEVM fund. Without builders, a decentralized blockchain is empty infrastructure. An ecosystem fund governed by a community-elected grants committee — with public review, milestone-based disbursement, and clawback provisions — is decentralization applied to economic incentives: the community decides what gets built, not a central team. This directly expands the diversity and independence of the development ecosystem around Goliath, reducing long-term dependency on any single development entity and distributing the power to shape what the protocol becomes.
+
+### Summary
+Establish a 500,000,000 XCN Ecosystem Development Fund to attract builders, developers, and projects to the Goliath ecosystem at and after mainnet launch.
+
+### Structure
+- **Allocation**: 500,000,000 XCN from treasury
+- **Purpose**: Developer grants, hackathons, ecosystem partnerships, tooling, and infrastructure
+
+### Governance
+- **Grants Committee**: 5 community-elected members (not Insiders)
+- **Committee Term**: 6 months
+- **Election**: Same process as Community Strategic Voting Pool representatives
+
+### Grant Tiers
+
+| Tier | Amount | Process |
+|------|--------|---------|
+| Micro | Up to 1M XCN | Committee approval (3-of-5) |
+| Small | 1-10M XCN | Committee approval + 7-day public review |
+| Medium | 10-50M XCN | Committee + community comment + 14-day review |
+| Large | 50-100M XCN | Community governance vote required |
+| Strategic | >100M XCN | Full community governance vote, 21-day notice |
+
+### Requirements for All Grants
+- Specific deliverables with measurable milestones
+- Milestone-based disbursement (not lump sum)
+- Clawback provision for non-delivery
+- Public progress reports
+- No grants to current Insiders or entities with active DAO service contracts
+
+### Vote Options
+- **For** — Establish 500M XCN Ecosystem Development Fund with elected committee
+- **Against** — Do not establish
+
+---
+
+## POLL I.2: Early Validator Incentive Program
+
+### Decentralization Rationale
+Validator decentralization must be actively built, not passively hoped for. If the first 100 validators are all the same entities (exchanges, well-funded institutions, insiders), Goliath launches centralized and never recovers — network effects entrench the initial validator set. A pre-mainnet incentive program that rewards early commitment with 2x staking rewards and geographic diversity bonuses actively recruits the diverse global validator base that makes Goliath's decentralization real rather than nominal. The uptime requirements ensure only genuine operators benefit, not wallets that stake and ghost. This is an investment in the decentralized infrastructure layer that everything else depends on.
+
+### Summary
+Establish a 200,000,000 XCN Early Validator Incentive Program to recruit diverse, committed validators before Goliath mainnet launch.
+
+### Structure
+- **Allocation**: 200,000,000 XCN from treasury
+- **Target**: First 100 validators who commit pre-mainnet
+- **Incentive Period**: 12 months post-mainnet
+
+### Reward Structure
+
+| Condition | Reward |
+|-----------|--------|
+| Base staking APR | 2x standard rate (first 12 months) |
+| Geographic diversity bonus | +25% APR if from underrepresented region |
+| Uptime bonus | +10% APR for >99% uptime monthly |
+| Governance participation | +5% APR for >75% proposal participation |
+
+### Eligibility Requirements
+- Complete Tier 3 of Testnet Contributor Support Program (Poll S.3)
+- Minimum 14 days validator operation with >95% uptime on testnet
+- Commit to 12-month post-mainnet operation
+- Geographic limits: Maximum 10 validators from any single country in the incentive program
+
+### Accountability
+- Monthly uptime verification (automated on-chain)
+- Reward reduction for underperformance, not clawback (earned rewards keep)
+- Validators who exit before 12 months forfeit remaining enhanced APR (not earned rewards)
+
+### Vote Options
+- **For** — Establish 200M XCN Early Validator Incentive Program
+- **Against** — Do not establish
+
+---
+
+## POLL I.3: Treasury Diversification for Operational Runway
+
+### Decentralization Rationale
+A DAO treasury held entirely in its own native token is exposed to a catastrophic failure mode: if XCN price declines significantly, the DAO may lack the fiat-equivalent funds to pay for critical services (audits, infrastructure, development) even if it holds nominal billions in XCN. Protocol death by illiquidity — not by governance failure — has ended multiple decentralized projects. Quarterly conversion of a small treasury percentage to stable assets via OTC trades (not open market selling, which suppresses price) provides 12 months of guaranteed operational runway regardless of market conditions. This protects the community's ability to continue operating the protocol through bear markets, which is the foundation for long-term decentralized governance to function at all.
+
+### Summary
+Authorize quarterly conversion of up to 2% of the treasury to stable assets via OTC trades, protecting 12 months of minimum operational runway against sustained bear market conditions.
+
+### Structure
+- **Maximum per quarter**: 2% of total treasury value
+- **Method**: OTC trades only (no open market selling)
+- **Target stable assets**: USDC, USDT, or DAI
+- **Runway target**: Minimum 12 months of operational costs in stable assets
+
+### Operational Cost Definition
+Minimum operational costs include: smart contract infrastructure, security audits, bug bounty funding, and minimum community management. Does NOT include discretionary spending (marketing, partnerships, ambassador programs).
+
+### Triggers and Limits
+- Conversion only executes if runway reserve is below 12-month minimum
+- Stops automatically once 12-month runway is reached
+- Maximum cumulative stable holdings: 10% of total treasury value
+- Any single OTC trade >50M XCN USD equivalent requires MultiSig approval + public disclosure within 24 hours
+
+### Transparency
+- Monthly disclosure of stable asset balance
+- OTC counterparty and terms disclosed within 7 days of each trade
+- Quarterly runway calculation published publicly
+
+### Vote Options
+- **For** — Authorize quarterly treasury diversification up to 2% via OTC for operational runway
+- **Against** — Maintain 100% XCN treasury
+
+---
+
+# ═══════════════════════════════════════════════════════════════
 # IMPLEMENTATION MASTER TIMELINE
 # ═══════════════════════════════════════════════════════════════
 
@@ -1576,7 +1696,8 @@ Assuming all polls pass on same date:
 | Phase 3: Medium-Term | 15 | 90-180 days |
 | Phase 4: Long-Term | 5 | 180+ days |
 | Strategic | 4 | Immediate |
-| **TOTAL** | **45** | |
+| Innovation | 3 | Concurrent with Phase 1 |
+| **TOTAL** | **48** | |
 
 ---
 
@@ -1586,7 +1707,7 @@ Assuming all polls pass on same date:
 
 This document represents the complete, bulletproof reform package.
 
-**Polls**: 45 comprehensive proposals
+**Polls**: 48 comprehensive proposals (45 accountability reforms + 3 innovation)
 **Vulnerabilities Addressed**: 55+
 **Exploits Closed**: 55+
 **Contradictions Resolved**: All
