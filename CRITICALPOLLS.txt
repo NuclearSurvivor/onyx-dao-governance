@@ -1491,36 +1491,48 @@ Recipients must:
 
 ---
 
-## POLL S.5: Standardize Live Onyx Points to 1 XCN = 1 Point
+## POLL S.5: Standardize Live Onyx Points to 0.1 XCN Points per XCN per Day
 
 ### Decentralization Rationale
-The current live Onyx Points system distributes a fixed shared pool (5 million points per day) proportionally among stakers. This creates a zero-sum dynamic where early participants' points are diluted as more stakers join — participants are competing against each other for a fixed allocation rather than earning based on their own contribution. A pooled distribution system obscures what a point is actually worth, makes it impossible for participants to calculate their rewards in advance, and creates incentive structures that favor large whales (who capture a larger share of the fixed pool) over consistent smaller participants. The 1 XCN = 1 Point standard eliminates this hidden complexity: your rewards are a direct, transparent function of your own stake. It is the same fair, simple, verifiable standard proposed for the testnet in Poll S.4. One protocol, one standard. Consistency in reward rules is a decentralization principle — it means no insider knowledge, no hidden multipliers, no gaming the pool size window.
+The current live Onyx Points system distributes a fixed shared pool (5 million points per day) proportionally among stakers. This creates a zero-sum dynamic where early participants' points are diluted as more stakers join — participants are competing against each other for a fixed allocation rather than earning based on their own contribution. A pooled distribution system obscures what a point is actually worth, makes it impossible for participants to calculate their rewards in advance, and creates incentive structures that favor large whales who capture a larger share of the fixed pool over consistent smaller participants. The 0.1 XCN Points per XCN per day standard eliminates this hidden complexity: your rewards are a direct, transparent function of your own stake, calculable by anyone. The testnet rate (Poll S.4) is set higher at 1:1 to specifically incentivize testnet participation — the live rate of 0.1 reflects the different purpose of the mainnet program while preserving the same fairness principle: no pooling, no dilution, no insider multipliers.
 
 ### Summary
-Adopt the 1 XCN = 1 Point standard for the live (Season 3+) Onyx Points program, replacing the current fixed-pool proportional distribution on both Ethereum and Onyx Ledger. Aligns the live system with the testnet standard established in Poll S.4.
+Adopt a flat rate of **0.1 XCN Points per 1 XCN staked per day** for the live (Season 3+) Onyx Points program on both Ethereum and Onyx Ledger. Replaces the current fixed-pool proportional distribution with a transparent, individual-based earning rate.
+
+### Points Rate Comparison
+
+| System | Rate | Purpose |
+|--------|------|---------|
+| Live (Season 3+, this poll) | **0.1 XCN Points per XCN per day** | Reward long-term staking, sustainable |
+| Testnet (Poll S.4) | 1 XCN Point per XCN per day | Higher rate incentivizes testnet participation |
 
 ### Current State (Season 2)
 | Chain | Current Method | Problem |
 |-------|---------------|---------|
-| Ethereum | 5M points shared per day (proportional to stake) | Zero-sum; diluted as participation grows; rewards unpredictable |
-| Onyx Ledger | 5M points shared per day (proportional to stake) | Same issue |
+| Ethereum | 5M XCN Points shared per day (proportional to stake) | Zero-sum; diluted as participation grows; rewards unpredictable |
+| Onyx Ledger | 5M XCN Points shared per day (proportional to stake) | Same issue |
 
 ### Proposed Change (Season 3+)
 
-**Live Onyx Points: 1 XCN = 1 Point**
+**Live Onyx Points: 0.1 XCN Points per XCN per day**
 
-| Activity | Points |
+| Activity | XCN Points Earned |
 |----------|--------|
-| XCN Staked on Ethereum | 1 point per XCN per day |
-| XCN Staked on Onyx Ledger | 1 point per XCN per day |
-| XCN Held in Onyx Gas-Free Wallet | 1 point per XCN per day |
-| Governance Vote Cast | 10,000 points per vote |
-| Zealy Task Completed (verified) | Points per task as published |
+| XCN Staked on Ethereum | 0.1 per XCN per day |
+| XCN Staked on Onyx Ledger | 0.1 per XCN per day |
+| XCN Held in Onyx Gas-Free Wallet | 0.1 per XCN per day |
+| Governance Vote Cast | 1,000 XCN Points per vote |
+| Zealy Task Completed (verified) | XCN Points per task as published |
+
+**Example (transparent, predictable):**
+- 100,000 XCN staked → 10,000 XCN Points per day
+- 1,000,000 XCN staked → 100,000 XCN Points per day
+- Rate does not change as more participants join
 
 **What Changes:**
 - Points are no longer pooled and split — each participant earns directly from their own stake
 - No dilution as more participants join — your rewards are your own
-- Reward calculation is transparent and verifiable by any participant in advance
+- Rate is calculable in advance by any participant without insider knowledge
 
 **What Stays the Same:**
 - Seamless participation — no enrollment required for staking-based points
@@ -1529,14 +1541,12 @@ Adopt the 1 XCN = 1 Point standard for the live (Season 3+) Onyx Points program,
 
 ### Transition
 - Season 2 completes under current rules; no retroactive changes
-- Season 3 launches under 1 XCN = 1 Point standard
+- Season 3 launches under 0.1 XCN Points per XCN per day standard
 - Minimum 14-day notice before Season 3 start date
-
-### Consistency with Testnet (Poll S.4)
-This poll mirrors the testnet standard exactly for mainnet activity. Both systems: same rate (1:1), same transparency, same simplicity. The only difference is the activity types (live staking vs. testnet staking/validation).
+- Rate may be adjusted for future seasons by community governance vote
 
 ### Vote Options
-- **For** — Adopt 1 XCN = 1 Point for live Onyx Points starting Season 3
+- **For** — Adopt 0.1 XCN Points per XCN per day for live Onyx Points starting Season 3
 - **Against** — Continue fixed pool proportional distribution
 
 ---
