@@ -1491,22 +1491,25 @@ Recipients must:
 
 ---
 
-## POLL S.5: Standardize Live Onyx Points to 0.1 XCN Points per XCN per Day
+## POLL S.5: Standardize Live Onyx Points to 1 XCN = 1 Point (Season 3+)
 
 ### Decentralization Rationale
-The current live Onyx Points system distributes a fixed shared pool (5 million points per day) proportionally among stakers. This creates a zero-sum dynamic where early participants' points are diluted as more stakers join — participants are competing against each other for a fixed allocation rather than earning based on their own contribution. A pooled distribution system obscures what a point is actually worth, makes it impossible for participants to calculate their rewards in advance, and creates incentive structures that favor large whales who capture a larger share of the fixed pool over consistent smaller participants. The 0.1 XCN Points per XCN per day standard eliminates this hidden complexity: your rewards are a direct, transparent function of your own stake, calculable by anyone. The testnet rate (Poll S.4) is set higher at 1:1 to specifically incentivize testnet participation — the live rate of 0.1 reflects the different purpose of the mainnet program while preserving the same fairness principle: no pooling, no dilution, no insider multipliers.
+The current live Onyx Points system distributes a fixed shared pool (5 million points per day) proportionally among stakers. This creates a zero-sum dynamic where early participants' points are diluted as more stakers join — participants are competing against each other for a fixed allocation rather than earning based on their own contribution. A pooled distribution system obscures what a point is actually worth, makes it impossible for participants to calculate their rewards in advance, and creates incentive structures that favor large whales who capture a larger share of the fixed pool over consistent smaller participants. The 1 XCN = 1 Point standard eliminates this hidden complexity: your rewards are a direct, transparent function of your own stake, calculable by anyone. No pooling, no dilution, no insider multipliers. One rule. Equal for every participant regardless of when they joined or how much others are staking.
 
 ### Summary
-Adopt a flat rate of **0.1 XCN Points per 1 XCN staked per day** for the live (Season 3+) Onyx Points program on both Ethereum and Onyx Ledger. Replaces the current fixed-pool proportional distribution with a transparent, individual-based earning rate.
+Adopt a flat rate of **1 XCN Point per 1 XCN staked per day** for the live (Season 3+) Onyx Points program on both Ethereum and Onyx Ledger — the same 1:1 standard as the testnet (Poll S.4). Replaces the current fixed-pool proportional distribution with a transparent, individual-based earning rate.
 
-### Points Rate Comparison
+### Points Rate
 
-| System | Rate | Purpose |
-|--------|------|---------|
-| Live (Season 3+, this poll) | **0.1 XCN Points per XCN per day** | Reward long-term staking, sustainable |
-| Testnet (Poll S.4) | 1 XCN Point per XCN per day | Higher rate incentivizes testnet participation |
+| System | Rate |
+|--------|------|
+| Live (Season 3+, this poll) | **1 XCN Point per XCN per day** |
+| Testnet (Poll S.4) | 1 XCN Point per XCN per day |
 
-### Current State (Season 2)
+One protocol. One standard. Both live and testnet at 1:1.
+
+### Current State (Season 2) — The Problem
+
 | Chain | Current Method | Problem |
 |-------|---------------|---------|
 | Ethereum | 5M XCN Points shared per day (proportional to stake) | Zero-sum; diluted as participation grows; rewards unpredictable |
@@ -1514,40 +1517,133 @@ Adopt a flat rate of **0.1 XCN Points per 1 XCN staked per day** for the live (S
 
 ### Proposed Change (Season 3+)
 
-**Live Onyx Points: 0.1 XCN Points per XCN per day**
-
 | Activity | XCN Points Earned |
-|----------|--------|
-| XCN Staked on Ethereum | 0.1 per XCN per day |
-| XCN Staked on Onyx Ledger | 0.1 per XCN per day |
-| XCN Held in Onyx Gas-Free Wallet | 0.1 per XCN per day |
-| Governance Vote Cast | 1,000 XCN Points per vote |
-| Zealy Task Completed (verified) | XCN Points per task as published |
+|----------|-------------------|
+| XCN Staked on Ethereum | 1 point per XCN per day |
+| XCN Staked on Onyx Ledger | 1 point per XCN per day |
+| XCN Held in Onyx Gas-Free Wallet | 1 point per XCN per day |
+| Governance Vote Cast | 10,000 XCN Points per vote |
+| Zealy Task Completed (verified) | Published rate per task |
 
 **Example (transparent, predictable):**
-- 100,000 XCN staked → 10,000 XCN Points per day
-- 1,000,000 XCN staked → 100,000 XCN Points per day
-- Rate does not change as more participants join
+- 100,000 XCN staked → 100,000 XCN Points per day, always
+- 1,000,000 XCN staked → 1,000,000 XCN Points per day, always
+- Rate does NOT change as more participants join — no dilution
 
 **What Changes:**
 - Points are no longer pooled and split — each participant earns directly from their own stake
-- No dilution as more participants join — your rewards are your own
+- No dilution as more participants join — your rewards are entirely your own
 - Rate is calculable in advance by any participant without insider knowledge
 
 **What Stays the Same:**
-- Seamless participation — no enrollment required for staking-based points
+- No enrollment required — stake and earn automatically
 - Real-time tracking in Onyx dApp
 - Season structure continues
 
 ### Transition
 - Season 2 completes under current rules; no retroactive changes
-- Season 3 launches under 0.1 XCN Points per XCN per day standard
-- Minimum 14-day notice before Season 3 start date
-- Rate may be adjusted for future seasons by community governance vote
+- Season 3 launches under 1 XCN = 1 Point standard
+- Minimum 14-day public notice before Season 3 start date
+- Rate adjustments for future seasons require a community governance vote
 
 ### Vote Options
-- **For** — Adopt 0.1 XCN Points per XCN per day for live Onyx Points starting Season 3
+- **For** — Adopt 1 XCN = 1 Point for live Onyx Points starting Season 3
 - **Against** — Continue fixed pool proportional distribution
+
+---
+
+## POLL S.6: Ambassador Regional Compensation Standard
+
+### Decentralization Rationale
+Ambassador compensation set by leadership discretion without community approval is not decentralized — it is a patronage system. When pay is opaque, unequal without transparent criteria, or decided behind closed doors, it creates dependency on leadership goodwill rather than objective performance. This poll establishes community-voted, transparent pay tiers with verifiable criteria: every ambassador knows exactly what they earn and why, the community knows what its budget goes to, and no single person controls compensation decisions. Regional bonuses reward actual community growth in underserved markets rather than concentrating compensation in already-dominant regions. Pay is disclosed at wallet-address level — no personal identity required — and all bonus eligibility criteria are publicly trackable through Zealy, on-chain voting records, and community-submitted metrics.
+
+### Summary
+Establish a formal ambassador compensation structure with a **$200/month base** for all ambassadors and a **$850/month maximum** achievable through regional growth and performance bonuses. All amounts denominated in USD equivalent, paid in XCN at the 30-day average market rate at time of disbursement.
+
+---
+
+### Why USD-Pegged?
+USD denomination protects ambassadors from XCN price volatility while keeping all payments in XCN. Ambassadors provide consistent service regardless of market conditions; their base pay should be consistent too. The community votes on the USD rates; disbursement converts to XCN at market price.
+
+---
+
+### Compensation Structure
+
+#### Base Pay — $200/month (All Ambassadors, All Regions)
+
+**Baseline Requirements (must meet ALL to receive base pay):**
+- Minimum 20 hours/month of documented community activity
+- Minimum 4 community support interactions per week (Discord, Telegram, or equivalent, logged in Zealy or equivalent tracker)
+- Attendance at minimum 1 monthly community town hall (or documented excuse)
+- Publish minimum 1 regional community update per month (Discord/forum post)
+- Vote on minimum 75% of governance proposals that month
+
+If any baseline is not met in a given month, base pay is prorated or withheld at community committee discretion — publicly documented.
+
+---
+
+#### Performance Bonuses — Up to $650/month Additional (Maximum Total: $850/month)
+
+| Bonus Category | Maximum | Criteria |
+|----------------|---------|---------|
+| Regional Community Growth | $200/month | Verifiable new community member onboarding in region; tracked via Zealy referrals, Discord invites, or region-tagged activity |
+| Content & Contribution | $200/month | Content pieces created (articles, videos, threads, translations); events organized; tasks completed on Zealy; scored on quality + quantity |
+| Governance Participation | $100/month | Voting on proposals above 75% threshold earns up to $50; publishing regional summaries of governance decisions earns up to $50 |
+| Regional Excellence | $150/month | Top-performing ambassador in their region per quarter, determined by aggregate Zealy score + community satisfaction rating; max 1 ambassador per region per quarter |
+
+**Note:** Bonuses are additive. An ambassador can earn any combination up to $650/month additional. Maximum total is $850/month.
+
+---
+
+### Regional Structure
+
+Based on Poll 2.7 regional ambassador seats:
+
+| Region | Ambassador Seats | Notes |
+|--------|-----------------|-------|
+| North America | 2 | Robinhood listing, regulatory importance |
+| Europe | 2 | Significant holder base |
+| Asia-Pacific | 2 | Large crypto markets |
+| Africa | 1 | Growing community — regional excellence bonus weighted +15% to incentivize growth |
+| South America | 1 | Emerging market — regional excellence bonus weighted +15% |
+| Flexible/At-Large | 2+ | Any region, based on community need |
+
+**Regional Excellence Bonus Note:** Africa and South America ambassadors receive a +15% weighting on the Regional Excellence bonus calculation to reflect the higher difficulty of building communities in emerging markets and to incentivize equal investment across all global regions. This is not a different pay tier — it is a scaling factor on one specific bonus category only.
+
+---
+
+### Payment Process
+
+1. **Monthly self-report** submitted by each ambassador via governance forum (Zealy score, activity log, events, content links)
+2. **Community committee review** (3 randomly-selected non-insider community members, rotated monthly) validates claims within 7 days
+3. **Payment authorization** requires 2-of-3 committee approval
+4. **Disbursement** in XCN at 30-day average market rate, within 14 days of month end
+5. **Public disclosure** of each ambassador's wallet address, total amount, and bonus breakdown — published monthly with no personal name required
+
+---
+
+### Total Budget Estimate
+
+| Scenario | Monthly | Annual |
+|----------|---------|--------|
+| All ambassadors at base ($200 × 10) | $2,000 | $24,000 |
+| All ambassadors at maximum ($850 × 10) | $8,500 | $102,000 |
+| Realistic blended average (~$500 × 10) | $5,000 | $60,000 |
+
+---
+
+### Anti-Gaming Provisions
+
+- No ambassador may self-report Zealy XP from tasks they did not personally complete
+- Community committee may request evidence for any claimed activity
+- Ambassadors found misreporting forfeit that month's bonus and trigger a recall eligibility review
+- No ambassador may receive the Regional Excellence bonus in two consecutive months from the same region (prevents lock-in)
+
+---
+
+### Vote Options
+- **For** — Adopt $200 base / $850 maximum ambassador compensation structure with regional bonuses
+- **Against** — Continue current unstructured compensation
 
 ---
 
@@ -1755,9 +1851,9 @@ Assuming all polls pass on same date:
 | Phase 2: Short-Term | 15 | 30-90 days |
 | Phase 3: Medium-Term | 15 | 90-180 days |
 | Phase 4: Long-Term | 5 | 180+ days |
-| Strategic | 5 | Immediate |
+| Strategic | 6 | Immediate |
 | Innovation | 3 | Concurrent with Phase 1 |
-| **TOTAL** | **49** | |
+| **TOTAL** | **50** | |
 
 ---
 
@@ -1767,7 +1863,7 @@ Assuming all polls pass on same date:
 
 This document represents the complete, bulletproof reform package.
 
-**Polls**: 49 comprehensive proposals (45 accountability reforms + 1 points standardization + 3 innovation)
+**Polls**: 50 comprehensive proposals (45 accountability reforms + 2 points standardization + 1 ambassador compensation + 3 innovation)
 **Vulnerabilities Addressed**: 55+
 **Exploits Closed**: 55+
 **Contradictions Resolved**: All
